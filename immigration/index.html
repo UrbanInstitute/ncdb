@@ -1,0 +1,397 @@
+<!-- 
+///////////////////URBAN INSTITUTE///////////////////
+
+
+
+////////////////////////////////////////////////////
+-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>How immigrants are reshaping residential segregation</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@urbaninstitute">
+    <meta name="twitter:creator" content="@urbaninstitute">
+    <meta name="twitter:title" content="How immigrants are reshaping residential segregation">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+
+    <meta property="og:title" content="How immigrants are reshaping residential segregation" />
+    <meta property="og:description" content="" />
+
+    <meta property="og:image" content="http://datatools.urban.org/features/mortgages-by-race/images/facebookShare.jpg" />
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="400">
+    <meta property="og:url" content="">
+
+
+
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
+    <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-hash/v0.2.1/leaflet-hash.js'></script>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/ncdb.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="../vendor/jquery-1.10.2.min.js"></script>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="topNav">
+        <div class="container">
+            <div id="header">
+               
+                     
+                <div id="share">
+                    <div id="logo"><a href="http://www.urban.org"><img src="images/logo-01.png" alt="The Urban Institute" /></a>
+                </div>
+                    <div id="shareMaster">
+                        <div id="shareCircle" class="circle">
+                            <i class="fa fa-share"></i>
+                        </div>
+                    </div>
+                    <div id="socials">
+                        <a href="" target="_blank">
+                            <div id="twitter" class="circle">
+                                <i class="fa fa-twitter"></i>
+                            </div>
+                        </a>
+                        <a href="" target="_blank">
+                            <div id="facebook" class="circle">
+                                <i class="fa fa-facebook"></i>
+                            </div>
+                        </a>
+                        <a href="mailto:%20?Subject=New interactive feature by the Urban Institute&amp;Body=Hi! I thought you'd be interested in this new interactive feature from the Urban Institute: “How immigrants are reshaping residential segregation” " target="_blank">
+                            <div id="email" class="circle">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Header -->
+
+
+    <div class="topBtns">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-12">
+                       <div id="map-nav">
+    <div id="chicago" class="map-btn">Chicago</div>
+    <div id="washington" class="map-btn">Washington, DC</div>
+    <div id="minneapolis" class="map-btn">Minneapolis</div>
+    <div id="atlanta" class="map-btn">Atlanta</div>
+    <div id="houston" class="map-btn">Houston</div>
+    <div id="lasvegas" class="map-btn">Las Vegas</div>
+    <div id="sanjose" class="map-btn">San Jose</div>
+    <div id="seattle" class="map-btn">Seattle</div>
+    <div id="fresno" class="map-btn">Fresno</div>
+    <div id="miami" class="map-btn">Miami</div>
+    <div id="newyork" class="map-btn">New York</div>
+    <div id="detroit" class="map-btn">Detroit</div>
+    <div id="cleveland" class="map-btn">Cleveland</div>
+    <div id="phoenix" class="map-btn">Phoenix</div>
+                          
+<!--
+    <div id="about" class="map-aux">About</div>
+    <div id="embed" class="map-aux">Embed</div>     
+-->
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="intro-header">
+
+        <div class="container" id="mapContainer">
+
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <div id='map'>
+<div id='layers'>
+        
+    <div id='legend'>
+       
+
+
+
+    </div>
+
+</div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+    <!-- Page Content -->
+
+    <div class="content-section-a">
+
+        <div class="container title ">
+<div class="shiftup">
+            <div class="row title">
+                <div class="col-sm-1 push">
+                    <div class="clearfix"></div>
+                    <img class="headshot" src="http://urban.prod.acquia-sites.com/sites/default/files/styles/author_portrait_300x330/public/alfresco/person-headshots/gelatt-julia_0.JPG?itok=IJLGmWWL">
+                    <div class="byline-name">Julia Gelatt</div>
+                                            &nbsp<img class="headshot" src="http://urban.prod.acquia-sites.com/sites/default/files/styles/author_portrait_300x330/public/alfresco/person-headshots/hanson-devlin.jpg?itok=QzaZx6wh">
+                    <div class="byline-name">Devlin Hanson</div>
+                </div>
+                <div class="col-md-6 ">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading title">How immigrants are reshaping residential segregation</h2>
+                    
+                    <p class="lead">Even as the United States becomes more diverse, residential segregation still divides many American cities. While the problem has historically centered on the stark separation between lower-income black and higher-income white neighborhoods, immigrants have added a new dimension to the picture, particularly after the past four decades of increased immigration from across Latin America and Asia.</p>
+
+<p>Just like US-born white, black, Latino, and Asian residents, immigrants from different world regions sort into neighborhoods across cities in patterns strongly shaped by the racial/ethnic and socioeconomic characteristics of those neighborhoods. Here, we present a portrait of where immigrants fit into patterns of residential segregation of several cities by socioeconomic status (SES) and how this varies by the key characteristics of each city.</p>
+
+<p>Where immigrants live matters for several reasons. Where immigrant families settle affects how parents pass on opportunities or disadvantages to their children, particularly whether families are close to high-quality schools, needed services, safe outdoor spaces for play and exercise, and grocery stores with affordable, nutritious food. Neighborhoods can shape how easily immigrants can access products, services, and assistance in a way that fits with their cultural and language needs. And neighborhoods shape families’ social networks and the resources, influences, and help available through those networks. </p>
+
+<p>We identified seven cities (technically, seven commuting zones: regions of metro and rural areas connected by a local economy) that exemplify three patterns of how immigrant families sort into neighborhoods. </p>
+                </div>
+                <div class="col-md-4 push">
+
+                    <div id="about-ncdb">
+                    <h4>About the Neighborhood change database</h4>
+                        <p>The volume of lending overall and to different racial and ethnic groups fluctuated greatly over the course of the boom and bust, according to records released under the Home Mortgage Disclosure Act.</p>
+<a href="https://drive.google.com/file/d/0B8Ayd1M8yKi4Zk1Vb3ozSUxLekE/view?usp=sharing" target="_blank"><button type="button" id="researchButton" class="btn btn-default" style="width:100%">Learn more</button></a>                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <hr class="section-heading-spacer">
+                <div class="col-sm-6">
+                    <img class="center-block mortgage-img" src="images/californiaMinorityMorgages-01.png" alt="California Minority Mortgages" />
+                    <hr class="section-heading-spacer" style="width:400px">
+                    <img class="center-block mortgage-img" src="images/la.gif" alt="Los Angeles" style="margin-top: 10px;" />
+                </div>
+                <div class="col-sm-6">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Traditionally Segregated Cities</h2>
+                    <p>Both Chicago and DC exhibit stark segregation between black and white neighborhoods, with white residents mostly living in high-SES areas and black residents mostly living in low-SES areas. This dichotomy has changed little over the past two decades. </p>
+
+<p>Both cities have also attracted large numbers of immigrants. For the most part, immigrant residents have avoided both the traditionally black, low-SES communities and the traditionally white, high-SES communities, instead settling into the middle-SES neighborhoods in between.</p>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+
+    <div class="content-section-a">
+
+        <div class="container">
+
+            <div class="row">
+                <hr class="section-heading-spacer">
+                <div class="col-md-7">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Fast-Growth Cities</h2>
+                    <p>Many cities in the South and Southwest have seen fast growth in their overall populations and in their immigrant populations over the 1990s and 2000s. Atlanta, Houston, and Las Vegas all saw their immigrant populations more than double between 1990 and 2010. In fact, the foreign-born population of Atlanta was five times bigger in 2010 than in 1990. </p>
+
+<p>These fast-growth cities are also all places where immigrants cluster strongly in the poorest neighborhoods, forming growing shares of residents in the lowest-SES neighborhoods. Immigrants make up 15, 20, and 22 percent of the populations of Atlanta, Las Vegas, and Houston, respectively. But they comprise 17, 31, and 32 percent of all residents in the lowest-SES neighborhoods in these areas. </p>
+
+<p>In all three cities, the majority of immigrants were born in Mexico or other parts of Latin America, followed by immigrants from various parts of Asia and then Europe. Latin American immigrants are particularly concentrated in the lowest SES-neighborhoods, while immigrants from Asia and Europe are over-concentrated in the highest-SES neighborhoods.</p>
+
+<p>Looking now at US-born residents, those in the poorest neighborhoods in Atlanta and Houston are mainly black and Latino. In Atlanta, segregation among US-born residents echoes the black/white segregation observed in Chicago and DC: about two-thirds (65 percent) of residents in the lowest-SES neighborhoods are black. In Houston, about one-third (34 percent) of residents in the lowest-SES neighborhoods are black, while 19 percent are US-born Latinos. In contrast, in Las Vegas, 30 percent of residents in the poorest neighborhoods are US-born non-Hispanic whites, while 17 percent are US-born Latinos.</p>
+
+                </div>
+                <div class="col-md-5 center-block">
+                    <img class="center-block mortgage-img" src="images/miamiCashSales-01.png" alt="miami cash sales" />
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!--end .content secion a-->
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <hr class="section-heading-spacer">
+                <div class="col-md-5">
+                    <img class="center-block mortgage-img" src="images/detroit.gif" alt="Detroit" />
+                </div>
+                <div class="col-md-7">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Tech Cities</h2>
+                    <p>San Jose and Seattle have booming tech industries that draw large numbers of high-skilled immigrants and high-skilled US-born workers alike. These high-skilled immigrants, who often make high salaries, opt to move into the high-SES neighborhoods in both cities. </p>
+
+<p>Although both cities attract high-skilled immigrants, each is also home to other types of immigrants. A large share of immigrants living in Seattle <a >is</a> refugees, mostly from Russia, Cambodia, and Somalia, who settle in the lo<a >west</a>-SES areas. In San Jose, a large number of poorer Latin American immigrants tend to settle in the lowest-SES areas. This combination of immigrants—high-skilled workers, refugees, and poorer Latino households—means that immigrants make up a higher share of the low SES-neighborhoods, and a higher share of the high-SES neighborhoods.</p>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+
+    <div class="content-section-a">
+
+        <div class="container">
+
+            <div class="row">
+                <hr class="section-heading-spacer">
+                <div class="col-md-7">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Other US Cities</h2>
+                    <p>Beyond these seven cities, immigrants’ residential patterns are influencing the composition of neighborhoods and cities across the United States. All three of these trends play out at the same time in places like Los Angeles and New York—gateway cities that are home to sizeable immigrant populations and several generations of overlapping residence patterns. And, in cities such as Minneapolis, MN, a large share of the foreign-born population consists of resettled refugees. Immigrants tend to concentrate in the lowest-SES neighborhoods in these high-refugee cities, but overall patterns depend on the characteristics of other (non-refugee) residents who also live in these areas.</p>
+
+                </div>
+                <div class="col-md-5 center-block">
+                    <img class="center-block mortgage-img" src="images/miamiCashSales-01.png" alt="miami cash sales" />
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!--end .content secion a-->
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <hr class="section-heading-spacer">
+                <div class="col-md-5">
+                    <img class="center-block mortgage-img" src="images/detroit.gif" alt="Detroit" />
+                </div>
+                <div class="col-md-7">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">What's next?</h2>
+                    <p>Neighborhood and class segregation is no longer just a black/white story. Immigrants from Latin America and Asia make up a substantial proportion of US neighborhoods across the SES spectrum. As they shape and are shaped by the neighborhoods they reside in, immigrants play an increasing role in the inequality story playing out across US communities. Discussions of residential segregation need to consider the wide diversity in the country’s immigrant populations. Immigrants from different parts of the world bring very different educational, occupational, and language skills with them, along with different sets of needs and preferences. In considering how to address problematic patterns of segregation, these particular strengths and needs must be considered.</p>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    </div>
+    <!-- /.content-section-b -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <p class="copyright">Copyright &copy; Urban Institute 2014. All rights reserved.</p>
+                    
+                    
+                    <a href='https://www.mapbox.com/about/maps/' target='_blank'>Maps &copy; Mapbox &copy; OpenStreetMap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript" src="immigration-map2.js"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-392952-14', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+</body>
+
+</html>

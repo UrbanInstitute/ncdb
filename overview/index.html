@@ -1,0 +1,213 @@
+<!-- 
+///////////////////URBAN INSTITUTE///////////////////
+
+Based on research by Bing Bai and Taz George
+Design, graphics and development by Tim Meko
+and Daniel Wolfe
+
+Story by Leigh Franke
+Edited by Fiona Blackshaw
+
+////////////////////////////////////////////////////
+-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>A new view of the housing boom and bust</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@urbaninstitute">
+    <meta name="twitter:creator" content="@urbaninstitute">
+    <meta name="twitter:title" content="A new view of the housing boom and bust">
+    <meta name="twitter:description" content="Today, low interest rates and affordable prices should be ideal for potential homebuyers. But while country’s housing markets slowly recover, stricter credit access means many previously qualified borrowers are getting locked out. While the downturn hurt many households, white borrowers hold a growing share of new mortgages while Hispanics and African Americans have yet to recapture their losses.">
+    <meta name="twitter:image" content="http://datatools.urban.org/features/mortgages-by-race/images/facebookShare.jpg">
+
+    <meta property="og:title" content="A new view of the housing boom and bust" />
+    <meta property="og:description" content="Today, low interest rates and affordable prices should be ideal for potential homebuyers. But while country’s housing markets slowly recover, stricter credit access means many previously qualified borrowers are getting locked out. While the downturn hurt many households, white borrowers hold a growing share of new mortgages while Hispanics and African Americans have yet to recapture their losses." />
+
+    <meta property="og:image" content="http://datatools.urban.org/features/mortgages-by-race/images/facebookShare.jpg" />
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="400">
+    <meta property="og:url" content="http://urbn.is/MortgageByRace">
+
+
+
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script type="text/javascript" src="overview-map.js"></script>
+
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
+    <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-hash/v0.2.1/leaflet-hash.js'></script>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/ncdb-overview.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="../font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="../vendor/jquery-1.10.2.min.js"></script>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="topNav">
+        <div class="container">
+            <div id="header">
+
+
+                <div id="share">
+                    <div id="logo">
+                        <a href="http://www.urban.org">
+                            <img src="../housing/images/logo-01.png" alt="The Urban Institute" />
+                        </a>
+                    </div>
+                    <div id="shareMaster">
+                        <div id="shareCircle" class="circle">
+                            <i class="fa fa-share"></i>
+                        </div>
+                    </div>
+                    <div id="socials">
+                        <a href="https://twitter.com/home?status=New%20@urbaninstitute%20interactive:%20Breaking%20down%20mortgages%20by%20race%20http://urbn.is/MortgageByRace%20%23HMDA" target="_blank">
+                            <div id="twitter" class="circle">
+                                <i class="fa fa-twitter"></i>
+                            </div>
+                        </a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://urbn.is/MortgageByRace" target="_blank">
+                            <div id="facebook" class="circle">
+                                <i class="fa fa-facebook"></i>
+                            </div>
+                        </a>
+                        <a href="mailto:%20?Subject=New interactive feature by the Urban Institute&amp;Body=Hi! I thought you'd be interested in this new interactive feature from the Urban Institute: “A new view of the housing boom and bust” http://urbn.is/http://urbn.is/MortgageByRace" target="_blank">
+                            <div id="email" class="circle">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Header -->
+
+
+
+
+
+
+
+    <div class="intro-header">
+
+        <div class="container" id="mapContainer">
+
+            <div class="row">
+
+                <div class="col-lg-12">
+
+                    <div id='map'>
+
+                            <div id='legend'>
+
+
+
+
+                            </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <p class="copyright">Copyright &copy; Urban Institute 2014. All rights reserved.</p>
+
+                    <a href='https://www.mapbox.com/about/maps/' target='_blank'>Maps &copy; Mapbox &copy; OpenStreetMap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript" src="overview-map.js"></script>
+
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () { 
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),  m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m) 
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+         
+        ga('create', 'UA-392952-14', 'auto'); 
+        ga('send', 'pageview');
+    </script>
+
+
+</body>
+
+</html>
