@@ -171,6 +171,11 @@ table {
  padding-top:15px;
     
 }
+.author{
+ max-width: 80px;
+    float:left;
+    margin-bottom: 15px;
+}
 .headshot {
     width: 100%;
     height: 100%;

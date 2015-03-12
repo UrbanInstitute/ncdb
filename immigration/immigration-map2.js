@@ -43,6 +43,9 @@ $(document).ready(function () {
     var control = document.getElementById('layers');
 
 
+//control.addTo(map);
+// the same as
+//map.addControl(control);
 
 
 
@@ -108,17 +111,13 @@ $(document).ready(function () {
 
         layerGroup.clearLayers();
 
-        if (grid && gridControl) {
-            map.removeLayer(grid);
-            map.removeControl(gridControl);
-        }
 
 
         layerGroup.addLayer(layers[i].layer);
         var gridControl = L.mapbox.gridControl(layers[2].grid);
         map.addLayer(layers[2].grid);
-        map.addControl(gridControl);
-
+ 
+        
 
         var count = document.getElementById('count');
 
