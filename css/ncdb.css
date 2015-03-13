@@ -226,25 +226,25 @@ table {
 #map {
     width: 100%;
     height: 600px;
+    cursor: auto;
 }
 #map2 {
     width: 100%;
     height: 600px;
     background-color: #1696d2;
 }
-#key {
-    max-width: 200px;
+.key {
+    max-width: 290px;
 }
 #layers {
     position: absolute;
     top: 50px;
     /*margin-left: 10px;*/
-    /*height: auto;*/
-    background: white;
-    /*background: rgba(255, 255, 255, 0.8);*/
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
     font-size: 12px;
     /*border-radius: 5px;*/
-    width: 250px;
+    width: 300px;
     text-align: center;
     /*padding: 10px;*/
     z-index: 1000;
