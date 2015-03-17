@@ -110,7 +110,7 @@ $(document).ready(function () {
             if (o.data) {
                 drawKey(o.data, i)
             }else{
-               defaultlegend.innerHTML = "<img class='key' src='key/ncdb-key.png'/>";   
+    //           defaultlegend.innerHTML = "<img class='key' src='key/ncdb-key.png'/>";   
             }
         })
         for (var j = 0; j < active.length; j++) active[j].className = '';
@@ -122,7 +122,7 @@ $(document).ready(function () {
         var SES;
         var legend = document.getElementById('legend');
         var legendtext = document.getElementById('legend-text');
-        console.log(data);
+       // console.log(data);
 
         switch (String(index)) {
         case "0":
@@ -135,8 +135,21 @@ $(document).ready(function () {
             break
         case "1":
             if (typeof (data.SES0) != "undefined") {
-                legend.innerHTML = "<img class='key' src='key/" + data.SES0 + "/" + data.key0 + ".png'/>";
-                legendtext.innerHTML = "<div id='year'>2000</div><div id='SES-label'>SES: " + data.SES00t + "</div><div id='immig-label'>Share of immigrants: " + data.share00 + "%</div>"
+                //legend.innerHTML = "<img class='key' src='key/" + data.SES0 + "/" + data.key0 + ".png'/>";
+            var selected = $(".selected")
+//            console.log(selected)
+            selected.each(function(){
+                var myClass = this.getAttribute("class")
+
+                if (myClass.search("ses" + data.SES0) != -1 && myClass.search("immig" + data.key0 != -1)){
+                    console.log(myClass)
+                    myClass = myClass.replace(" selected", "")
+                    this.setAttribute("class",myClass)
+                }
+            });
+//               $(".ses"+data.SES0 + ".immig"+data.key0).attr("class", ".ses"+data.SES0 + ".immig"+data.key0 + " selected");
+                
+             //   legendtext.innerHTML = "<div id='year'>2000</div><div id='SES-label'>SES: " + data.SES00t + "</div><div id='immig-label'>Share of immigrants: " + data.share00 + "%</div>"
 
 
             }

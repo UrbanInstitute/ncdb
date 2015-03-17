@@ -255,6 +255,9 @@ table {
 .key {
     max-width: 290px;
 }
+.selected{
+background-color:#000;
+}
 #year{
  color: #1696d2;
 font-size: 1em;
