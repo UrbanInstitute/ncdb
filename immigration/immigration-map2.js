@@ -59,8 +59,8 @@ $(document).ready(function () {
         layer.button = control.appendChild(document.createElement('a'));
         layer.button.innerHTML = layers[n].name;
         layer.button.onclick = function () {
-            highlightLayer();
             i = n
+            highlightLayer();
             nextInterval = clearInterval(nextInterval);
             play_button.innerHTML = play;
         };
@@ -123,47 +123,34 @@ $(document).ready(function () {
         var legend = document.getElementById('legend');
         var legendtext = document.getElementById('legend-text');
        // console.log(data);
-
+        d3.selectAll(".selected").classed("selected",false)
+        var el;
         switch (String(index)) {
         case "0":
             if (typeof (data.SES9) != "undefined") {
-                legend.innerHTML = "<img class='key' src='key/" + data.SES9 + "/" + data.key9 + ".png'/>";
-                legendtext.innerHTML = "<div id='year'>1990</div><div id='SES-label'>SES: " + data.SES90t + "</div><div id='immig-label'>Share of immigrants: " + data.share90 + "%</div>"
-
-
+                el = d3.select(".ses"+data.SES9 + ".immig"+data.key9)
+                el.classed("selected",true)
+                el[0][0].parentNode.appendChild(el[0][0])
             }
             break
         case "1":
             if (typeof (data.SES0) != "undefined") {
-                //legend.innerHTML = "<img class='key' src='key/" + data.SES0 + "/" + data.key0 + ".png'/>";
-            var selected = $(".selected")
-//            console.log(selected)
-            selected.each(function(){
-                var myClass = this.getAttribute("class")
-
-                if (myClass.search("ses" + data.SES0) != -1 && myClass.search("immig" + data.key0 != -1)){
-                    console.log(myClass)
-                    myClass = myClass.replace(" selected", "")
-                    this.setAttribute("class",myClass)
-                }
-            });
-//               $(".ses"+data.SES0 + ".immig"+data.key0).attr("class", ".ses"+data.SES0 + ".immig"+data.key0 + " selected");
-                
-             //   legendtext.innerHTML = "<div id='year'>2000</div><div id='SES-label'>SES: " + data.SES00t + "</div><div id='immig-label'>Share of immigrants: " + data.share00 + "%</div>"
-
-
+                el = d3.select(".ses"+data.SES0 + ".immig"+data.key0)
+                el.classed("selected",true)
+                el[0][0].parentNode.appendChild(el[0][0])
             }
             break
         case "2":
             if (typeof (data.SES1A) != "undefined") {
-                legend.innerHTML = "<img class='key' src='key/" + data.SES1A + "/" + data.key1a + ".png'/>";
-                legendtext.innerHTML = "<div id='year'>2010</div><div id='SES-label'>SES: " + data.SES10tim + "</div><div id='immig-label'>Share of immigrants: " + data.share10 + "%</div>"
-
-
+                el = d3.select(".ses"+data.SES1A + ".immig"+data.key1a)
+                el.classed("selected",true)
+                el[0][0].parentNode.appendChild(el[0][0])
             }
             break
             
         }
+        // el.classed("selected",true)
+        // el[0][0].parentNode.appendChild(el[0][0])
     }
 
     //streets on top

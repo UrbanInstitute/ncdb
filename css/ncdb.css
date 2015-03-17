@@ -256,7 +256,8 @@ table {
     max-width: 290px;
 }
 .selected{
-background-color:#000;
+    stroke: #000000;
+    stroke-width: 2px;
 }
 #year{
  color: #1696d2;
