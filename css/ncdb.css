@@ -213,7 +213,8 @@ table {
 .shiftup {
     position: relative;
     top: -100px;
-    margin-bottom: -100;
+    z-index: 3;
+
 }
 /*//MAP STYLES*/
 
@@ -235,22 +236,22 @@ table {
     background-color: #1696d2;
 }
 .persistent{
- z-index: 10000;
+ z-index: 1;
     position: absolute;
         top:50px;
     right: 0px;
     background: rgba(0, 0, 0, 0.7);
+    height: 100%;
 }
 #legend {
-    position: relative;
-    width: 373px;
+/*    position: relative;*/
     padding: 10px;
+    top: 70px;
     font-size: 12px;
     text-align: left;
     line-height: 18px;
     border-radius: 5px;
 
-    
 }
 .key {
     max-width: 290px;
@@ -265,19 +266,12 @@ font-size: 1em;
     font-weight: 700;
 }
 #layers {
-    position: absolute;
-    top: 50px;
-    /*margin-left: 10px;*/
-   /* height: 100%;*/
- /*   background: rgba(255, 255, 255, 0.8);
-    background:black;*/
+    position: relative;
+    top: 10px;
     font-size: 12px;
-    /*border-radius: 5px;*/
     width: 300px;
     text-align: center;
-    /*padding: 10px;*/
     z-index: 1000;
-   left:30px;
     padding-bottom: 10px;
 }
 #layers a {
