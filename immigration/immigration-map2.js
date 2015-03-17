@@ -49,7 +49,7 @@ $(document).ready(function () {
             play_button.innerHTML = play;
         } else {
             highlightLayer(i++);
-            if (i === 12) i = 0;
+            if (i === 3){ i = 0};
             nextInterval = animate();
             play_button.innerHTML = pause;
         }
@@ -83,16 +83,17 @@ $(document).ready(function () {
 
 
     function animate() {
-        var i = 0
+        // var i = 0
             // and then time the next() function to run every 1 seconds
         return setInterval(function () {
             highlightLayer();
             if (++i >= layers.length) i = 0;
-        }, 3000 * 1);
+        }, 1000 * 1);
     }
 
     // var active;
     function highlightLayer() {
+        i = i%3
         if (i == 0) {
             layerGroup.clearLayers();
         }
