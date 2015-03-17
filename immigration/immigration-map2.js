@@ -122,10 +122,12 @@ $(document).ready(function () {
         var SES;
         var legend = document.getElementById('legend');
         var legendtext = document.getElementById('legend-text');
+        console.log(data);
+
         switch (String(index)) {
         case "0":
             if (typeof (data.SES9) != "undefined") {
-                legend.innerHTML = "<img class='key' src='key/" + data.SES9 + "/" + data.key9 + ".jpg'/>";
+                legend.innerHTML = "<img class='key' src='key/" + data.SES9 + "/" + data.key9 + ".png'/>";
                 legendtext.innerHTML = "<div id='year'>1990</div><div id='SES-label'>SES: " + data.SES90t + "</div><div id='immig-label'>Share of immigrants: " + data.share90 + "%</div>"
 
 
@@ -133,7 +135,7 @@ $(document).ready(function () {
             break
         case "1":
             if (typeof (data.SES0) != "undefined") {
-                legend.innerHTML = "<img class='key' src='key/" + data.SES0 + "/" + data.key0 + ".jpg'/>";
+                legend.innerHTML = "<img class='key' src='key/" + data.SES0 + "/" + data.key0 + ".png'/>";
                 legendtext.innerHTML = "<div id='year'>2000</div><div id='SES-label'>SES: " + data.SES00t + "</div><div id='immig-label'>Share of immigrants: " + data.share00 + "%</div>"
 
 
@@ -141,8 +143,7 @@ $(document).ready(function () {
             break
         case "2":
             if (typeof (data.SES1A) != "undefined") {
-
-                legend.innerHTML = "<img class='key' src='key/" + data.SES1A + "/" + data.key1a + ".jpg'/>";
+                legend.innerHTML = "<img class='key' src='key/" + data.SES1A + "/" + data.key1a + ".png'/>";
                 legendtext.innerHTML = "<div id='year'>2010</div><div id='SES-label'>SES: " + data.SES10tim + "</div><div id='immig-label'>Share of immigrants: " + data.share10 + "%</div>"
 
 

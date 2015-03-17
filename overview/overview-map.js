@@ -18,11 +18,11 @@ $(document).ready(function(){
         var hash = L.hash(map);
 
         
-var tile = L.mapbox.tileLayer('urbaninstitute.k5ave7b9');
+var tile = L.mapbox.tileLayer('urbaninstitute.ncdb-top-bot');
     map.addLayer(tile);
 
     
-     var gridLayer = L.mapbox.gridLayer('urbaninstitute.tekrcnmi'); //1980
+     var gridLayer = L.mapbox.gridLayer('urbaninstitute.ncdb-top-bot'); //1980
  map.addLayer(gridLayer);
  map.addControl(L.mapbox.gridControl(gridLayer));
 
