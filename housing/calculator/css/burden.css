@@ -1,0 +1,136 @@
+.background-image {
+  position: fixed;
+  left: -10;
+  right: 10;
+    top:-10;
+    bottom:-10;
+  z-index: 1;
+
+  display: block;
+  background-image: url('../img/background.jpg');
+  width: 110%;
+/*  height: 500px;*/
+    background-size: cover;
+    background-position: center;
+
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.burden-calculator {
+  position: relative;
+width:75%;
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+  z-index: 9999;
+
+}
+
+#burden-response{
+ color:#fff;
+    font-size: 1.5em;
+}
+#burden{
+ width: 100%;   
+}
+#input-fields{
+ display: block;
+ height: 200px
+}
+.form-input{
+ margin-top: 10px;
+
+}
+.full{
+ width: 100%;
+}
+.half{
+ width: 48%;
+    float: left;
+}
+.left{
+     margin-right: 4%;
+   
+}
+#submit_button{
+ width:200px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.big{
+ height: 60px;   
+    font-size: 2em;
+    font-weight: 100;
+    
+}
+#calculator-title{
+ font-family: 'Lato', sans-serif;
+    font-size: 2em;
+    font-weight: 100;
+    color: #fff;
+    text-align: center;
+}
+
+input {
+	padding: 15px;
+	border: 1px solid rgba(0,0,0, .6);
+	background: #fff;
+  font-size: 1.3em;
+    height: 35px;
+    display: inline;
+}
+input::-webkit-input-placeholder {
+	color: rgba(0,0,0,.5);
+	font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    height: 50px;
+    
+}
+input::-moz-placeholder {
+	color: rgba(0,0,0,.5);
+	text-transform: uppercase;
+}
+input:-moz-placeholder {   /* Older versions of Firefox */
+	color: rgba(0,0,0,.5);
+	text-transform: uppercase;
+}
+input:-ms-input-placeholder { 
+	color: rgba(0,0,0,.5);
+	text-transform: uppercase;
+}
+
+.form-control { border-radius: 0; }
+
+select {
+	padding: 15px;
+	border: 1px solid rgba(0,0,0, .6);
+	background: #fff;
+  font-size: 1.3em;
+    height: 50px;
+    display: inline;
+    border-radius: 0px;
+}
+select::-webkit-input-placeholder {
+	color: rgba(0,0,0,.5);
+	font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    height: 50px;
+        border-radius: 0px;
+    
+}
+select::-moz-placeholder {
+	color: rgba(0,0,0,.5);
+	text-transform: uppercase;
+}
+select:-moz-placeholder {   /* Older versions of Firefox */
+	color: rgba(0,0,0,.5);
+	text-transform: uppercase;
+}
+select:-ms-input-placeholder { 
+	color: rgba(0,0,0,.5);
+	text-transform: uppercase;
+}
