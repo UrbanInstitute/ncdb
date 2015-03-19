@@ -120,11 +120,22 @@ p {
     display: inline-block;
 }
 .footer {
-    font-size: 11px;
-    font-style: italic;
+    font-size: 1em;
     background-color: #555;
-    height: 60px;
+    color:#fff;
+    height: auto;
     margin-top: 25px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.logo{
+ margin-left: 30px;
+    margin-right:30px;
+}
+#partner-logos{
+ margin-left: auto;
+    margin-right: auto;
+    width: 400px;
 }
 #researchGroup {
     position: relative;
@@ -134,9 +145,10 @@ p {
     max-width: 75%;
     margin: auto;
 }
-p.copyright {
+.copyright {
     margin: 15px 0 0;
     color: #eee;
+    font-weight: 400;
 }
 .intro-header {
     /padding-bottom: 50px;
@@ -171,19 +183,7 @@ table {
 .content-section-a {
     padding-top: 15px;
 }
-.author {
-    max-width: 80px;
-    float: left;
-    margin-bottom: 15px;
-}
-.headshot {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-}
-.byline-name {
-    text-align: center;
-}
+
 #about-ncdb {
     color: #fff;
     background-color: #1696d2;
@@ -213,8 +213,81 @@ table {
 .shiftup {
     position: relative;
     top: -100px;
-    z-index: 3;
-
+    z-index: 15;
+}
+.plexiglass {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: none;
+    opacity: 0;
+    text-align: left;
+}
+.popup-modal {
+    width: 65%;
+    display: block;
+    margin: 0 auto;
+    max-height: 300px;
+    background-color: #fff;
+    color: #000;
+    margin-top: 100px;
+}
+.modal-body {
+    display: block;
+    max-height: 300px;
+    font-size: 10px;
+    overflow-y: scroll;
+}
+.deep {
+    height: auto;
+}
+.modal-title {
+    width: 100%;
+    padding: 10px;
+    height: 50px;
+    background-color: #EEEFF0;
+    font-size: 16px;
+    vertical-align: middle;
+    color: #00ADEF;
+}
+.close-modal {
+    float: right;
+    cursor: pointer;
+}
+.modal .modal-body pre {
+    margin-left: 10px;
+    font-size: 10px;
+    white-space: pre-wrap;
+    /* CSS 3 */
+    white-space: -moz-pre-wrap;
+    /* Mozilla, since 1999 */
+    white-space: -pre-wrap;
+    /* Opera 4-6 */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* Internet Explorer 5.5+ */
+}
+.about-text {
+    padding: 10px;
+    font-size: 10pt;
+    margin-bottom: 0;
+}
+table.about-table {
+    font-size: 10pt;
+    margin: 10px;
+}
+.about-table tbody th,
+.about-table tbody td {
+    padding: 5px;
+}
+.about-table tbody th {
+    text-align: center;
+}
+.about-table tbody td:nth-of-type(2) {
+    border-right: 1px solid #ccc;
 }
 /*//MAP STYLES*/
 
@@ -232,37 +305,53 @@ table {
 }
 #map2 {
     width: 100%;
-    height: 600px;
-    background-color: #1696d2;
+    height: 400px;
+    margin-bottom: 20px;
+    background-color: #fff;
 }
-.persistent{
- z-index: 1;
+#locBtn {
     position: absolute;
-        top:50px;
+    top: 69px;
+    left: 55px;
+    z-index: 5;
+}
+.persistent {
+    z-index: 1;
+    position: absolute;
+    top: 50px;
     right: 0px;
     background: rgba(0, 0, 0, 0.7);
     height: 100%;
+    text-align: left;
+    padding: 10px;
+    color: #fff;
 }
 #legend {
-/*    position: relative;*/
+    /*    position: relative;*/
     padding: 10px;
     top: 70px;
     font-size: 12px;
     text-align: left;
     line-height: 18px;
     border-radius: 5px;
-
 }
 .key {
     max-width: 290px;
 }
-.selected{
+.selected {
     stroke: #000000;
-    stroke-width: 2px;
+    stroke-width: 3px;
 }
-#year{
- color: #1696d2;
-font-size: 1em;
+#year {
+    color: #1696d2;
+    font-size: 1em;
+    font-weight: 700;
+}
+.key-label {
+    font-size: 1.5em;
+    font-weight: 300;
+}
+.key-data {
     font-weight: 700;
 }
 #layers {
@@ -283,6 +372,7 @@ font-size: 1em;
     border-radius: 0px;
     color: #fff;
     font-size: 14px;
+    min-width: 44px;
 }
 #layers a.active,
 #layers a#play_button:hover {
@@ -299,12 +389,56 @@ font-size: 1em;
 #layers a#play_button {
     background: #555;
 }
+#bottom-links {
+    font-size: 0.8em;
+    color: #fff;
+    position: absolute;
+    top: 450px;
+}
+.more-link {
+    float: left;
+    margin-right: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+#credit {
+    position: absolute;
+    /* float: right; */
+    display: block;
+    font-weight: 900;
+    letter-spacing: 1.5pt;
+    text-align: right;
+    bottom: 0px;
+    left: 180px;
+}
+#credit a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.role {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.8em;
+    color: #bbb;
+}
+#research {
+    width: 45%;
+    float: left;
+}
+#feature {
+    width: 45%;
+    margin-left: 10%;
+    float: left;
+}
+#urban {
+    color: #1696d2;
+}
 .leaflet-control-zoom {
     position: relative;
     top: 50px;
     left: 7px;
 }
-
 .map-btn {
     width: 14.1%;
     min-width: 70px;
@@ -336,7 +470,6 @@ font-size: 1em;
     background-color: #000;
     max-width: 1200px;
 }
-
 .topBtns {
     margin-top: 50px;
     background-color: #000;
@@ -345,12 +478,29 @@ font-size: 1em;
     .intro-message {
         padding-bottom: 15%;
     }
-    #accessSwitch {
-        display: none;
+    .headshot {
+        width: 40px;
+        float: left;
+        display: inline;
+            border-radius: 50%;
+
     }
-    #hidePanel {
-        display: none;
-        height: 44px;
+    .author {
+        width: auto;
+        max-width: 100%;
+        /* max-width: 33%; */
+        float: left;
+        margin-bottom: 15px;
+        float: left;
+        display: inline;
+    }
+    .byline-name {
+        text-align: left;
+        /* float: left; */
+        display: inline-block;
+        margin-top: 10px;
+        margin-right: 20px;
+        margin-left: 5px;
     }
     .intro-message > h1 {
         font-size: 3em;
@@ -380,6 +530,7 @@ font-size: 1em;
         text-align: left;
         margin-top: 2px;
         margin-left: 2px;
+        min-width: 44px;
     }
     #layers a {
         padding: 5px;
@@ -499,4 +650,46 @@ font-size: 1em;
     .col-sm-5 {
         width: 50%;
     }
+    .headshot {
+        width: 40px;
+        float: left;
+        display: inline;
+            border-radius: 50%;
+
+    }
+    .author {
+        width: auto;
+        max-width: 100%;
+        /* max-width: 33%; */
+        float: left;
+        margin-bottom: 15px;
+        float: left;
+        display: inline;
+    }
+    .byline-name {
+        text-align: left;
+        /* float: left; */
+        display: inline-block;
+        margin-top: 10px;
+        margin-right: 20px;
+        margin-left: 5px;
+    }
+}
+
+@media (min-width: 990px){
+ .author {
+    width: 100%;
+    max-width: 80px;
+    float: left;
+    margin-bottom: 15px;
+}
+.headshot {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.byline-name {
+    text-align: center;
+    margin-left: 0px;
+}   
 }

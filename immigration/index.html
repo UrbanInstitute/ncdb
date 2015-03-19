@@ -133,25 +133,22 @@
                 <div class="col-lg-12">
                     <div class="intro-message">
                         <div id='map'>
-                           
+                            <button type="button" id="locBtn" class="btn btn-default">Pan to my current location</button>
                             <div class="persistent">
-                                 <div id='layers'></div>
-                            <div id='legend'>
-                                <!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In  -->
-<svg version="1.1"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-	 x="0px" y="0px" width="246.4px" height="265px" viewBox="0 0 246.4 265" style="enable-background:new 0 0 246.4 265;"
-	 xml:space="preserve">
-<defs>
-</defs>
-<g>
-	<g>
-		<g>
-			<g>
-				<g>
-					<g>
-						<g style="opacity:0.6;">
-							<path style="fill:#FFFFFF;" d="M184.4,245.4c0.6-0.2,1.1-0.5,1.5-0.9c0.1,0,0.1-0.1,0.1-0.2c0.1,0.1,0.1,0.2,0.2,0.2
+                                <div id='layers'></div>
+                                <div id='legend'>
+                                    <!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In  -->
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="266.4px" height="265px" viewBox="0 0 246.4 265" style="enable-background:new 0 0 266.4 265;" xml:space="preserve">
+                                        <defs>
+                                        </defs>
+                                        <g>
+                                            <g>
+                                                <g>
+                                                    <g>
+                                                        <g>
+                                                            <g>
+                                                                <g style="opacity:0.6;">
+                                                                    <path style="fill:#FFFFFF;" d="M184.4,245.4c0.6-0.2,1.1-0.5,1.5-0.9c0.1,0,0.1-0.1,0.1-0.2c0.1,0.1,0.1,0.2,0.2,0.2
 								c0.3,0.4,0.8,0.7,1.2,0.9c0.5,0.2,1,0.3,1.5,0.3c0.7,0,1.3-0.2,1.9-0.5c0.5-0.2,0.9-0.6,1.3-1c0.2,0.3,0.4,0.6,0.5,0.7
 								c0.4,0.3,1,0.7,1.9,0.7c0.4,0,0.9-0.1,1.3-0.3c0.3-0.1,0.6-0.3,0.9-0.5c0,0,0,0,0,0c0.4,0.3,1,0.7,1.9,0.7
 								c0.4,0,0.9-0.1,1.3-0.3c0.3-0.1,0.6-0.3,0.9-0.5c0.2,0.2,0.5,0.4,0.8,0.5c0.5,0.2,1,0.3,1.5,0.3c0.7,0,1.3-0.2,1.9-0.5
@@ -168,8 +165,8 @@
 								c0-0.1,0.1-0.3,0.1-0.4C189.5,240.9,189.5,241.1,189.4,241.3z M199.3,242.8l0.3,0c0,0,0,0.1,0,0.1L199.3,242.8L199.3,242.8z
 								 M203.7,241.3c0,0.1-0.1,0.3-0.1,0.4c0-0.2,0-0.4,0.1-0.6c0-0.1,0.1-0.3,0.1-0.4C203.8,240.9,203.7,241.1,203.7,241.3z
 								 M195.2,242.8L195.2,242.8l0.7-0.1c0,0,0,0.1,0,0.1L195.2,242.8z M196.1,241.7l0.1-1.2h0L196.1,241.7
-								C196.1,241.7,196.1,241.7,196.1,241.7z"/>
-							<path style="fill:#FFFFFF;" d="M239.6,242.9c-0.1-0.3-0.2-0.5-0.4-0.8c-0.2-0.3-0.5-0.5-0.8-0.6c-0.3-0.1-0.6-0.2-0.9-0.2
+								C196.1,241.7,196.1,241.7,196.1,241.7z" />
+                                                                    <path style="fill:#FFFFFF;" d="M239.6,242.9c-0.1-0.3-0.2-0.5-0.4-0.8c-0.2-0.3-0.5-0.5-0.8-0.6c-0.3-0.1-0.6-0.2-0.9-0.2
 								c0,0,0,0,0,0c0-0.5-0.1-1-0.3-1.4c-0.2-0.4-0.4-0.7-0.7-1c-0.1-0.1-0.3-0.2-0.4-0.3c0.3,0,0.5-0.2,0.8-0.3
 								c0.1-0.1,0.3-0.2,0.5-0.5l0.3-0.5c0.4-0.5,0.4-1.3,0-1.8c-0.4-0.5-0.8-0.9-1.4-1.1c-1.1-0.5-2.5-0.5-3.6-0.1
 								c-0.3,0.1-0.5,0.2-0.7,0.4c0,0-0.1-0.1-0.1-0.1c-0.3-0.3-0.7-0.5-1.1-0.5h-4.9c-0.5,0-1,0.3-1.2,0.7
@@ -187,8 +184,8 @@
 								c0,0,0,0,0-0.1l0.8,0.3c0,0,0,0,0,0l-1-0.3C233.4,241.9,233.3,241.9,233.2,241.9z M230.7,241.1c0.1-0.2,0.2-0.4,0.3-0.6
 								l0-0.1c0.1,0.1,0.1,0.2,0.2,0.2c0.1,0.1,0.3,0.3,0.5,0.4C231.3,241,231,241,230.7,241.1z M230.1,238L230.1,238
 								C230.2,238,230.2,238.1,230.1,238C230.2,238.1,230.2,238,230.1,238z M229.8,241.8h-0.2c0.1,0,0.2-0.1,0.3-0.1
-								C229.9,241.7,229.9,241.7,229.8,241.8L229.8,241.8C229.9,241.8,229.9,241.8,229.8,241.8z"/>
-							<path style="fill:#FFFFFF;" d="M203.2,251.7c-0.3-0.4-0.7-0.7-1.2-0.7h-0.8c-0.4,0-0.8,0.1-1.1,0.4c-0.2,0.2-0.4,0.3-0.5,0.5
+								C229.9,241.7,229.9,241.7,229.8,241.8L229.8,241.8C229.9,241.8,229.9,241.8,229.8,241.8z" />
+                                                                    <path style="fill:#FFFFFF;" d="M203.2,251.7c-0.3-0.4-0.7-0.7-1.2-0.7h-0.8c-0.4,0-0.8,0.1-1.1,0.4c-0.2,0.2-0.4,0.3-0.5,0.5
 								c-0.1-0.2-0.2-0.3-0.4-0.5c-0.3-0.3-0.7-0.4-1.2-0.4h-0.4c-0.4,0-0.8,0.1-1.1,0.4c-0.2,0.2-0.4,0.3-0.5,0.6
 								c-0.1-0.2-0.3-0.4-0.4-0.5c-0.3-0.3-0.7-0.4-1.1-0.4h-0.8c-0.4,0-0.8,0.2-1.1,0.5c-0.2-0.1-0.3-0.2-0.5-0.3
 								c-1-0.4-2.4-0.4-3.4,0.2c-0.6,0.3-1,0.7-1.5,1.2c-0.4,0.5-0.7,1-0.9,1.6c-0.2,0.6-0.3,1.3-0.3,1.9h-1l0.7-6
@@ -196,8 +193,8 @@
 								c0.3,0.3,0.7,0.5,1.1,0.5h4.5c0.4,0,0.8-0.2,1.1-0.5c0.2,0.1,0.4,0.2,0.6,0.3c0.5,0.2,1,0.3,1.5,0.3c0.7,0,1.3-0.2,1.9-0.5
 								c0.6-0.3,1-0.7,1.5-1.2c0,0,0-0.1,0.1-0.1l0.1,0.4c0.1,0.7,0.7,1.2,1.5,1.2h0.8c0.7,0,1.3-0.4,1.6-1c0.3,0.6,0.8,1,1.5,1h0.8
 								c0.6,0,1.1-0.4,1.4-0.9l2.5-6.1C203.6,252.6,203.5,252.1,203.2,251.7z M190.2,255.5c0-0.1,0.1-0.3,0.1-0.4
-								c0,0.2,0,0.4-0.1,0.6c0,0.1-0.1,0.3-0.1,0.4C190.1,255.8,190.1,255.6,190.2,255.5z"/>
-							<path style="fill:#FFFFFF;" d="M236.9,256.4c-0.2-0.2-0.4-0.4-0.7-0.5c-0.5-0.2-1-0.2-1.5-0.1c0.1-0.2,0.2-0.4,0.2-0.6
+								c0,0.2,0,0.4-0.1,0.6c0,0.1-0.1,0.3-0.1,0.4C190.1,255.8,190.1,255.6,190.2,255.5z" />
+                                                                    <path style="fill:#FFFFFF;" d="M236.9,256.4c-0.2-0.2-0.4-0.4-0.7-0.5c-0.5-0.2-1-0.2-1.5-0.1c0.1-0.2,0.2-0.4,0.2-0.6
 								c0-0.2,0.1-0.3,0.1-0.5c0.2-0.1,0.4-0.3,0.6-0.5c0.2-0.3,0.3-0.5,0.3-0.8l0-0.4c0.1-0.4-0.1-0.9-0.4-1.2
 								c-0.3-0.3-0.7-0.5-1.1-0.5h-1.3c-1-0.4-2.2-0.4-3.2,0c-0.1,0-0.1,0.1-0.2,0.1c0.1-0.2,0.1-0.5,0.1-0.8c0-0.3-0.1-0.6-0.2-0.9
 								c-0.1-0.3-0.3-0.5-0.5-0.7c-0.2-0.2-0.4-0.4-0.7-0.5c-0.6-0.3-1.2-0.3-1.8,0c-0.2,0.1-0.5,0.3-0.7,0.5
@@ -226,24 +223,24 @@
 								C206.5,250,206.6,250.1,206.6,250.1z M205.4,250.3c0-0.1,0.1-0.1,0.1-0.2c0.1-0.1,0.1-0.1,0.2-0.1c0,0,0,0,0,0
 								c-0.1,0-0.1,0.1-0.2,0.1C205.5,250.2,205.4,250.2,205.4,250.3c0,0.1,0,0.2,0,0.3s0,0.2,0.1,0.3c0,0,0.1,0.1,0.1,0.1h0
 								c0,0,0-0.1-0.1-0.1c0-0.1-0.1-0.2-0.1-0.3C205.3,250.5,205.3,250.4,205.4,250.3z M235,258.6c0.1,0,0.2,0,0.3,0
-								c0.1,0,0.1,0,0.2,0C235.3,258.7,235.1,258.7,235,258.6z M236,257.7c0,0.1,0.1,0.2,0.1,0.3C236,257.9,236,257.8,236,257.7z"/>
-						</g>
-						<rect class="ses1 immig1" x="183.2" y="227.2" style="fill:#FFEEBD;" width="49.6" height="37.8"/>
-						<rect class="ses1 immig2" x="183.2" y="189.6" style="fill:#FFE180;" width="49.6" height="37.8"/>
-						<rect class="ses1 immig3" x="183.2" y="151.9" style="fill:#FED208;" width="49.6" height="37.8"/>
-                        <rect class="ses1 immig4" x="183.2" y="114.3" style="fill:#FCB918;" width="49.6" height="37.8"/>
-						<rect class="ses1 immig5" x="183.2" y="76.6" style="fill:#F69321;" width="49.6" height="37.8"/>
-						<rect class="ses1 immig6" x="183.2" y="39" style="fill:#F37124;" width="49.6" height="37.8"/>
-						<rect class="ses2 immig1" x="128.1" y="227.2" style="fill:#EEEEEE;" width="49.6" height="37.8"/>
-						<rect class="ses2 immig2" x="128.1" y="189.6" style="fill:#DFDFDF;" width="49.6" height="37.8"/>
-						<rect class="ses2 immig3" x="128.2" y="151.9" style="fill:#C8C8C8;" width="49.6" height="37.8"/>
-                        <rect class="ses2 immig4" x="128.1" y="114.3" style="fill:#BBBBBB;" width="49.6" height="37.8"/>
-						<rect class="ses2 immig5" x="128.1" y="76.6" style="fill:#A3A3A3;" width="49.6" height="37.8"/>
-						<rect class="ses2 immig6" x="128.1" y="39" style="fill:#8F8F8F;" width="49.6" height="37.8"/>
-                        
-						
-						<g style="opacity:0.6;">
-							<path style="fill:#FFFFFF;" d="M75.8,245.3h1.1c0.8,0,1.4-0.6,1.5-1.3l0.3-2.6h1.2l-0.3,2.2c-0.1,0.4,0.1,0.9,0.4,1.2
+								c0.1,0,0.1,0,0.2,0C235.3,258.7,235.1,258.7,235,258.6z M236,257.7c0,0.1,0.1,0.2,0.1,0.3C236,257.9,236,257.8,236,257.7z" />
+                                                                </g>
+                                                                <rect class="ses1 immig1" x="183.2" y="227.2" style="fill:#FFEEBD;" width="49.6" height="37.8" />
+                                                                <rect class="ses1 immig2" x="183.2" y="189.6" style="fill:#FFE180;" width="49.6" height="37.8" />
+                                                                <rect class="ses1 immig3" x="183.2" y="151.9" style="fill:#FED208;" width="49.6" height="37.8" />
+                                                                <rect class="ses1 immig4" x="183.2" y="114.3" style="fill:#FCB918;" width="49.6" height="37.8" />
+                                                                <rect class="ses1 immig5" x="183.2" y="76.6" style="fill:#F69321;" width="49.6" height="37.8" />
+                                                                <rect class="ses1 immig6" x="183.2" y="39" style="fill:#F37124;" width="49.6" height="37.8" />
+                                                                <rect class="ses2 immig1" x="128.1" y="227.2" style="fill:#EEEEEE;" width="49.6" height="37.8" />
+                                                                <rect class="ses2 immig2" x="128.1" y="189.6" style="fill:#DFDFDF;" width="49.6" height="37.8" />
+                                                                <rect class="ses2 immig3" x="128.2" y="151.9" style="fill:#C8C8C8;" width="49.6" height="37.8" />
+                                                                <rect class="ses2 immig4" x="128.1" y="114.3" style="fill:#BBBBBB;" width="49.6" height="37.8" />
+                                                                <rect class="ses2 immig5" x="128.1" y="76.6" style="fill:#A3A3A3;" width="49.6" height="37.8" />
+                                                                <rect class="ses2 immig6" x="128.1" y="39" style="fill:#8F8F8F;" width="49.6" height="37.8" />
+
+
+                                                                <g style="opacity:0.6;">
+                                                                    <path style="fill:#FFFFFF;" d="M75.8,245.3h1.1c0.8,0,1.4-0.6,1.5-1.3l0.3-2.6h1.2l-0.3,2.2c-0.1,0.4,0.1,0.9,0.4,1.2
 								c0.3,0.3,0.7,0.5,1.1,0.5h1.1c0.4,0,0.7-0.1,0.9-0.3c0.3,0.2,0.6,0.3,0.9,0.3h0.6c0.1,0.2,0.1,0.4,0.2,0.6
 								c0.2,0.4,0.5,0.7,0.9,1c0.3,0.2,0.7,0.4,1.2,0.5c0.4,0.1,0.8,0.2,1.3,0.2c0.6,0,1.1-0.1,1.6-0.2c0.5-0.2,1-0.4,1.4-0.7
 								c0.4-0.3,0.7-0.7,1-1.2c0,0,0-0.1,0-0.1c0,0,0.1,0,0.1,0h1.1c0.6,0,1.1-0.3,1.3-0.8c0.1,0.1,0.1,0.2,0.2,0.3
@@ -259,8 +256,8 @@
 								s0-0.2-0.1-0.3C86.2,235.5,86.1,235.4,86.1,235.3c-0.1-0.1-0.2-0.1-0.3-0.2c0,0,0,0,0,0C86,235.2,86.1,235.3,86.1,235.3z
 								 M84.9,235.5c0-0.1,0.1-0.1,0.1-0.2c0.1-0.1,0.1-0.1,0.2-0.1c0,0,0,0,0,0c-0.1,0-0.1,0.1-0.2,0.1
 								C85,235.4,84.9,235.5,84.9,235.5c0,0.1,0,0.2,0,0.3s0,0.2,0.1,0.3c0,0,0.1,0.1,0.1,0.1h0c0,0,0-0.1-0.1-0.1
-								c0-0.1-0.1-0.2-0.1-0.3C84.8,235.7,84.8,235.6,84.9,235.5z"/>
-							<path style="fill:#FFFFFF;" d="M99.6,243.7c0.4,0.5,0.9,0.9,1.5,1.3c0.6,0.3,1.3,0.5,2,0.5c0.7,0,1.3-0.1,1.8-0.4
+								c0-0.1-0.1-0.2-0.1-0.3C84.8,235.7,84.8,235.6,84.9,235.5z" />
+                                                                    <path style="fill:#FFFFFF;" d="M99.6,243.7c0.4,0.5,0.9,0.9,1.5,1.3c0.6,0.3,1.3,0.5,2,0.5c0.7,0,1.3-0.1,1.8-0.4
 								c0.3-0.1,0.6-0.3,0.9-0.5c0.1,0.1,0.1,0.2,0.2,0.3c0.3,0.3,0.7,0.5,1.1,0.5h4.9c0.4,0,0.8-0.2,1.1-0.5c0.1,0,0.1,0.1,0.2,0.1
 								c0.6,0.3,1.3,0.5,2,0.5c0.7,0,1.3-0.1,1.8-0.4c0.2-0.1,0.3-0.2,0.5-0.3c0,0.1,0,0.2,0,0.3c0,0.5,0.2,0.9,0.6,1.3l0.2,0.2
 								c0.3,0.3,0.7,0.4,1,0.4c0.3,0,0.7-0.1,1-0.4c0.3-0.2,0.5-0.5,0.7-0.7c0.2-0.3,0.4-0.5,0.5-0.8c0.1-0.3,0.3-0.6,0.3-0.9
@@ -278,8 +275,8 @@
 								c0,0,0,0-0.1-0.1c0.1,0,0.1,0.1,0.2,0.1L115.8,241.4z M106.3,238.3C106.3,238.3,106.3,238.2,106.3,238.3
 								C106.3,238.2,106.3,238.2,106.3,238.3L106.3,238.3z M103.5,241.4c0.1,0,0.2,0.1,0.2,0c0,0,0,0,0-0.1l0.8,0.3c0,0,0,0,0,0
 								L103.5,241.4c0,0-0.1,0.1-0.2,0.1c-0.1,0-0.1,0-0.1,0c-0.1,0-0.2-0.1-0.2-0.1c-0.1-0.1-0.2-0.1-0.2-0.2c0,0,0,0-0.1-0.1
-								c0.1,0,0.1,0.1,0.2,0.1L103.5,241.4z"/>
-							<path style="fill:#FFFFFF;" d="M92.4,251.3c-0.3-0.4-0.7-0.7-1.2-0.7h-0.8c-0.4,0-0.8,0.1-1.1,0.4c-0.2,0.2-0.4,0.3-0.5,0.5
+								c0.1,0,0.1,0.1,0.2,0.1L103.5,241.4z" />
+                                                                    <path style="fill:#FFFFFF;" d="M92.4,251.3c-0.3-0.4-0.7-0.7-1.2-0.7h-0.8c-0.4,0-0.8,0.1-1.1,0.4c-0.2,0.2-0.4,0.3-0.5,0.5
 								c-0.1-0.2-0.2-0.3-0.4-0.5c-0.3-0.3-0.7-0.4-1.2-0.4h-0.4c-0.4,0-0.8,0.1-1.1,0.4c-0.2,0.2-0.4,0.3-0.5,0.6
 								c-0.1-0.2-0.3-0.4-0.4-0.5c-0.3-0.3-0.7-0.4-1.1-0.4h-0.8c-0.4,0-0.8,0.2-1.1,0.5c-0.2-0.1-0.3-0.2-0.5-0.3
 								c-1-0.4-2.4-0.4-3.4,0.2c-0.6,0.3-1,0.7-1.5,1.2c-0.4,0.5-0.7,1-0.9,1.6c-0.2,0.6-0.3,1.3-0.3,1.9h-1l0.7-6
@@ -287,8 +284,8 @@
 								c0.3,0.3,0.7,0.5,1.1,0.5h4.5c0.4,0,0.8-0.2,1.1-0.5c0.2,0.1,0.4,0.2,0.6,0.3c0.5,0.2,1,0.3,1.5,0.3c0.7,0,1.3-0.2,1.9-0.5
 								c0.6-0.3,1-0.7,1.5-1.2c0,0,0-0.1,0.1-0.1l0.1,0.4c0.1,0.7,0.7,1.2,1.5,1.2h0.8c0.7,0,1.3-0.4,1.6-1c0.3,0.6,0.8,1,1.5,1h0.8
 								c0.6,0,1.1-0.4,1.4-0.9l2.5-6.1C92.7,252.3,92.7,251.7,92.4,251.3z M79.3,255.1c0-0.1,0.1-0.3,0.1-0.4c0,0.2,0,0.4-0.1,0.6
-								c0,0.1-0.1,0.3-0.1,0.4C79.2,255.5,79.3,255.3,79.3,255.1z"/>
-							<path style="fill:#FFFFFF;" d="M126.5,256.7c-0.1-0.3-0.3-0.5-0.5-0.7c-0.2-0.2-0.4-0.4-0.7-0.5c-0.5-0.2-1-0.2-1.5-0.1
+								c0,0.1-0.1,0.3-0.1,0.4C79.2,255.5,79.3,255.3,79.3,255.1z" />
+                                                                    <path style="fill:#FFFFFF;" d="M126.5,256.7c-0.1-0.3-0.3-0.5-0.5-0.7c-0.2-0.2-0.4-0.4-0.7-0.5c-0.5-0.2-1-0.2-1.5-0.1
 								c0.1-0.2,0.2-0.4,0.2-0.6c0-0.2,0.1-0.3,0.1-0.5c0.2-0.1,0.4-0.3,0.6-0.5c0.2-0.3,0.3-0.5,0.3-0.8l0-0.4
 								c0.1-0.4-0.1-0.9-0.4-1.2c-0.3-0.3-0.7-0.5-1.1-0.5h-1.3c-1-0.4-2.2-0.4-3.2,0c-0.1,0-0.1,0.1-0.2,0.1
 								c0.1-0.2,0.1-0.5,0.1-0.8c0-0.3-0.1-0.6-0.2-0.9c-0.1-0.3-0.3-0.5-0.5-0.7c-0.2-0.2-0.4-0.4-0.7-0.5c-0.6-0.3-1.2-0.3-1.8,0
@@ -317,57 +314,114 @@
 								 M94.5,249.9c0-0.1,0.1-0.1,0.1-0.2c0.1-0.1,0.1-0.1,0.2-0.1c0,0,0,0,0,0c-0.1,0-0.1,0.1-0.2,0.1
 								C94.6,249.8,94.6,249.9,94.5,249.9c0,0.1,0,0.2,0,0.3s0,0.2,0.1,0.3c0,0,0.1,0.1,0.1,0.1h0c0,0,0-0.1-0.1-0.1
 								c0-0.1-0.1-0.2-0.1-0.3C94.4,250.1,94.5,250,94.5,249.9z M124.2,258.3c0.1,0,0.2,0,0.3,0c0.1,0,0.1,0,0.2,0
-								C124.4,258.3,124.3,258.3,124.2,258.3z M125.1,257.3c0,0.1,0.1,0.2,0.1,0.3C125.2,257.5,125.1,257.4,125.1,257.3z"/>
-						</g>
-						<rect class="ses3 immig1" x="73.3" y="227.2" style="fill:#BDE6FA;" width="49.6" height="37.8"/>
-						<rect class="ses3 immig2" x="73.3" y="189.6" style="fill:#7DD3F7;" width="49.6" height="37.8"/>
-						<rect class="ses3 immig3" x="73.3" y="151.9" style="fill:#27B7EA;" width="49.6" height="37.8"/>
-						<rect class="ses3 immig4" x="73.3" y="114.3" style="fill:#1D96D4;" width="49.6" height="37.8"/>
-						<rect class="ses3 immig5" x="73.3" y="76.6" style="fill:#1589CA;" width="49.6" height="37.8"/>
-						<rect class="ses3 immig6" x="73.3" y="39" style="fill:#136FA5;" width="49.6" height="37.8"/>
-						<g>
-							<text transform="matrix(8.979319e-11 -1 1 8.979319e-11 12.0611 226.8701)"><tspan x="0" y="0" style="fill:#FFFFFF; font-family:'Lato-Bold'; font-size:14; letter-spacing:1;">IMMIGRANT SHARE </tspan><tspan x="10.4" y="16.8" style="fill:#FFFFFF; font-family:'Lato-Bold'; font-size:14; letter-spacing:1;">OF POPULATION</tspan></text>
-						</g>
-						<text transform="matrix(1 0 0 1 9.8179 12.0603)" style="fill:#FFFFFF; font-family:'Lato-Bold'; font-size:14;">TRACT SOCIOECONOMIC STATUS</text>
-						<text transform="matrix(1 0 0 1 133.0979 33.753)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:12;">Middle</text>
-						<text transform="matrix(1 0 0 1 82.0227 33.753)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:12;">Top</text>
-						<text transform="matrix(1 0 0 1 36.9065 194.2486)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:12;">20%</text>
-						<text transform="matrix(1 0 0 1 36.9338 156.0504)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:12;">30%</text>
-						
-					</g>
-				</g>
-				<line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="65" y1="151.3" x2="67.7" y2="151.3"/>
-				<line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="65" y1="189.6" x2="67.7" y2="189.6"/>
-				<text transform="matrix(1 0 0 1 36.9065 231.0513)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:12;">10%</text>
-				<line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="65" y1="227.6" x2="67.7" y2="227.6"/>
-				<text transform="matrix(1 0 0 1 36.9065 81.0552)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:12;">50%</text>
-				<line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="65" y1="76.4" x2="67.7" y2="76.4"/>
-				<text transform="matrix(1 0 0 1 36.9065 117.858)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:12;">40%</text>
-				<line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="65" y1="114.4" x2="67.7" y2="114.4"/>
-			</g>
-			<text transform="matrix(1 0 0 1 187.7834 33.7525)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:12;">Bottom</text>
-		</g>
-		<text transform="matrix(1 0 0 1 79.4993 54.6324)"><tspan x="0" y="0" style="fill:#FFFFFF; font-family:'Lato-Italic'; font-size:12;">Top SES, </tspan><tspan x="-8.3" y="14.4" style="fill:#FFFFFF; font-family:'Lato-Italic'; font-size:12;">High immig.</tspan></text>
-		<text transform="matrix(1 0 0 1 180.2405 52.8375)"><tspan x="0" y="0" style="fill:#FFFFFF; font-family:'Lato-Italic'; font-size:12;">Bottom SES, </tspan><tspan x="0.8" y="14.4" style="fill:#FFFFFF; font-family:'Lato-Italic'; font-size:12;">High immig.</tspan></text>
-		<g>
-			<g>
-				<line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="67.8" y1="46.9" x2="67.8" y2="264.3"/>
-				<g>
-					<path style="fill:#FFFFFF;" d="M67.8,48.7l3.6,2.2l0.1-0.1l-2.3-5.9c-0.5-2-0.9-4.1-1.4-6.1c-0.5,2-0.9,4.1-1.4,6.1l-2.3,5.9
-						l0.1,0.1L67.8,48.7z"/>
-				</g>
-			</g>
-		</g>
-	</g>
-	<text transform="matrix(1 0 0 1 179.2395 244.2081)"><tspan x="0" y="0" style="font-family:'Lato-Italic'; font-size:12;">Bottom SES, </tspan><tspan x="2.3" y="14.4" style="font-family:'Lato-Italic'; font-size:12;">Low immig.</tspan></text>
-	<text transform="matrix(1 0 0 1 77.4133 243.8287)"><tspan x="0" y="0" style="font-family:'Lato-Italic'; font-size:12;">Top SES, </tspan><tspan x="-6.8" y="14.4" style="font-family:'Lato-Italic'; font-size:12;">Low immig.</tspan></text>
-</g>
-</svg>
+								C124.4,258.3,124.3,258.3,124.2,258.3z M125.1,257.3c0,0.1,0.1,0.2,0.1,0.3C125.2,257.5,125.1,257.4,125.1,257.3z" />
+                                                                </g>
+                                                                <rect class="ses3 immig1" x="73.3" y="227.2" style="fill:#BDE6FA;" width="49.6" height="37.8" />
+                                                                <rect class="ses3 immig2" x="73.3" y="189.6" style="fill:#7DD3F7;" width="49.6" height="37.8" />
+                                                                <rect class="ses3 immig3" x="73.3" y="151.9" style="fill:#27B7EA;" width="49.6" height="37.8" />
+                                                                <rect class="ses3 immig4" x="73.3" y="114.3" style="fill:#1D96D4;" width="49.6" height="37.8" />
+                                                                <rect class="ses3 immig5" x="73.3" y="76.6" style="fill:#1589CA;" width="49.6" height="37.8" />
+                                                                <rect class="ses3 immig6" x="73.3" y="39" style="fill:#136FA5;" width="49.6" height="37.8" />
+                                                                <g>
+                                                                    <text transform="matrix(8.979319e-11 -1 1 8.979319e-11 12.0611 226.8701)">
+                                                                        <tspan x="0" y="0" style="fill:#FFFFFF; font-family:'Lato-Bold'; font-size:14; letter-spacing:1;">IMMIGRANT SHARE</tspan>
+                                                                        <tspan x="10.4" y="16.8" style="fill:#FFFFFF; font-family:'Lato-Bold'; font-size:14; letter-spacing:1;">OF POPULATION</tspan>
+                                                                    </text>
+                                                                </g>
+                                                                <text transform="matrix(1 0 0 1 9.8179 12.0603)" style="fill:#FFFFFF; font-family:'Lato-Bold'; font-size:14;">TRACT SOCIOECONOMIC STATUS</text>
+                                                                <text transform="matrix(1 0 0 1 133.0979 33.753)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:12;">Middle</text>
+                                                                <text transform="matrix(1 0 0 1 82.0227 33.753)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:12;">Top</text>
+                                                                <text transform="matrix(1 0 0 1 36.9065 194.2486)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:12;">20%</text>
+                                                                <text transform="matrix(1 0 0 1 36.9338 156.0504)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:12;">30%</text>
+
+                                                            </g>
+                                                        </g>
+                                                        <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="65" y1="151.3" x2="67.7" y2="151.3" />
+                                                        <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="65" y1="189.6" x2="67.7" y2="189.6" />
+                                                        <text transform="matrix(1 0 0 1 36.9065 231.0513)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:12;">10%</text>
+                                                        <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="65" y1="227.6" x2="67.7" y2="227.6" />
+                                                        <text transform="matrix(1 0 0 1 36.9065 81.0552)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:12;">50%</text>
+                                                        <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="65" y1="76.4" x2="67.7" y2="76.4" />
+                                                        <text transform="matrix(1 0 0 1 36.9065 117.858)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:12;">40%</text>
+                                                        <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="65" y1="114.4" x2="67.7" y2="114.4" />
+                                                    </g>
+                                                    <text transform="matrix(1 0 0 1 187.7834 33.7525)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:12;">Bottom</text>
+                                                </g>
+                                                <text transform="matrix(1 0 0 1 79.4993 54.6324)">
+                                                    <tspan x="0" y="0" style="fill:#FFFFFF; font-family:'Lato-Italic'; font-size:12;">Top SES,</tspan>
+                                                    <tspan x="-8.3" y="14.4" style="fill:#FFFFFF; font-family:'Lato-Italic'; font-size:12;">High immig.</tspan>
+                                                </text>
+                                                <text transform="matrix(1 0 0 1 180.2405 52.8375)">
+                                                    <tspan x="0" y="0" style="fill:#FFFFFF; font-family:'Lato-Italic'; font-size:12;">Bottom SES,</tspan>
+                                                    <tspan x="0.8" y="14.4" style="fill:#FFFFFF; font-family:'Lato-Italic'; font-size:12;">High immig.</tspan>
+                                                </text>
+                                                <g>
+                                                    <g>
+                                                        <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="67.8" y1="46.9" x2="67.8" y2="264.3" />
+                                                        <g>
+                                                            <path style="fill:#FFFFFF;" d="M67.8,48.7l3.6,2.2l0.1-0.1l-2.3-5.9c-0.5-2-0.9-4.1-1.4-6.1c-0.5,2-0.9,4.1-1.4,6.1l-2.3,5.9
+						l0.1,0.1L67.8,48.7z" />
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                            <text transform="matrix(1 0 0 1 179.2395 244.2081)">
+                                                <tspan x="0" y="0" style="font-family:'Lato-Italic'; font-size:12;">Bottom SES,</tspan>
+                                                <tspan x="2.3" y="14.4" style="font-family:'Lato-Italic'; font-size:12;">Low immig.</tspan>
+                                            </text>
+                                            <text transform="matrix(1 0 0 1 77.4133 243.8287)">
+                                                <tspan x="0" y="0" style="font-family:'Lato-Italic'; font-size:12;">Top SES,</tspan>
+                                                <tspan x="-6.8" y="14.4" style="font-family:'Lato-Italic'; font-size:12;">Low immig.</tspan>
+                                            </text>
+                                        </g>
+                                    </svg>
                                 </div>
                                 <div id='legend-text'>
                                 </div>
-                        </div>
-                            
+
+                                <div id="bottom-links">
+
+                                    <div class="more-link" id="embed"><a>Embed map</a>
+                                    </div>
+                                    <div class="more-link" id="about"><a>About</a>
+                                    </div>
+                                    <div id="credit">
+                                        <a href="http://www.urban.org/">
+                                            <span id="urban">URBAN</span>&nbsp;INSTITUTE</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="plexiglass" id="embed-modal">
+                                <div class="popup-modal">
+                                    <div class="modal-title">
+                                        Copy this code to embed graphic
+                                        <span class="close-modal">
+              <img src="images/close.png" alt=""></span>
+                                    </div>
+                                    <div class="modal-body">
+                                        <pre id="code-example"><script src="http://datatools.urban.org/features/embed.js"
+        data-viz="lorem-ipsum/dolor-amit/index.html"></script></pre>
+                                        <p><em>We optimized this embed code to work on all devices. Curious how it works? View the <a href="https://github.com/UrbanInstitute/datatools-embed" target="_blank">source code</a> on Github</em>
+                                        </p>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="plexiglass" id="about-modal">
+                                <div class="popup-modal">
+                                    <div class="modal-title">
+                                        About this map
+                                        <span class="close-modal">
+              <img src="images/close.png" alt=""></span>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Aute cupidatat exercitation, aut culpa appellat. Esse quamquam id irure ipsum. E labore cernantur. Aliquip de lorem mentitum a laboris varias fabulas. Quo ipsum vidisse, excepteur summis aute probant culpa nam te labore elit sunt arbitror, magna officia qui summis legam, id pariatur eruditionem nam te magna probant comprehenderit, doctrina dolor aut cernantur concursionibus de magna excepteur an praesentibus. Ipsum singulis est nulla irure te illum quamquam voluptatibus, eram cernantur instituendarum a a officia aut vidisse. In labore irure e commodo se pariatur anim expetendis consequat.</p>
+
+                                    </div>
+                                </div>
+
+                            </div>
 
                         </div>
                     </div>
@@ -387,7 +441,12 @@
         <div class="container title ">
             <div class="shiftup">
                 <div class="row title">
-                    <div class="col-sm-1 push">
+                    <div class="col-md-11 col-md-offset-1 title">
+                        <h2 class="section-heading title">How immigrants are reshaping residential segregation</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1">
                         <div class="author">
                             <img class="headshot" src="http://urban.prod.acquia-sites.com/sites/default/files/styles/author_portrait_300x330/public/alfresco/person-headshots/gelatt-julia_0.JPG?itok=IJLGmWWL">
                             <div class="byline-name">Julia Gelatt</div>
@@ -403,9 +462,9 @@
                             <div class="byline-name">Heather Koball</div>
                         </div>
                     </div>
-                    <div class="col-md-6 ">
+                    <div class="col-md-6">
                         <div class="clearfix"></div>
-                        <h2 class="section-heading title">How immigrants are reshaping residential segregation</h2>
+
 
                         <p class="lead">Even as the United States becomes more diverse, residential segregation still divides many American cities. While the problem has historically centered on the stark separation between lower-income black and higher-income white neighborhoods, immigrants have added a new dimension to the picture, particularly after the past four decades of increased immigration from across Latin America and Asia.</p>
 
@@ -416,7 +475,7 @@
                         <p>We identified seven cities (technically, seven commuting zones: regions of metro and rural areas connected by a local economy) that exemplify three patterns of how immigrant families sort into neighborhoods.</p>
 
                     </div>
-                    <div class="col-md-4 push">
+                    <div class="col-md-4">
 
                         <div id="about-ncdb">
                             <h4>Mapping Geographic Inequality</h4>
@@ -440,10 +499,10 @@
 
                 <div class="row">
                     <hr class="section-heading-spacer">
-                    <div class="col-sm-6">
+                    <div class="col-md-5 col-md-offset-1">
                         <img class="center-block mortgage-img" src="images/chicago%20and%20dc%20neighborhoods-01.png" alt="Chicago and DC neighborhoods" />
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-md-5">
                         <div class="clearfix"></div>
                         <h2 class="section-heading">Traditionally Segregated Cities</h2>
                         <p>Both Chicago and DC exhibit stark segregation between black and white neighborhoods, with the highest-SES areas primarily comprised of white residents and the lowest-SES areas primarily comprised of black residents. This dichotomy has changed little over the past two decades.</p>
@@ -464,7 +523,7 @@
 
                 <div class="row">
                     <hr class="section-heading-spacer">
-                    <div class="col-md-6">
+                    <div class="col-md-5 col-md-offset-1">
                         <div class="clearfix"></div>
                         <h2 class="section-heading">Fast-Growth Cities</h2>
                         <p>Many cities in the South and Southwest have seen fast growth in their overall populations and in their immigrant populations over the 1990s and 2000s. Atlanta, Houston, and Las Vegas all saw their immigrant populations more than double between 1990 and 2010. In fact, the foreign-born population of Atlanta was five times bigger in 2010 than in 1990.</p>
@@ -477,7 +536,7 @@
 
 
                     </div>
-                    <div class="col-md-6 center-block">
+                    <div class="col-md-5 center-block">
                         <img class="center-block mortgage-img" src="images/fast-growth-cities-01.png" alt="Fast-growth cities" />
                     </div>
 
@@ -494,10 +553,10 @@
 
                 <div class="row">
                     <hr class="section-heading-spacer">
-                    <div class="col-md-6">
+                    <div class="col-md-5 col-md-offset-1">
                         <img class="center-block mortgage-img" src="images/tech-cities-01.png" alt="Tech Cities" />
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         <div class="clearfix"></div>
                         <h2 class="section-heading">Tech Cities</h2>
                         <p>San Jose and Seattle have booming tech industries that draw large numbers of high-skilled immigrants and high-skilled US-born workers alike. These high-skilled immigrants, who often make high salaries, opt to move into the highest-SES neighborhoods in both cities.</p>
@@ -520,7 +579,7 @@
 
                 <div class="row">
                     <hr class="section-heading-spacer">
-                    <div class="col-md-8 col-md-offset-2">
+                    <div class="col-md-10 col-md-offset-1">
                         <div class="clearfix"></div>
                         <h2 class="section-heading">Other US Cities</h2>
                         <p>Beyond these seven cities, immigrants’ residential patterns are influencing the composition of neighborhoods and cities across the United States. All three of these trends play out at the same time in places like Los Angeles and New York—gateway cities that are home to sizeable immigrant populations and several generations of overlapping residence patterns. And, in cities such as Minneapolis, MN, a large share of the foreign-born population consists of resettled refugees. Immigrants tend to concentrate in the lowest-SES neighborhoods in these high-refugee cities, but overall patterns depend on the characteristics of other (non-refugee) residents who also live in these areas.</p>
@@ -542,7 +601,7 @@
                 <div class="row">
                     <hr class="section-heading-spacer">
 
-                    <div class="col-md-8 col-md-offset-2">
+                    <div class="col-md-10 col-md-offset-1">
                         <div class="clearfix"></div>
                         <h2 class="section-heading">What's next?</h2>
                         <p>Neighborhood and class segregation is no longer just a black/white story. Immigrants from Latin America and Asia make up a substantial proportion of US neighborhoods across the SES spectrum. As they shape and are shaped by the neighborhoods they reside in, immigrants play an increasing role in the inequality story playing out across US communities. Discussions of residential segregation need to consider the wide diversity in the country’s immigrant populations. Immigrants from different parts of the world bring very different educational, occupational, and language skills with them, along with different sets of needs and preferences. In considering how to address problematic patterns of segregation, these particular strengths and needs must be considered.</p>
@@ -561,7 +620,33 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-md-10 col-md-offset-1">
+
+
+                    <div class="footer-container">
+                        <h2>Project credits</h2>
+                        <div id="research">
+                            <h5>Research</h5>
+                            <p class="">Signe-Mary McKernan</p>
+                            <p class="">Caroline Ratcliffe</p>
+                            <p class="">C. Eugene Steuerle</p>
+                            <p class="">Emma Kalish</p>
+                            <p class="">Caleb Quakenbush</p>
+                        </div>
+                        <div id="feature">
+                            <h5>Feature</h5>
+                            <p class=""><span class="role">Editorial </span>Serena Lei and Fiona Blackshaw</p>
+                            <p class=""><span class="role">Design and development </span>Tim Meko and Ben Chartoff</p>
+                        </div>
+                        <div class="clearfix"></div>
+                        <hr>
+                        <div id="partner-logos"><img class="logo" src="../rock-logo.png" /><img src="../urban_grid_blue_black.png" class="logo" /></div>
+                        <div class="copyright">This project was funded by... Ab irure te quae, non dolor nisi ipsum officia nam e veniam incurreret doctrina, ex veniam elit ad incurreret si in noster sunt a pariatur eu amet ubi singulis se summis, eu iudicem qui arbitror, minim expetendis tractavissent. Quae aliquip ubi nostrud, magna sed arbitror, ab cupidatat o excepteur et de ullamco nam laborum. Vidisse anim duis ad dolore si aliquip praetermissum iis nescius. An sint litteris firmissimum nam magna nescius fidelissimae. Fore tempor a probant. Ne offendit voluptatibus, enim nescius tractavissent. Id sint coniunctione in ingeniis duis quid incurreret sint o non summis laboris, tempor non dolore quamquam, admodum amet amet in noster est enim ne ne minim occaecat, magna ex arbitror a culpa, id nisi esse quo proident. Minim expetendis ita adipisicing.</div>
+                        &nbsp;
+
+                    </div>
+
+
 
                     <p class="copyright">Copyright &copy; Urban Institute 2014. All rights reserved.</p>
 
@@ -574,7 +659,7 @@
 
     <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
-    <script src = "js/d3.min.js"></script>
+    <script src="js/d3.min.js"></script>
     <script type="text/javascript" src="immigration-map2.js"></script>
 
 

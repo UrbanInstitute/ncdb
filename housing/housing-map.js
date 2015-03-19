@@ -6,13 +6,13 @@ $(document).ready(function(){
         });
 
 //        var map = L.mapbox.map('map', 'urbaninstitute.ddf7bf72,', {
-        var map = L.mapbox.map('map', ',', {
+        var map = L.mapbox.map('map2', ',', {
             fadeAnimation: true,
             maxZoom: 12,
-            minZoom: 4,
+            minZoom: 3,
             attributionControl: false
         })
-            .setView([41.9023,-87.7080], 10);
+            .setView([42,-94], 4);
 
         L.mapbox.accessToken = 'pk.eyJ1IjoidXJiYW5pbnN0aXR1dGUiLCJhIjoiTEJUbmNDcyJ9.mbuZTy4hI_PWXw3C3UFbDQ';
         var hash = L.hash(map);
@@ -125,49 +125,5 @@ $(document).ready(function(){
         
 
 
-$('#chicago').click(function () {
-    map.panTo([41.8644,-87.8947], 10);
-});
-$('#washington').click(function () {
-    map.panTo([38.9423,-77.1872], 10);
-});
-$('#minneapolis').click(function () {
-    map.panTo([44.9638,-93.2368], 10);
-});
-$('#atlanta').click(function () {
-    map.panTo([33.7894, -84.3393], 10);
-});
-$('#houston').click(function () {
-    map.panTo([29.7632,-95.3819], 10);
-});
-
-$('#lasvegas').click(function () {
-    map.panTo([36.1467,-115.3317], 10);
-});
-$('#sanjose').click(function () {
-    map.panTo([37.3194,-121.9812], 10);
-});
-$('#seattle').click(function () {
-    map.panTo([47.5311,-122.2696], 10);
-});
-$('#fresno').click(function () {
-    map.panTo([36.5494,-119.7208], 10);
-});
-$('#miami').click(function () {
-    map.panTo([25.8382,-80.3307], 10);
-});
-$('#newyork').click(function () {
-    map.panTo([40.8013,-73.8831], 10);
-});
-$('#detroit').click(function () {
-    map.panTo([42.3981,-83.3505], 10);
-});
-$('#cleveland').click(function () {
-    map.panTo([41.4952,-81.5900], 10);
-});
-$('#phoenix').click(function () {
-    map.panTo([33.4819,-111.9589], 10);
-});
-     
 
 });
