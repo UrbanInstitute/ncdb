@@ -80,7 +80,7 @@ function makeAPICall() {
         };
 
         jsonp.fetch(fccString, function(data) {
-          showBurden(data);
+          showBurden(rent, income, data);
           //drawMap(lat, lon);
         });
       }
@@ -131,21 +131,25 @@ function badBurdenData(tractFIPS) {
 function calculateBurden(rent, income, burden) {
   var monthlyIncome = income / 12;
   var rentalBurden = rent / monthlyIncome;
+  var format = d3.format(",%");
+  var value = Number(burden.burden2010);
   if (rentalBurden > 0.35) {
-    $("#burden-response").text("You're housing burdened. You spend " + rentalBurden * 100 + "% of your montly income on rent");
-
+    $("#burden-response").text(
+      "You, and " +
+      format(value) + " of your neighbors in 2010, are " +
+      "housing burdened. You spend " +
+      format(rentalBurden) +
+      " of your montly income on rent."
+    );
   } else {
-    var format = d3.format("%");
-    var value = Number(burden.burden2010);
     $("#burden-response").text(
       "You're not housing burdened, but in 2010, " +
       format(value) + " of your neighbors were."
     );
   }
-
 }
 
-function showBurden(data) {
+function showBurden(rent, income, data) {
   var fullFIPS = data.Block.FIPS;
   var tractFIPS = fullFIPS.substring(0, fullFIPS.length - 4);
   tractFIPS = tractFIPS.replace(/^0+/, '');
