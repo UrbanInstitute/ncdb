@@ -1,0 +1,42 @@
+#chart, #burden-container {
+    width: 500px;
+    display: block;
+    margin: 0 auto;
+}
+
+#chart .area {
+    fill : rgba(22,150,210, 0.7);
+}
+
+#chart .x.axis .domain {
+  fill: none;
+  stroke: #fff;
+}
+
+#chart text {
+  fill: #fff;
+  stroke : none;
+}
+
+#chart-container {
+    text-align: center;
+}
+
+#chart-container h1 {
+    color: #fff;
+}
+
+#chart .line {
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+#chart circle {
+  fill : rgba(22,150,210, 1);
+  stroke : #fff;
+  stroke-width: 3px;
+}
+
+#chart .label {
+  font-size: 10px;
+}
