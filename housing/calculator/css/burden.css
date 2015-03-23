@@ -4,9 +4,9 @@
     right: 10;
     top: -10;
     bottom: -10;
-    z-index: 1;
+    z-index: 0;
     display: block;
-    background-image: url('../img/background.jpg');
+    background-image: url('../img/map-bg.jpg');
     width: 110%;
     background-size: cover;
     background-position: center;
@@ -16,7 +16,10 @@
     -ms-filter: blur(5px);
     filter: blur(5px);
 }
-
+.btn {
+ border-radius: 0px !important; 
+    font-size: 12px !important;
+}
 .burden-calculator {
     position: relative;
     width: 75%;

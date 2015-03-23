@@ -38,5 +38,13 @@
 }
 
 #chart .label {
-  font-size: 10px;
+  font-size: 14px;
+}
+
+@media (max-width: 500px) {
+    #chart, #burden-container {
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+}
 }

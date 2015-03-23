@@ -16,6 +16,21 @@
 <body>
     <div id="burden">
         <div class="background-image"></div>
+        <div id="rent-map"></div>
+        
+        <div class="btn-group " role="group" aria-label="...">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-primary">
+                            EXPLORE THE MAP
+                        </button>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-primary" id="close-chart">
+                           CALCULATOR
+                        </button>
+                    </div>
+                </div>
+
         <div class="burden-calculator" style="max-width:600px;">
             <div id="input-fields">
                 <div id="calculator-title">Are you housing burdened? How about your neighbors?</div>
@@ -86,19 +101,14 @@
             <div id="submit-container">
                 <button type="button" class="btn btn-primary" id="submit_button">Submit</button>
                 <div class="spinner" id="loading-spinner">
-                  <div class="rect1"></div>
-                  <div class="rect2"></div>
-                  <div class="rect3"></div>
-                  <div class="rect4"></div>
-                  <div class="rect5"></div>
+                    <div class="rect1"></div>
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                    <div class="rect4"></div>
+                    <div class="rect5"></div>
                 </div>
             </div>
             <div>
-                <div id="rent-map">
-                    <!--    <textarea id = "fake-map" rows = "10" cols = "10"></textarea>
-                <textarea id="fake-burden" rows="10" cols="10" style="display:inline; width:150px; margin-left:30px"></textarea>
-                <div id="fake-error" style="font-size:20; display:inline; color:red"></div>-->
-                </div>
             </div>
         </div>
         <div class="plexiglass modal-div" id="chart-container">
@@ -106,16 +116,16 @@
             <div id="burden-container">
                 <div id="chart"></div>
                 <div class="btn-group btn-group-justified" role="group" aria-label="...">
-                  <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-primary">
-                        EXPLORE THE MAP
-                    </button>
-                  </div>
-                  <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-primary" id="close-chart">
-                        BACK TO THE CALCULATOR
-                    </button>
-                  </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-primary">
+                            EXPLORE THE MAP
+                        </button>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-primary" id="close-chart">
+                            BACK TO THE CALCULATOR
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -144,9 +154,9 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
     <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-hash/v0.2.1/leaflet-hash.js'></script>
     <script>
-    $(function() {
-        $("#submit_button").on("click", makeAPICall);
-    });
+        $(function () {
+            $("#submit_button").on("click", makeAPICall);
+        });
     </script>
 </body>
 
