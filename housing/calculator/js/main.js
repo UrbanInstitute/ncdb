@@ -1,24 +1,44 @@
 var burdenData;
 
+
+
+
+// store current state of data
+var currentState = {
+  "street" : null,
+  "city" : null,
+  "state" : null,
+  "zip" : null,
+  "rent" : null,
+  "income" : null,
+  "lat" : null,
+  "lon" : null
+};
+
+
+function getAddress() {
+  $('.address-input').each(function() {
+    var id = this.id;
+    var val = $(this).val();
+    currentState[id] = val;
+  });
+}
+
+
 function makeAPICall() {
 
     $('#loading-spinner').css('opacity', 1);
 
-    var street = $('#street').val();
-    var city = $('#city').val();
-    var state = $('#state').val();
-    var zip = $('#zip').val();
-
-    var rent = $('#rent').val();
-    var income = $('#income').val();
+    // update "currentState" model with address info
+    getAddress();
 
     var osmString = (
-        "http://nominatim.openstreetmap.org/search?" +
-        "street=" + street.replace(" ", "+") +
-        "&city=" + city +
-        "&state= " + state +
-        "&postalcode=" + zip +
-        "&format=json&addressdetails=1&limit=1"
+      "http://nominatim.openstreetmap.org/search?" +
+      "street=" + currentState.street.replace(" ", "+") +
+      "&city=" + currentState.city +
+      "&state= " + currentState.state +
+      "&postalcode=" + currentState.zip +
+      "&format=json&addressdetails=1&limit=1"
     );
 
     $.ajax({
@@ -33,8 +53,8 @@ function makeAPICall() {
                 badAddress();
             } else {
 
-                var lat = data[0].lat;
-                var lon = data[0].lon;
+                var lat = currentState.lat = data[0].lat;
+                var lon = currentState.lon = data[0].lon;
                 var fccString = (
                     "http://data.fcc.gov/api/block/find?" +
                     "format=jsonp" +
@@ -80,8 +100,7 @@ function makeAPICall() {
                 };
 
                 jsonp.fetch(fccString, function (data) {
-                    showBurden(rent, income, data);
-                    //drawMap(lat, lon);
+                    showBurden(data);
                 });
             }
         },
@@ -95,22 +114,24 @@ function makeAPICall() {
 // !!! START OF FUNCTIONS FOR TIM TO WRITE !!!
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-function drawMap(lat, lon) {
-    console.log(lat + ", " + lon);
-    //        var map = L.mapbox.map('map', 'urbaninstitute.ddf7bf72,', {
-    var map = L.mapbox.map('rent-map', ',', {
+function drawMap() {
+
+    var coords = [42, -94];
+
+    if (currentState.lat !== null && currentState.lon !== null) {
+      coords = [currentState.lat , currentState.lon];
+    }
+
+    var map = L.mapbox.map('map2', ',', {
             fadeAnimation: true,
             maxZoom: 12,
             minZoom: 3,
             attributionControl: false
         })
-        .setView([42, -94], 4);
+        .setView(coords, 4);
 
     L.mapbox.accessToken = 'pk.eyJ1IjoidXJiYW5pbnN0aXR1dGUiLCJhIjoiTEJUbmNDcyJ9.mbuZTy4hI_PWXw3C3UFbDQ';
     var hash = L.hash(map);
-
-
-
 
     var last_layer;
 
@@ -132,6 +153,7 @@ function drawMap(lat, lon) {
         layer: init('urbaninstitute.4251m7vi') //2010
         }];
 
+
     var control = document.getElementById('layers');
 
 
@@ -139,11 +161,14 @@ function drawMap(lat, lon) {
     map.addLayer(gridLayer);
     map.addControl(L.mapbox.gridControl(gridLayer));
 
-
     // Add a play button div
-    var play_button = control.appendChild(document.createElement('a'))
+    var play_button = control.appendChild(
+      document.createElement('a')
+    );
+
     var pause = "&#9616;&#9616;";
     var play = "&#9654;";
+
     play_button.innerHTML = pause;
     play_button.id = "play_button";
     play_button.onclick = function () {
@@ -156,7 +181,7 @@ function drawMap(lat, lon) {
             nextInterval = animate();
             play_button.innerHTML = pause;
         }
-    }
+    };
 
     layers.forEach(function (layer, n) {
 
@@ -196,7 +221,7 @@ function drawMap(lat, lon) {
     }
 
     function highlightLayer(i) {
-        if (i == 0) {
+        if (i === 0) {
             layerGroup.clearLayers();
         }
         layerGroup.addLayer(layers[i].layer);
@@ -212,6 +237,15 @@ function drawMap(lat, lon) {
         .setZIndex(100)
         .addTo(map);
 
+    $('#show-map, #view-burden-in-map').click(function() {
+      if (currentState.lon !== null && currentState.lat !== null) {
+        map.panTo([currentState.lat, currentState.lon], true);
+        map.setZoom(11, true);
+      }
+      $(".modal-div").removeClass('plexiglass-show');
+      $("#map-container").addClass('plexiglass-show');
+    });
+
 }
 
 function badAddress() {
@@ -222,7 +256,12 @@ function badBurdenData(tractFIPS) {
     $("#fake-error").text("FIPS code " + tractFIPS + " can not be found in our data :(");
 }
 
-function calculateBurden(rent, income, burden) {
+function calculateBurden(burden) {
+
+    // get rent and income from data model
+    var rent = currentState.rent;
+    var income = currentState.income;
+
     var monthlyIncome = income / 12;
     var rentalBurden = rent / monthlyIncome;
     var format = d3.format(",%");
@@ -243,19 +282,24 @@ function calculateBurden(rent, income, burden) {
     }
 }
 
-function showBurden(rent, income, data) {
+function showBurden(data) {
+
+    var income = currentState.income;
+    var rent = currentState.rent;
+
     var fullFIPS = data.Block.FIPS;
     var tractFIPS = fullFIPS.substring(0, fullFIPS.length - 4);
     tractFIPS = tractFIPS.replace(/^0+/, '');
 
     var burden = burdenData[tractFIPS];
-    calculateBurden(rent, income, burden);
-    $("#chart-container").attr("style", "display:block;opacity:1;");
-    $("#input-fields").css("opacity", 0);
+    calculateBurden(burden);
+
+  $(".modal-div").removeClass('plexiglass-show');
+  $("#chart-container").addClass('plexiglass-show');
+
     d3.select('#chart')
         .datum(burden)
         .call(burdenArea());
-
 
 }
 
@@ -265,16 +309,17 @@ function showBurden(rent, income, data) {
 // !!! END OF FUNCTIONS FOR TIM TO WRITE !!!!
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
+
+
 $(document).ready(function () {
-    $.ajax({
-        type: "GET",
-        url: "data/rentburden_tracts.csv",
-        dataType: "text",
-        success: function (data) {
-            processData(data);
-        }
-    });
+  $.ajax({
+    type: "GET",
+    url: "data/rentburden_tracts.csv",
+    dataType: "text",
+    success: processData
+  });
 });
+
 
 function processData(text) {
     var lines = text.split('\n');
@@ -317,7 +362,11 @@ function processData(text) {
 }
 
 
-$(".close-modal, #close-chart").click(function () {
-    $(".modal-div").attr("style", "display:none;opacity:0;");
-    $("#input-fields").css("opacity", 1);
+$(".close-modal, #close-chart, #show-calculator").click(function () {
+  $(".modal-div").removeClass('plexiglass-show');
+  $("#control-container").addClass('plexiglass-show');
 });
+
+
+
+$(function() { drawMap(); });

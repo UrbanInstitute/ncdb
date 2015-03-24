@@ -7,7 +7,6 @@
 
   this.burdenArea = function area() {
 
-
     function chart(selection) {
 
       var data = d3.entries(selection.data()[0])
@@ -21,13 +20,22 @@
         return (a.year > b.year) - (a.year < b.year);
       });
 
+      // animation durations
+      var dur = {
+        area : 1000,
+        line : 1000,
+        circle : 200
+      };
+
       var bb = selection.node().getBoundingClientRect();
 
-      var margin = { top: 30, right: 40, bottom: 40, left: 40 },
+      var margin = { top: 40, right: 40, bottom: 40, left: 40 },
           width = bb.width - margin.left - margin.right,
           height = 200 - margin.top - margin.bottom;
 
       var years = d3.extent(data, function(d) { return d.year; });
+
+      // extend x axis out on both sides a little bit
       years[0] -= 5;
       years[1] += 5;
 
@@ -75,18 +83,11 @@
           .attr("transform", "translate(0," + height + ")")
           .call(xAxis);
 
-      // animation durations
-      var dur = {
-        area : 1000,
-        line : 1000,
-        circle : 200
-      };
-
       area_path
-          .datum(data)
-          .transition()
-          .duration(dur.area)
-          .attr("d", area);
+        .datum(data)
+        .transition()
+        .duration(dur.area)
+        .attr("d", area);
 
       line_path = svg.append("path")
         .attr("class", "line")
@@ -126,12 +127,10 @@
         .attr('class', 'label')
         .text(function(d) { return format(d.value) ; })
         .attr('x', function(d) {
-          var bb = this.getBBox();
-          return x(d.year) - bb.width/2;
+          return x(d.year) - this.getBBox().width/2;
         })
         .attr('y', function(d) {
-          var bb = this.getBBox();
-          return y(d.value) - bb.height;
+          return y(d.value) - this.getBBox().height;
         })
         .style('opacity', 0);
 
