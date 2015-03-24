@@ -27,7 +27,7 @@ p {
     font-size: 1.2em
 }
 .btn-primary {
-    background-color: #0096d2;
+    background-color: #1696d2;
 }
 .lead {
     font-size: 18px;
@@ -36,7 +36,7 @@ p {
 .pullQuote {
     font-size: 18px;
     font-weight: 400;
-    color: #0096d2;
+    color: #1696d2;
 }
 .quoteAttribution {
     font-size: 14px;
@@ -74,22 +74,17 @@ p {
     line-height: 25px;
     margin-top: 10px;
     margin-right: 5px;
-    background-color: #ccc;
-    color: #fff;
+    background-color: #1696d2;
     display: inline-block;
+    color: #fff;
 }
 .circle:hover {
-    background-color: #0096d2;
+    background-color: #014F85;
 }
-#socials a {
-    color: #fff;
-}
-#socials a:hover {
-    color: #0096d2;
-}
+
+
 #socials {
     float: right;
-    color: #fff;
     opacity: 0;
     transition: opacity .25s ease-in-out;
     -moz-transition: opacity .25s ease-in-out;
@@ -110,7 +105,7 @@ p {
 .img-responsive {
     margin: auto;
 }
-.mortgage-img {
+.urban-img {
     width: 100%;
     max-width: 400px;
 }
@@ -158,7 +153,7 @@ p {
     position: relative;
 }
 #topNav {
-    background-color: #fff;
+    background-color: #000;
     border-bottom: 1px solid #ccc;
 }
 #graphicExplain {
@@ -176,6 +171,7 @@ table {
 .title {
     background-color: #fff;
     padding-top: 15px;
+    padding-bottom:5px;
 }
 .push {
     margin-top: 70px;
@@ -185,10 +181,21 @@ table {
 }
 
 #about-ncdb {
-    color: #fff;
-    background-color: #1696d2;
-    padding: 15px;
+color: #555;
+background-color: #f5f5f5;
+padding: 15px;
+font-family: georgia, serif;
+font-style: italic;
+font-size: 0.9em;
 }
+.about-title{
+ font-family: georgia, serif;
+}
+
+
+
+
+
 #hidePanel {
     display: none;
 }
@@ -540,7 +547,7 @@ table.about-table {
     }
     #layers a.active,
     #layers a#play_button:hover {
-        background: #0096d2;
+        background: #1696d2;
         color: #fff;
         font-size: 12px;
         font-weight: 900;
@@ -640,7 +647,7 @@ table.about-table {
         color: #fff;
     }
     footer a:hover {
-        color: #0096d2;
+        color: #1696d2;
     }
     .footer-menu-divider {
         color: #ccc;
@@ -671,17 +678,22 @@ table.about-table {
         /* float: left; */
         display: inline-block;
         margin-top: 10px;
+
         margin-right: 20px;
         margin-left: 5px;
+
     }
 }
 
-@media (min-width: 990px){
+@media (min-width: 992px){
  .author {
     width: 100%;
     max-width: 80px;
     float: left;
     margin-bottom: 15px;
+             margin-right: 0px;
+        margin-left: 0px;
+
 }
 .headshot {
     width: 100%;
