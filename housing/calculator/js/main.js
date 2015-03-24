@@ -249,7 +249,8 @@ function drawMap() {
 }
 
 function badAddress() {
-    $("#address-error").attr("style", "display:block;opacity:1;");
+    $(".modal-div").removeClass('plexiglass-show');
+    $("#address-error").addClass('plexiglass-show');
 }
 
 function badBurdenData(tractFIPS) {
