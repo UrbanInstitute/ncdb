@@ -179,15 +179,39 @@ function drawMap() {
         }
     };
 
+
+    var pct_format = d3.format('%');
+    var $hover_year = $('#hover-year');
+    var $hover_val = $('#hover-value');
+
+    function gridMouseover(o) {
+        if (o.data) {
+            console.log(o.data, i);
+            var d = d3.entries(o.data)[0];
+            var year = d.key.split("-")[1];
+            var val = pct_format(d.value/100);
+            if (year.charAt(0) === "9") {
+                year = 1900 + parseInt(year);
+            } else {
+                year = 2000 + parseInt(year);
+            }
+            $hover_year.html(year);
+            $hover_val.html(val);
+        } else {
+            //           defaultlegend.innerHTML = "<img class='key' src='key/ncdb-key.png'/>";
+        }
+    }
+
     layers.forEach(function (layer, n) {
         layer.button = control.appendChild(document.createElement('a'));
         layer.button.innerHTML = layers[n].name;
         layer.button.onclick = function () {
-            i = n
+            i = n;
             highlightLayer();
             nextInterval = clearInterval(nextInterval);
             play_button.innerHTML = play;
         };
+        layer.grid.on('mouseover', gridMouseover);
     });
 
 
@@ -217,8 +241,8 @@ function drawMap() {
 
     // var active;
     function highlightLayer() {
-        i = i % 3
-        if (i == 0) {
+        i = i % 3;
+        if (i === 0) {
             layerGroup.clearLayers();
         }
         layerGroup.addLayer(layers[i].layer);
@@ -227,81 +251,19 @@ function drawMap() {
 
         var count = document.getElementById('count');
 
-
         var active = control.getElementsByClassName('active');
-        var activeLayer = layers[i].grid;
         var defaultlegend = document.getElementById('legend');
-        var pct_format = d3.format('%');
-        var $hover_year = $('#hover-year');
-        var $hover_val = $('#hover-value');
-        activeLayer.on("mousemove", function (o) {
-            if (o.data) {
-                var d = d3.entries(o.data)[0];
-                var year = d.key.split("-")[1];
-                var val = pct_format(d.value/100);
-                if (year.charAt(0) === "9") {
-                    year = 1900 + parseInt(year);
-                } else {
-                    year = 2000 + parseInt(year);
-                }
-                $hover_year.html(year);
-                $hover_val.html(val);
-            } else {
-                //           defaultlegend.innerHTML = "<img class='key' src='key/ncdb-key.png'/>";
-            }
-        });
+
         for (var j = 0; j < active.length; j++) active[j].className = '';
         layers[i].button.className = 'active';
 
     }
-
-    // function drawKey(data, index) {
-    //     var RentalBurden;
-    //     //var legend = document.getElementById('legend');
-    //     var legendtext = document.getElementById('legend-text');
-
-    //     var el;
-
-    //     switch (String(index)) {
-    //     case "0":
-    //         if (typeof (data.SES9) != "undefined") {
-    //             //el = d3.select(".ses" + data.SES9 + ".immig" + data.key9)
-    //             //el.classed("selected", true)
-    //             //el[0][0].parentNode.appendChild(el[0][0])
-    //             legendtext.innerHTML = "<div id='year'>1990</div><div class='key-label'>Tract SES :: <span class='key-data'>" + data.SES90t + "</span></div><div class='key-label'>Share of immigrants :: <span class='key-data'>" + data.share90 + "%</span></div>"
-
-    //         }
-
-    //         break;
-    //     case "1":
-    //         if (typeof (data.SES0) != "undefined") {
-    //            // el = d3.select(".ses" + data.SES0 + ".immig" + data.key0)
-    //            // el.classed("selected", true)
-    //            // el[0][0].parentNode.appendChild(el[0][0])
-    //             legendtext.innerHTML = "<div id='year'>2000</div><div class='key-label'>Tract SES :: <span class='key-data'>" + data.SES00t + "</span></div><div class='key-label'>Share of immigrants :: <span class='key-data'>" + data.share00 + "%</span></div>"
-    //         }
-    //         break;
-    //     case "2":
-    //         if (typeof (data.SES1A) != "undefined") {
-    //            // el = d3.select(".ses" + data.SES1A + ".immig" + data.key1a)
-    //            // el.classed("selected", true)
-    //            // el[0][0].parentNode.appendChild(el[0][0])
-    //             legendtext.innerHTML = "<div id='year'>2010</div><div class='key-label'>Tract SES :: <span class='key-data'>" + data.SES10tim + "</span></div><div class='key-label'>Share of immigrants :: <span class='key-data'>" + data.share10 + "%</span></div>"
-    //         }
-    //         break;
-
-    //     }
-    //     // el.classed("selected",true)
-    //     // el[0][0].parentNode.appendChild(el[0][0])
-    // }
 
     //streets on top
     var streetLayer = L.mapbox.tileLayer('urbaninstitute.h5b1kc2b');
     streetLayer
         .setZIndex(100)
         .addTo(map);
-
-    console.log('erer')
 
     $('#show-map, #view-burden-in-map').click(function() {
       if (currentState.lon !== null && currentState.lat !== null) {
