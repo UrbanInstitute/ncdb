@@ -149,8 +149,6 @@ $(document).ready(function () {
                 activeLayer.on("mousemove", function (o) {
                     if (o.data) {
                         drawKey(o.data, i)
-                    } else {
-                        //           defaultlegend.innerHTML = "<img class='key' src='key/ncdb-key.png'/>";   
                     }
                 })
                 for (var j = 0; j < active.length; j++) active[j].className = '';
@@ -162,13 +160,12 @@ $(document).ready(function () {
                 var SES;
                 var legend = document.getElementById('legend');
                 var legendtext = document.getElementById('legend-text');
-                // console.log(data);
-                d3.selectAll(".selected").classed("selected", false)
                 var el;
                 switch (String(index)) {
                 case "0":
                     if (typeof (data.SES9) != "undefined") {
                         el = d3.select(".ses" + data.SES9 + ".immig" + data.key9)
+                        d3.selectAll(".selected").classed("selected", false)
                         el.classed("selected", true)
                         el[0][0].parentNode.appendChild(el[0][0])
                         legendtext.innerHTML = "<div id='year'>1990</div><div class='key-label'>Tract SES :: <span class='key-data'>" + data.SES90t + "</span></div><div class='key-label'>Share of immigrants :: <span class='key-data'>" + data.share90 + "%</span></div>"
@@ -179,6 +176,7 @@ $(document).ready(function () {
                 case "1":
                     if (typeof (data.SES0) != "undefined") {
                         el = d3.select(".ses" + data.SES0 + ".immig" + data.key0)
+                        d3.selectAll(".selected").classed("selected", false)
                         el.classed("selected", true)
                         el[0][0].parentNode.appendChild(el[0][0])
                         legendtext.innerHTML = "<div id='year'>2000</div><div class='key-label'>Tract SES :: <span class='key-data'>" + data.SES00t + "</span></div><div class='key-label'>Share of immigrants :: <span class='key-data'>" + data.share00 + "%</span></div>"
@@ -187,6 +185,8 @@ $(document).ready(function () {
                 case "2":
                     if (typeof (data.SES1A) != "undefined") {
                         el = d3.select(".ses" + data.SES1A + ".immig" + data.key1a)
+                        // console.log(el)
+                        d3.selectAll(".selected").classed("selected", false)
                         el.classed("selected", true)
                         el[0][0].parentNode.appendChild(el[0][0])
                         legendtext.innerHTML = "<div id='year'>2010</div><div class='key-label'>Tract SES :: <span class='key-data'>" + data.SES10tim + "</span></div><div class='key-label'>Share of immigrants :: <span class='key-data'>" + data.share10 + "%</span></div>"
