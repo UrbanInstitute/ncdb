@@ -2,19 +2,17 @@ $(document).ready(function () {
         var initLat = 39.673;
         var initLon = -92.395;
 
-
         $("#embed").click(function(){
             $("#embed-modal").attr("style", "display:block;z-index:10;opacity:1;");
         });
-    $(".close-modal").click(function(){
+        $(".close-modal").click(function(){
             $("#embed-modal").attr("style", "display:none;z-index:10;opacity:0;");
             $("#about-modal").attr("style", "display:none;z-index:10;opacity:0;");
         });
     
-    $("#about").click(function(){
+        $("#about").click(function(){
             $("#about-modal").attr("style", "display:block;z-index:10;opacity:1;");
         });
-    
                        
             $("#locBtn").click(getLocation);
 
@@ -122,7 +120,6 @@ $(document).ready(function () {
 
 
             function animate() {
-                // var i = 0
                 // and then time the next() function to run every 1 seconds
                 return setInterval(function () {
                     highlightLayer();
@@ -185,7 +182,6 @@ $(document).ready(function () {
                 case "2":
                     if (typeof (data.SES1A) != "undefined") {
                         el = d3.select(".ses" + data.SES1A + ".immig" + data.key1a)
-                        // console.log(el)
                         d3.selectAll(".selected").classed("selected", false)
                         el.classed("selected", true)
                         el[0][0].parentNode.appendChild(el[0][0])
@@ -194,8 +190,6 @@ $(document).ready(function () {
                     break
 
                 }
-                // el.classed("selected",true)
-                // el[0][0].parentNode.appendChild(el[0][0])
             }
 
             //streets on top
