@@ -101,6 +101,11 @@ $(document).ready(function () {
                     nextInterval = clearInterval(nextInterval);
                     play_button.innerHTML = play;
                 };
+                layer.grid.on('mouseover', function (o) {
+                    if (o.data) {
+                        drawKey(o.data, i);
+                    }
+                });
             });
 
 
@@ -141,13 +146,7 @@ $(document).ready(function () {
 
 
                 var active = control.getElementsByClassName('active');
-                var activeLayer = layers[i].grid
                 var defaultlegend = document.getElementById('legend');
-                activeLayer.on("mousemove", function (o) {
-                    if (o.data) {
-                        drawKey(o.data, i)
-                    }
-                })
                 for (var j = 0; j < active.length; j++) active[j].className = '';
                 layers[i].button.className = 'active';
 
