@@ -17,22 +17,24 @@
     <div id="burden">
         <!-- <div class="background-image"></div> -->
         <div class="btn-group toggle-buttons" role="group" aria-label="...">
-            <div class="btn-group" role="group">
-                <button id="show-map" type="button" class="btn btn-primary">
+            <div class="btn-group " role="group">
+                <button id="show-map" type="button" class="btn btn-primary map-calc-btn">
                     EXPLORE THE MAP
                 </button>
             </div>
+            
             <div class="btn-group" role="group">
-                <button id="show-calculator" type="button" class="btn btn-primary" id="close-chart">
-                   CALCULATOR
+                <button id="show-calculator" type="button" class="btn btn-primary map-calc-btn" id="close-chart">
+                   USE THE CALCULATOR
                 </button>
             </div>
+            
         </div>
 
         <div class="plexiglass modal-div plexiglass-show" id="control-container">
             <div class="burden-calculator" style="max-width:600px;">
                 <div id="input-fields">
-                    <div id="calculator-title">Are you housing burdened? How about your neighbors?</div>
+                    <div id="calculator-title">Are you rent burdened? Are your neighbors?</div>
                     <input class="form-input full address-input" type="text" id="street" placeholder='Street'></input>
                     <input class="form-input full  address-input" type="text" id="city" placeholder='City'></input>
                     <input class="form-input half left  address-input" type="text" id="state" placeholder="State"></input>
@@ -93,7 +95,7 @@
                     -->
                     <input class="form-input half address-input" type="text" id="zip" placeholder="Zip Code"></input>
                     <input class="form-input big half left address-input" type="text" id="rent" placeholder="Rent"></input>
-                    <input class="form-input big half address-input" type="text" id="income" placeholder="Income"></input>
+                    <input class="form-input big half address-input" type="text" id="income" placeholder="Annual Income"></input>
                 </div>
                 <div id="submit-container">
                     <button type="button" class="btn btn-primary" id="submit_button">Submit</button>

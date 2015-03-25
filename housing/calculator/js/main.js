@@ -128,7 +128,7 @@ function drawMap() {
             minZoom: 3,
             attributionControl: false
         })
-        .setView(coords, 4);
+        .setView(coords, 7);
 
     L.mapbox.accessToken = 'pk.eyJ1IjoidXJiYW5pbnN0aXR1dGUiLCJhIjoiTEJUbmNDcyJ9.mbuZTy4hI_PWXw3C3UFbDQ';
     var hash = L.hash(map);
@@ -269,16 +269,12 @@ function calculateBurden(burden) {
     var value = Number(burden.burden2010);
     if (rentalBurden > 0.35) {
         $("#burden-response").text(
-            "You, and " +
-            format(value) + " of your neighbors in 2010, are " +
-            "housing burdened. You spend " +
-            format(rentalBurden) +
-            " of your montly income on rent."
+            "You are rent burdened. You spend " +format(rentalBurden) + " of your monthly income on rent. In 2010, " + format(value) + " of your census tract was rent burdened."
         );
     } else {
         $("#burden-response").text(
-            "You're not housing burdened, but in 2010, " +
-            format(value) + " of your neighbors were."
+            "You’re not rent burdened! But, in 2010, " +
+            format(value) + " of your census tract was rent burdened."
         );
     }
 }

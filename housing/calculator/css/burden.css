@@ -21,13 +21,24 @@
     font-size: 12px !important;
 }
 
-
+.toggle-buttons{
+width: 300px;
+margin-left: auto;
+margin-right: auto;
+z-index: 999;
+margin-top: 10px;
+display: block;
+}
 .burden-calculator {
     width: 75%;
     max-width: 1170px;
     margin-left: auto;
     margin-right: auto;
     z-index: 999;
+    margin-top:50px;
+}
+.map-calc-btn{
+ width: 150px;   
 }
 
 h1#burden-response {
@@ -44,6 +55,7 @@ h1#burden-response {
 
 .form-input {
     margin-top: 10px;
+    font-weight: 100;
 }
 
 .full {
@@ -60,6 +72,8 @@ h1#burden-response {
     width: 200px;
     margin: 0 auto;
     margin-top: 10px;
+    display: block;
+    text-transform: uppercase;
 }
 
 .big {
