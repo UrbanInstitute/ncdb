@@ -144,153 +144,164 @@ function drawMap() {
 
     var layers = [{
         name: '1990',
-        layer: init('urbaninstitute.fsbp4x6r') //1990
+        layer: init('urbaninstitute.fsbp4x6r'), //1990
+        grid: L.mapbox.gridLayer('urbaninstitute.fsbp4x6r')
         }, {
         name: '2000',
-        layer: init('urbaninstitute.s31bgldi') //2000
+        layer: init('urbaninstitute.s31bgldi'), //2000
+        grid: L.mapbox.gridLayer('urbaninstitute.s31bgldi')
         }, {
         name: '2010',
-        layer: init('urbaninstitute.4251m7vi') //2010
+        layer: init('urbaninstitute.4251m7vi'), //2010
+        grid: L.mapbox.gridLayer('urbaninstitute.4251m7vi')
         }];
 
 
-            var control = document.getElementById('layers');
+    var control = document.getElementById('layers');
 
-            // Add a play button div
-            var play_button = control.appendChild(document.createElement('a'))
-            var pause = "&#9616;&#9616;";
-            var play = "&#9654;";
-            play_button.innerHTML = pause;
-            play_button.id = "play_button";
-            play_button.onclick = function () {
-                if (nextInterval) {
-                    nextInterval = clearInterval(nextInterval);
-                    play_button.innerHTML = play;
-                } else {
-                    highlightLayer(i++);
-                    if (i === 3) {
-                        i = 0
-                    };
-                    nextInterval = animate();
-                    play_button.innerHTML = pause;
-                }
-            }
-
-            layers.forEach(function (layer, n) {
-                layer.button = control.appendChild(document.createElement('a'));
-                layer.button.innerHTML = layers[n].name;
-                layer.button.onclick = function () {
-                    i = n
-                    highlightLayer();
-                    nextInterval = clearInterval(nextInterval);
-                    play_button.innerHTML = play;
-                };
-            });
-
-
-            // we use a layer group to make it simple to remove an existing overlay
-            // and add a new one in the same line of code, as below, without juggling
-            // temporary variables.
-            var layerGroup = L.layerGroup().addTo(map);
-
-            // i is the number of the currently-selected layer: this loops through
-            // 0, 1, and 2.
-            var i = 0;
-
-            // show the first overlay as soon as the map loads
+    // Add a play button div
+    var play_button = control.appendChild(document.createElement('a'));
+    var pause = "&#9616;&#9616;";
+    var play = "&#9654;";
+    play_button.innerHTML = pause;
+    play_button.id = "play_button";
+    play_button.onclick = function () {
+        if (nextInterval) {
+            nextInterval = clearInterval(nextInterval);
+            play_button.innerHTML = play;
+        } else {
             highlightLayer(i++);
-
-            var nextInterval = animate();
-
-
-            function animate() {
-                // var i = 0
-                // and then time the next() function to run every 1 seconds
-                return setInterval(function () {
-                    highlightLayer();
-                    if (++i >= layers.length) i = 0;
-                }, 3000 * 1);
+            if (i === 3) {
+                i = 0
             }
+            nextInterval = animate();
+            play_button.innerHTML = pause;
+        }
+    };
 
-            // var active;
-            function highlightLayer() {
-                i = i % 3
-                if (i == 0) {
-                    layerGroup.clearLayers();
+    layers.forEach(function (layer, n) {
+        layer.button = control.appendChild(document.createElement('a'));
+        layer.button.innerHTML = layers[n].name;
+        layer.button.onclick = function () {
+            i = n
+            highlightLayer();
+            nextInterval = clearInterval(nextInterval);
+            play_button.innerHTML = play;
+        };
+    });
+
+
+    // we use a layer group to make it simple to remove an existing overlay
+    // and add a new one in the same line of code, as below, without juggling
+    // temporary variables.
+    var layerGroup = L.layerGroup().addTo(map);
+
+    // i is the number of the currently-selected layer: this loops through
+    // 0, 1, and 2.
+    var i = 0;
+
+    // show the first overlay as soon as the map loads
+    highlightLayer(i++);
+
+    var nextInterval = animate();
+
+
+    function animate() {
+        // var i = 0
+        // and then time the next() function to run every 1 seconds
+        return setInterval(function () {
+            highlightLayer();
+            if (++i >= layers.length) i = 0;
+        }, 3000 * 1);
+    }
+
+    // var active;
+    function highlightLayer() {
+        i = i % 3
+        if (i == 0) {
+            layerGroup.clearLayers();
+        }
+        layerGroup.addLayer(layers[i].layer);
+        var gridControl = L.mapbox.gridControl(layers[i].grid);
+        map.addLayer(layers[i].grid);
+
+        var count = document.getElementById('count');
+
+
+        var active = control.getElementsByClassName('active');
+        var activeLayer = layers[i].grid;
+        var defaultlegend = document.getElementById('legend');
+        var pct_format = d3.format('%');
+        var $hover_year = $('#hover-year');
+        var $hover_val = $('#hover-value');
+        activeLayer.on("mousemove", function (o) {
+            if (o.data) {
+                var d = d3.entries(o.data)[0];
+                var year = d.key.split("-")[1];
+                var val = pct_format(d.value/100);
+                if (year.charAt(0) === "9") {
+                    year = 1900 + parseInt(year);
+                } else {
+                    year = 2000 + parseInt(year);
                 }
-                layerGroup.addLayer(layers[i].layer);
-                var gridControl = L.mapbox.gridControl(layers[i].grid);
-                map.addLayer(layers[i].grid);
-
-                var count = document.getElementById('count');
-
-
-                var active = control.getElementsByClassName('active');
-                var activeLayer = layers[i].grid
-                var defaultlegend = document.getElementById('legend');
-                activeLayer.on("mousemove", function (o) {
-                    if (o.data) {
-                        drawKey(o.data, i)
-                    } else {
-                        //           defaultlegend.innerHTML = "<img class='key' src='key/ncdb-key.png'/>";   
-                    }
-                })
-                for (var j = 0; j < active.length; j++) active[j].className = '';
-                layers[i].button.className = 'active';
-
+                $hover_year.html(year);
+                $hover_val.html(val);
+            } else {
+                //           defaultlegend.innerHTML = "<img class='key' src='key/ncdb-key.png'/>";
             }
+        });
+        for (var j = 0; j < active.length; j++) active[j].className = '';
+        layers[i].button.className = 'active';
 
-            function drawKey(data, index) {
-                var RentalBurden;
-                //var legend = document.getElementById('legend');
-                var legendtext = document.getElementById('legend-text');
-                 console.log(data);
-                //d3.selectAll(".selected").classed("selected", false)
-                var el;
-                
-                
-                switch (String(index)) {
-                case "0":
-                    if (typeof (data.SES9) != "undefined") {
-                        //el = d3.select(".ses" + data.SES9 + ".immig" + data.key9)
-                        //el.classed("selected", true)
-                        //el[0][0].parentNode.appendChild(el[0][0])
-                        legendtext.innerHTML = "<div id='year'>1990</div><div class='key-label'>Tract SES :: <span class='key-data'>" + data.SES90t + "</span></div><div class='key-label'>Share of immigrants :: <span class='key-data'>" + data.share90 + "%</span></div>"
+    }
 
-                    }
+    // function drawKey(data, index) {
+    //     var RentalBurden;
+    //     //var legend = document.getElementById('legend');
+    //     var legendtext = document.getElementById('legend-text');
 
-                    break
-                case "1":
-                    if (typeof (data.SES0) != "undefined") {
-                       // el = d3.select(".ses" + data.SES0 + ".immig" + data.key0)
-                       // el.classed("selected", true)
-                       // el[0][0].parentNode.appendChild(el[0][0])
-                        legendtext.innerHTML = "<div id='year'>2000</div><div class='key-label'>Tract SES :: <span class='key-data'>" + data.SES00t + "</span></div><div class='key-label'>Share of immigrants :: <span class='key-data'>" + data.share00 + "%</span></div>"
-                    }
-                    break
-                case "2":
-                    if (typeof (data.SES1A) != "undefined") {
-                       // el = d3.select(".ses" + data.SES1A + ".immig" + data.key1a)
-                       // el.classed("selected", true)
-                       // el[0][0].parentNode.appendChild(el[0][0])
-                        legendtext.innerHTML = "<div id='year'>2010</div><div class='key-label'>Tract SES :: <span class='key-data'>" + data.SES10tim + "</span></div><div class='key-label'>Share of immigrants :: <span class='key-data'>" + data.share10 + "%</span></div>"
-                    }
-                    break
+    //     var el;
 
-                }
-                // el.classed("selected",true)
-                // el[0][0].parentNode.appendChild(el[0][0])
-            }
+    //     switch (String(index)) {
+    //     case "0":
+    //         if (typeof (data.SES9) != "undefined") {
+    //             //el = d3.select(".ses" + data.SES9 + ".immig" + data.key9)
+    //             //el.classed("selected", true)
+    //             //el[0][0].parentNode.appendChild(el[0][0])
+    //             legendtext.innerHTML = "<div id='year'>1990</div><div class='key-label'>Tract SES :: <span class='key-data'>" + data.SES90t + "</span></div><div class='key-label'>Share of immigrants :: <span class='key-data'>" + data.share90 + "%</span></div>"
 
-            //streets on top
-            var streetLayer = L.mapbox.tileLayer('urbaninstitute.h5b1kc2b');
-            streetLayer
-                .setZIndex(100)
-                .addTo(map);
+    //         }
 
-    
-    
-///TIM DON'T TOUCH ANYTHING BELOW THIS
+    //         break;
+    //     case "1":
+    //         if (typeof (data.SES0) != "undefined") {
+    //            // el = d3.select(".ses" + data.SES0 + ".immig" + data.key0)
+    //            // el.classed("selected", true)
+    //            // el[0][0].parentNode.appendChild(el[0][0])
+    //             legendtext.innerHTML = "<div id='year'>2000</div><div class='key-label'>Tract SES :: <span class='key-data'>" + data.SES00t + "</span></div><div class='key-label'>Share of immigrants :: <span class='key-data'>" + data.share00 + "%</span></div>"
+    //         }
+    //         break;
+    //     case "2":
+    //         if (typeof (data.SES1A) != "undefined") {
+    //            // el = d3.select(".ses" + data.SES1A + ".immig" + data.key1a)
+    //            // el.classed("selected", true)
+    //            // el[0][0].parentNode.appendChild(el[0][0])
+    //             legendtext.innerHTML = "<div id='year'>2010</div><div class='key-label'>Tract SES :: <span class='key-data'>" + data.SES10tim + "</span></div><div class='key-label'>Share of immigrants :: <span class='key-data'>" + data.share10 + "%</span></div>"
+    //         }
+    //         break;
+
+    //     }
+    //     // el.classed("selected",true)
+    //     // el[0][0].parentNode.appendChild(el[0][0])
+    // }
+
+    //streets on top
+    var streetLayer = L.mapbox.tileLayer('urbaninstitute.h5b1kc2b');
+    streetLayer
+        .setZIndex(100)
+        .addTo(map);
+
+    console.log('erer')
 
     $('#show-map, #view-burden-in-map').click(function() {
       if (currentState.lon !== null && currentState.lat !== null) {
@@ -346,8 +357,8 @@ function showBurden(data) {
     var burden = burdenData[tractFIPS];
     calculateBurden(burden);
 
-  $(".modal-div").removeClass('plexiglass-show');
-  $("#chart-container").addClass('plexiglass-show');
+    $(".modal-div").removeClass('plexiglass-show');
+    $("#chart-container").addClass('plexiglass-show');
 
     d3.select('#chart')
         .datum(burden)
