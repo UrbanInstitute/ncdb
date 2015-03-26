@@ -73,24 +73,24 @@ $(document).ready(function () {
             var control = document.getElementById('layers');
 
             // Add a play button div
-            var play_button = control.appendChild(document.createElement('a'))
-            var pause = "&#9616;&#9616;";
-            var play = "&#9654;";
-            play_button.innerHTML = pause;
-            play_button.id = "play_button";
-            play_button.onclick = function () {
-                if (nextInterval) {
-                    nextInterval = clearInterval(nextInterval);
-                    play_button.innerHTML = play;
-                } else {
-                    highlightLayer(i++);
-                    if (i === 3) {
-                        i = 0
-                    };
-                    nextInterval = animate();
-                    play_button.innerHTML = pause;
-                }
-            }
+//            var play_button = control.appendChild(document.createElement('a'))
+//            var pause = "&#9616;&#9616;";
+//            var play = "&#9654;";
+//            play_button.innerHTML = pause;
+//            play_button.id = "play_button";
+//            play_button.onclick = function () {
+//                if (nextInterval) {
+//                    nextInterval = clearInterval(nextInterval);
+//                    play_button.innerHTML = play;
+//                } else {
+//                    highlightLayer(i++);
+//                    if (i === 3) {
+//                        i = 0
+//                    };
+//                    nextInterval = animate();
+//                    play_button.innerHTML = pause;
+//                }
+//            }
 
             layers.forEach(function (layer, n) {
                 layer.button = control.appendChild(document.createElement('a'));
@@ -118,10 +118,12 @@ $(document).ready(function () {
             // 0, 1, and 2.
             var i = 0;
 
+    highlightLayer(i); //start on 1990
+    
             // show the first overlay as soon as the map loads
-            highlightLayer(i++);
-
-            var nextInterval = animate();
+//            highlightLayer(i++);
+//
+//            var nextInterval = animate();
 
 
             function animate() {

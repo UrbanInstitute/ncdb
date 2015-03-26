@@ -160,24 +160,24 @@ function drawMap() {
     var control = document.getElementById('layers');
 
     // Add a play button div
-    var play_button = control.appendChild(document.createElement('a'));
-    var pause = "&#9616;&#9616;";
-    var play = "&#9654;";
-    play_button.innerHTML = pause;
-    play_button.id = "play_button";
-    play_button.onclick = function () {
-        if (nextInterval) {
-            nextInterval = clearInterval(nextInterval);
-            play_button.innerHTML = play;
-        } else {
-            highlightLayer(i++);
-            if (i === 3) {
-                i = 0
-            }
-            nextInterval = animate();
-            play_button.innerHTML = pause;
-        }
-    };
+//    var play_button = control.appendChild(document.createElement('a'));
+//    var pause = "&#9616;&#9616;";
+//    var play = "&#9654;";
+//    play_button.innerHTML = pause;
+//    play_button.id = "play_button";
+//    play_button.onclick = function () {
+//        if (nextInterval) {
+//            nextInterval = clearInterval(nextInterval);
+//            play_button.innerHTML = play;
+//        } else {
+//            highlightLayer(i++);
+//            if (i === 3) {
+//                i = 0
+//            }
+//            nextInterval = animate();
+//            play_button.innerHTML = pause;
+//        }
+//    };
 
 
     var pct_format = d3.format('%');
@@ -223,21 +223,21 @@ function drawMap() {
     // i is the number of the currently-selected layer: this loops through
     // 0, 1, and 2.
     var i = 0;
-
+highlightLayer(i);
     // show the first overlay as soon as the map loads
-    highlightLayer(i++);
+//    highlightLayer(i++);
 
-    var nextInterval = animate();
+//    var nextInterval = animate();
 
 
-    function animate() {
-        // var i = 0
-        // and then time the next() function to run every 1 seconds
-        return setInterval(function () {
-            highlightLayer();
-            if (++i >= layers.length) i = 0;
-        }, 3000 * 1);
-    }
+//    function animate() {
+//        // var i = 0
+//        // and then time the next() function to run every 1 seconds
+//        return setInterval(function () {
+//            highlightLayer();
+//            if (++i >= layers.length) i = 0;
+//        }, 3000 * 1);
+//    }
 
     // var active;
     function highlightLayer() {
