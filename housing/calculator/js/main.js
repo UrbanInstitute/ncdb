@@ -186,7 +186,7 @@ function drawMap() {
 
     function gridMouseover(o) {
         if (o.data) {
-            console.log(o.data, i);
+            //console.log(o.data, i);
             var d = d3.entries(o.data)[0];
             var year = d.key.split("-")[1];
             var val = pct_format(d.value/100);
@@ -196,7 +196,7 @@ function drawMap() {
                 year = 2000 + parseInt(year);
             }
             $hover_year.html(year);
-            $hover_val.html(val);
+            $hover_val.html("Share rent burdened :: <span id='key-data'>"+ val + "</span");
         } else {
             //           defaultlegend.innerHTML = "<img class='key' src='key/ncdb-key.png'/>";
         }

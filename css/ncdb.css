@@ -336,7 +336,7 @@ table.about-table {
 #legend {
     /*    position: relative;*/
     padding: 10px;
-    top: 70px;
+    top: 65px;
     font-size: 12px;
     text-align: left;
     line-height: 18px;
@@ -363,12 +363,11 @@ table.about-table {
 }
 #layers {
     position: relative;
-    top: 10px;
     font-size: 12px;
     width: 300px;
     text-align: center;
     z-index: 1000;
-    padding-bottom: 10px;
+/*    padding-bottom: 10px;*/
 }
 #layers a {
     display: inline-block;
@@ -403,10 +402,17 @@ table.about-table {
     top: 450px;
 }
 .more-link {
-    float: left;
+    color: #fff !important;
+    display: inline-block;
     margin-right: 10px;
     text-transform: uppercase;
-    font-weight: 900;
+}
+.alt-map-links a{
+  color: #fff;
+  margin-top: -10px;
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
 }
 #credit {
     position: absolute;

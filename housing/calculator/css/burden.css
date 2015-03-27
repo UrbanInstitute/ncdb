@@ -20,7 +20,19 @@
  border-radius: 0px !important;
     font-size: 12px !important;
 }
+#hover-year{
+    color: #1696d2;
+    font-size: 1em;
+        font-weight: 700;
 
+}
+
+#hover-value{
+    font-size: 1.5em;
+}   
+#key-data{
+ font-weight: 700;   
+}
 .toggle-buttons{
 width: 300px;
 margin-left: auto;
