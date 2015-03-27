@@ -98,8 +98,8 @@ $(document).ready(function () {
                 layer.button.onclick = function () {
                     i = n
                     highlightLayer();
-                    nextInterval = clearInterval(nextInterval);
-                    play_button.innerHTML = play;
+                   // nextInterval = clearInterval(nextInterval);
+             //       play_button.innerHTML = play;
                 };
                 layer.grid.on('mouseover', function (o) {
                     if (o.data) {

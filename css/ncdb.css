@@ -414,7 +414,7 @@ table.about-table {
   font-size: 0.8em;
 }
 }
-#credit {
+#credit a{
     position: absolute;
     /* float: right; */
     display: block;
@@ -423,11 +423,10 @@ table.about-table {
     text-align: right;
     bottom: 0px;
     left: 180px;
-}
-#credit a {
-    text-decoration: none;
+     text-decoration: none;
     color: inherit;
 }
+
 .role {
     text-transform: uppercase;
     font-weight: 600;
