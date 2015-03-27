@@ -354,7 +354,7 @@ function processData(text) {
     for (var i = 0; i < lines.length; i++) {
         var line = lines[i].split(',');
         data[line[0]] = {
-            "burden1980": line[1],
+           // "burden1980": line[1],
             "burden1990": line[2],
             "burden2000": line[3],
             "burden2010": line[4]

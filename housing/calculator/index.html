@@ -32,9 +32,11 @@
             <div class="burden-calculator" style="max-width:600px;">
                 <div id="input-fields">
                     <div id="calculator-title">Are you rent burdened? Are your neighbors?</div>
+<!--
                     <input class="form-input full address-input" type="text" id="street" placeholder='Street'></input>
                     <input class="form-input full  address-input" type="text" id="city" placeholder='City'></input>
                     <input class="form-input half left  address-input" type="text" id="state" placeholder="State"></input>
+-->
                     <!--
                       <select class="form-input half left">
                         <option value="AL">Alabama</option>
@@ -90,9 +92,63 @@
                         <option value="WY">Wyoming</option>
                       </select>
                     -->
+<!--
                     <input class="form-input half address-input" type="text" id="zip" placeholder="Zip Code"></input>
                     <input class="form-input big half left address-input" type="text" id="rent" placeholder="Rent"></input>
                     <input class="form-input big half address-input" type="text" id="income" placeholder="Annual Income"></input>
+-->
+                    <!--redesigned input fields-->
+            <div class="container">
+
+                <form>
+
+                    <div class="group">
+                        <input type="text" class="address-input full" id="street" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Street</label>
+                    </div>
+                    <div class="group">
+                        <input type="text"  class="address-input full" id="city" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>City</label>
+                    </div>
+                    <div class="group half left">
+                        <input type="text" class="address-input " id="state" required>
+                        <span class="highlight"></span>
+                        <span class="bar half"></span>
+                        <label>State</label>
+                    </div>
+                    <div class="group half ">
+                        <input type="text" class="address-input " id="zip" required>
+                        <span class="highlight"></span>
+                        <span class="bar half"></span>
+                        <label>Zip</label>
+                    </div>
+                    <div class="group half left">
+                        <input type="text" class="address-input " id="rent" required>
+                        <span class="highlight"></span>
+                        <span class="bar half"></span>
+                        <label>Monthly Rent ($)</label>
+                    </div>
+                    <div class="group half ">
+                        <input type="text" class="address-input " id="income" required>
+                        <span class="highlight"></span>
+                        <span class="bar half"></span>
+                        <label>Annual Income ($)</label>
+                    </div>
+
+
+
+                </form>
+
+            </div>
+
+            <!--redesigned input fields-->
+                    
+                    
+                    
                 </div>
                 <div id="submit-container">
                     <button type="button" class="btn btn-primary" id="submit_button">Submit</button>
@@ -105,6 +161,11 @@
                     </div>
                 </div>
             </div>
+
+
+            
+
+
         </div>
         <div class="plexiglass modal-div" id="chart-container">
             <h1 id="burden-response"></h1>
@@ -235,9 +296,9 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
     <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-hash/v0.2.1/leaflet-hash.js'></script>
     <script>
-    $(function() {
-        $("#submit_button").on("click", makeAPICall);
-    });
+        $(function () {
+            $("#submit_button").on("click", makeAPICall);
+        });
     </script>
 </body>
 
