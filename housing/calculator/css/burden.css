@@ -320,3 +320,29 @@ input:focus ~ .highlight {
 	from { background:#1696d2; }
   to 	{ width:0; background:transparent; }
 }
+
+@media (max-width: 768px){
+.container {
+  width: 100%;
+    margin-left: 30px;
+    
+}
+.half{
+ width: 90%;   
+}
+.full{
+width:90%;
+}
+    input{
+     width:90%;   
+    }
+    .burden-calculator{
+     width: 100%;
+    }
+    .group{
+     width: 90%;   
+    }
+    #bottom-links{
+     top:590px; 
+    }
+}

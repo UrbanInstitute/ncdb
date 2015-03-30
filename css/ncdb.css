@@ -138,16 +138,19 @@ p {
     max-width: 75%;
     margin: auto;
 }
+
+#mobile-key{
+ display: none;
+}
 .copyright {
     margin: 15px 0 0;
     color: #eee;
     font-weight: 400;
 }
 .intro-header {
-    /padding-bottom: 50px;
+/*    /padding-bottom: 50px;*/
     text-align: center;
-    background-color: #fff;
-    /height: 705px;
+/*    /height: 705px;*/
     position: relative;
 }
 #topNav {
@@ -542,19 +545,19 @@ table.about-table {
         margin-top: 2px;
         margin-left: 2px;
         min-width: 44px;
+        top:10px;
     }
     #layers a {
         padding: 5px;
         font-size: 12px;
         text-align: center;
-        background-color: #fff;
+        background-color: #000;
     }
     #layers a.active,
     #layers a#play_button:hover {
         background: #1696d2;
         color: #fff;
         font-size: 12px;
-        font-weight: 900;
     }
     #layers a:hover {
         cursor: pointer;
@@ -570,31 +573,32 @@ table.about-table {
         top: 170px;
         visibility: hidden;
     }
-    #legend {
-        position: absolute;
-        width: 80%;
-        margin-left: 10%;
-        margin-right: 10%;
-        top: 405px;
-        left: 00px;
-        padding: 7px;
-        background: rgb(255, 255, 255);
-        background: rgba(255, 255, 255, 0.6);
-        font-size: 13px;
-        text-align: left;
-        line-height: 18px;
-        border-radius: 5px;
+    #legend{
+     display: none;   
     }
-    #hpi {
-        display: none;
+    #locBtn{
+     display: none;
+        
     }
     .intro-header {
-        height: 500px;
-        top: 80px;
+        height: 620px;
+/*        top: 80px;*/
+    }
+    .persistent{
+     height: auto;
+        top:0;
+        padding-top:50px;
+        width:100%;
     }
     #logo img {
         width: 200px;
         padding-top: 10px;
+    }
+    #mobile-key{
+     display: block;
+    }
+    .shiftup{
+     top:0;   
     }
     .network-name {
         text-transform: uppercase;
@@ -604,12 +608,11 @@ table.about-table {
     }
     .content-section-a {
         padding: 50px 0;
-        background-color: #f8f8f8;
+        background-color: #fff;
     }
     .content-section-b {
         padding: 50px 0;
-        border-top: 1px solid #e7e7e7;
-        border-bottom: 1px solid #e7e7e7;
+
     }
     .section-heading {
         margin-bottom: 30px;
@@ -617,14 +620,11 @@ table.about-table {
     .section-heading-spacer {
         float: left;
         width: 200px;
-        border-top: 3px solid #e7e7e7;
     }
-    .banner {
-        padding: 100px 0;
-        color: #f8f8f8;
-        background: url(../img/banner-bg.jpg) no-repeat center center;
-        background-size: cover;
-    }
+#housing-calculator{
+ height: 620px;  
+    width: 90%;
+}
     .banner h2 {
         margin: 0;
         text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
