@@ -400,6 +400,7 @@ table.about-table {
     color: #fff;
     position: absolute;
     top: 450px;
+    cursor: hand;
 }
 .more-link {
     color: #fff !important;
