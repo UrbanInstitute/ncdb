@@ -218,7 +218,7 @@ function drawMap() {
         layer.button.onclick = function () {
             i = n;
             highlightLayer();
-            nextInterval = clearInterval(nextInterval);
+//            nextInterval = clearInterval(nextInterval);
             play_button.innerHTML = play;
         };
         layer.grid.on('mouseover', gridMouseover);
