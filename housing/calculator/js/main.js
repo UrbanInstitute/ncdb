@@ -1,5 +1,15 @@
 var burdenData;
 
+$(".close-modal").click(function(){
+            $("#embed-modal").attr("style", "display:none;z-index:10;opacity:0;");
+            $("#about-modal").attr("style", "display:none;z-index:10;opacity:0;");
+        });
+    
+        $("#about").click(function(){
+            $("#about-modal").attr("style", "display:block;z-index:10;opacity:1;");
+        });
+          
+
 
 
 
