@@ -360,5 +360,9 @@ $("#about").click(function() {
   showModal("#about-modal");
 });
 
+$("#embed").click(function() {
+  showModal("#embed-modal");
+});
+
 // draw map on document load
 $(drawMap);
