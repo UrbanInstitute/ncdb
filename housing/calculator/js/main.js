@@ -219,7 +219,7 @@ function drawMap() {
             i = n;
             highlightLayer();
 //            nextInterval = clearInterval(nextInterval);
-            play_button.innerHTML = play;
+//            play_button.innerHTML = play;
         };
         layer.grid.on('mouseover', gridMouseover);
     });
