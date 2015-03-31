@@ -95,12 +95,10 @@ $(function() {
         layer.button.innerHTML = layers[n].name;
         layer.button.onclick = function() {
             highlightLayer(n);
-            // nextInterval = clearInterval(nextInterval);
-            //       play_button.innerHTML = play;
         };
         layer.grid.on('mouseover', function(o) {
             if (o.data) {
-                drawKey(o.data, i);
+                drawKey(o.data, n);
             }
         });
     });
@@ -110,7 +108,8 @@ $(function() {
     // temporary variables.
     var layerGroup = L.layerGroup().addTo(map);
 
-    highlightLayer(2); //start on 1990
+    // start on 2010
+    highlightLayer(2);
 
     // var active;
     function highlightLayer(i) {
