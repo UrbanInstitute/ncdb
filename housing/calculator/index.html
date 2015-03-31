@@ -1,64 +1,57 @@
+<!doctype html>
+
 <html>
 
 <head>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <!-- Bootstrap Core CSS -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="../../css/ncdb.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/chart.css">
-    <link rel="stylesheet" href="css/burden.css">
-    <link rel="stylesheet" href="css/main.css">
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
+  <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <!-- Bootstrap Core CSS -->
+  <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="../../css/ncdb.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/chart.css">
+  <link rel="stylesheet" href="css/burden.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-    <div id="burden">
-        <!-- <div class="background-image"></div> -->
-        <div class="btn-group toggle-buttons" role="group" aria-label="...">
-            <div class="btn-group " role="group">
-                <button id="show-map" type="button" class="btn btn-primary map-calc-btn">
-                    EXPLORE THE MAP
-                </button>
-            </div>
-            <div class="btn-group" role="group">
-                <button id="show-calculator" type="button" class="btn btn-primary map-calc-btn" id="close-chart">
-                    USE THE CALCULATOR
-                </button>
-            </div>
-        </div>
-        
-        <div id="bottom-links" style="  z-index: 1000;
-  font-size: 10px;
-  position: absolute;
-  right: 200px;">
-
-                                    <div class="more-link" id="embed">Embed
-                                    </div>
-                                    <div class="more-link" id="about">About
-                                    </div>
-                                    <div id="credit" style="
-    position: absolute;
-    left: 185px;
-    bottom: 0px;
-">
-                                        <a href="http://www.urban.org/">
-                                            <span id="urban">URBAN</span>&nbsp;INSTITUTE</a>
-                                    </div>
-                                </div>
-        
-        
-        <div class="plexiglass modal-div plexiglass-show" id="control-container">
-            <div class="burden-calculator" style="max-width:600px;">
-                <div id="input-fields">
-                    <div id="calculator-title">Are you rent burdened? Are your neighbors?</div>
-<!--
+  <div id="burden">
+    <!-- <div class="background-image"></div> -->
+    <div class="btn-group toggle-buttons" role="group" aria-label="...">
+      <div class="btn-group " role="group">
+        <button id="show-map" type="button" class="btn btn-primary map-calc-btn">
+          EXPLORE THE MAP
+        </button>
+      </div>
+      <div class="btn-group" role="group">
+        <button id="show-calculator" type="button" class="btn btn-primary map-calc-btn" id="close-chart">
+          USE THE CALCULATOR
+        </button>
+      </div>
+    </div>
+    <div id="bottom-links" style="  z-index: 1000;size: 10px;position: absolute;right: 200px;">
+      <div class="more-link" id="embed">Embed
+      </div>
+      <div class="more-link" id="about">About
+      </div>
+      <div id="credit" style="position: absolute;left: 185px;bottom: 0px;">
+        <a href="http://www.urban.org/">
+          <span id="urban">URBAN</span>
+          &nbsp;INSTITUTE
+        </a>
+      </div>
+    </div>
+    <div class="plexiglass modal-div plexiglass-show" id="control-container">
+      <div class="burden-calculator" style="max-width:600px;">
+        <div id="input-fields">
+          <div id="calculator-title">Are you rent burdened? Are your neighbors?</div>
+          <!--
                     <input class="form-input full address-input" type="text" id="street" placeholder='Street'></input>
                     <input class="form-input full  address-input" type="text" id="city" placeholder='City'></input>
                     <input class="form-input half left  address-input" type="text" id="state" placeholder="State"></input>
--->
-                    <!--
+          -->
+          <!--
                       <select class="form-input half left">
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
@@ -113,223 +106,201 @@
                         <option value="WY">Wyoming</option>
                       </select>
                     -->
-<!--
+          <!--
                     <input class="form-input half address-input" type="text" id="zip" placeholder="Zip Code"></input>
                     <input class="form-input big half left address-input" type="text" id="rent" placeholder="Rent"></input>
                     <input class="form-input big half address-input" type="text" id="income" placeholder="Annual Income"></input>
 -->
-                    <!--redesigned input fields-->
-            <div class="container">
-
-                <form>
-
-                    <div class="group">
-                        <input type="text" class="address-input full" id="street" required>
-                        <span class="highlight"></span>
-                        <span class="bar"></span>
-                        <label>Street</label>
-                    </div>
-                    <div class="group">
-                        <input type="text"  class="address-input full" id="city" required>
-                        <span class="highlight"></span>
-                        <span class="bar"></span>
-                        <label>City</label>
-                    </div>
-                    <div class="group half left">
-                        <input type="text" class="address-input " id="state" required>
-                        <span class="highlight"></span>
-                        <span class="bar half"></span>
-                        <label>State</label>
-                    </div>
-                    <div class="group half ">
-                        <input type="text" class="address-input " id="zip" required>
-                        <span class="highlight"></span>
-                        <span class="bar half"></span>
-                        <label>Zip</label>
-                    </div>
-                    <div class="group half left">
-                        <input type="text" class="address-input " id="rent" required>
-                        <span class="highlight"></span>
-                        <span class="bar half"></span>
-                        <label>Monthly Rent ($)</label>
-                    </div>
-                    <div class="group half ">
-                        <input type="text" class="address-input " id="income" required>
-                        <span class="highlight"></span>
-                        <span class="bar half"></span>
-                        <label>Annual Income ($)</label>
-                    </div>
-
-
-
-                </form>
-
-            </div>
-
-            <!--redesigned input fields-->
-                    
-                    
-                    
-                </div>
-                <div id="submit-container">
-                    <button type="button" class="btn btn-primary" id="submit_button">Submit</button>
-                    <div class="spinner" id="loading-spinner">
-                        <div class="rect1"></div>
-                        <div class="rect2"></div>
-                        <div class="rect3"></div>
-                        <div class="rect4"></div>
-                        <div class="rect5"></div>
-                    </div>
-                </div>
-            </div>
-
-
-            
-
-
+          <!--redesigned input fields-->
+          <div class="container">
+            <form>
+              <div class="group">
+                <input type="text" class="address-input full" id="street" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Street</label>
+              </div>
+              <div class="group">
+                <input type="text" class="address-input full" id="city" required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>City</label>
+              </div>
+              <div class="group half left">
+                <input type="text" class="address-input " id="state" required>
+                <span class="highlight"></span>
+                <span class="bar half"></span>
+                <label>State</label>
+              </div>
+              <div class="group half ">
+                <input type="text" class="address-input " id="zip" required>
+                <span class="highlight"></span>
+                <span class="bar half"></span>
+                <label>Zip</label>
+              </div>
+              <div class="group half left">
+                <input type="text" class="address-input " id="rent" required>
+                <span class="highlight"></span>
+                <span class="bar half"></span>
+                <label>Monthly Rent ($)</label>
+              </div>
+              <div class="group half ">
+                <input type="text" class="address-input " id="income" required>
+                <span class="highlight"></span>
+                <span class="bar half"></span>
+                <label>Annual Income ($)</label>
+              </div>
+            </form>
+          </div>
+          <!--redesigned input fields-->
         </div>
-        <div class="plexiglass modal-div" id="chart-container">
-            <h1 id="burden-response"></h1>
-            <div id="burden-container">
-                <div id="chart"></div>
-                <div class="btn-group btn-group-justified" role="group" aria-label="...">
-                    <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-primary" id="view-burden-in-map">
-                            VIEW NEIGHBORHOOD IN MAP
-                        </button>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-primary" id="close-chart">
-                            BACK TO THE CALCULATOR
-                        </button>
-                    </div>
-                </div>
-                
-                
-                
-                
-            </div>
+        <div id="submit-container">
+          <button type="button" class="btn btn-primary" id="submit_button">Submit</button>
+          <div class="spinner" id="loading-spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+          </div>
         </div>
-        <div id="map-container">
-            <div id="map2">
-                <div class="persistent" style="top:0px;">
-                    <div id='layers' style="top:10px; left:6px; margin-bottom: 15px;"></div>
-                    <div id='legend'>
-                        <?xml version="1.0" encoding="utf-8" ?>
-                        <!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-                        <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 299.6 61.7" style="enable-background:new 0 0 299.6 61.7;" xml:space="preserve">
-                            <font horiz-adv-x="2000">
-                                <!-- Lato is a trademark of tyPoland Lukasz Dziedzic. -->
-                                <!-- Copyright: Copyright 2015 Adobe System Incorporated. All rights reserved. -->
-                                <font-face font-family="Lato-Regular" units-per-em="2000" underline-position="-140" underline-thickness="120" />
-                                <missing-glyph horiz-adv-x="1063" d="M250,1141C267,1156 285,1169 304,1182C323,1195 343,1206 366,1216C389,1225 413,1233 440,1239C466,1244 494,1247 525,1247C567,1247 605,1241 640,1230C674,1218 703,1201 728,1180C752,1159 771,1133 785,1103C798,1072 805,1038 805,1001C805,964 800,933 790,906C780,879 768,856 753,837C738,817 721,800 703,786C685,771 668,758 652,745C636,732 622,720 611,708C599,695 592,681 589,666l-17,-105l-122,0l-12,117C435,701 438,721 447,738C456,755 468,770 483,785C498,799 514,813 533,826C551,839 568,854 584,869C600,884 613,902 624,921C635,940 640,963 640,990C640,1024 628,1051 604,1071C579,1091 548,1101 510,1101C483,1101 460,1098 441,1092C422,1086 406,1079 393,1072C380,1065 368,1058 359,1052C350,1046 341,1043 334,1043C317,1043 305,1050 297,1065M396,292C396,323 406,350 427,371C448,392 474,403 506,403C521,403 535,400 548,395C561,389 573,381 583,371C592,361 600,349 606,336C611,322 614,307 614,292C614,277 611,262 606,249C600,236 592,224 583,214C573,204 561,196 548,191C535,185 521,182 506,182C474,182 448,193 427,214C406,235 396,261 396,292M45,1433l974,0l0,-1433l-974,0M95,54l867,0l0,1324l-867,0z" />
-                                <glyph unicode=" " horiz-adv-x="386" />
-                                <glyph unicode="%" horiz-adv-x="1572" d="M707,1087C707,1031 698,981 681,937C664,892 641,855 612,825C583,794 549,771 510,755C471,739 431,731 389,731C344,731 302,739 264,755C225,771 192,794 163,825C134,855 112,892 96,937C80,981 72,1031 72,1087C72,1144 80,1195 96,1240C112,1285 134,1322 163,1353C192,1384 225,1407 264,1423C302,1439 344,1447 389,1447C434,1447 476,1439 515,1423C554,1407 587,1384 616,1353C644,1322 666,1285 683,1240C699,1195 707,1144 707,1087M568,1087C568,1131 563,1168 554,1199C545,1230 532,1255 516,1275C499,1294 480,1308 459,1317C437,1326 414,1330 389,1330C364,1330 341,1326 320,1317C298,1308 279,1294 263,1275C247,1255 235,1230 226,1199C217,1168 212,1131 212,1087C212,1044 217,1007 226,977C235,946 247,922 263,903C279,884 298,870 320,862C341,853 364,849 389,849C414,849 437,853 459,862C480,870 499,884 516,903C532,922 545,946 554,977C563,1007 568,1044 568,1087M1208,1397C1217,1408 1226,1417 1236,1424C1245,1430 1258,1433 1274,1433l128,0l-1047,-1404C348,20 340,13 331,8C322,3 311,0 298,0l-132,0M1499,338C1499,282 1490,232 1473,188C1456,144 1433,107 1404,77C1375,46 1341,23 1303,7C1264,-9 1224,-17 1182,-17C1137,-17 1095,-9 1057,7C1018,23 985,46 956,77C927,107 905,144 889,188C873,232 865,282 865,338C865,395 873,447 889,492C905,537 927,574 956,605C985,636 1018,659 1057,675C1095,691 1137,699 1182,699C1227,699 1268,691 1307,675C1346,659 1379,636 1408,605C1437,574 1459,537 1475,492C1491,447 1499,395 1499,338M1361,338C1361,382 1356,420 1347,451C1338,482 1325,507 1309,526C1292,545 1273,559 1252,568C1230,577 1207,581 1182,581C1157,581 1134,577 1113,568C1091,559 1072,545 1056,526C1040,507 1028,482 1019,451C1010,420 1005,382 1005,338C1005,295 1010,258 1019,228C1028,198 1040,174 1056,155C1072,136 1091,122 1113,114C1134,105 1157,101 1182,101C1207,101 1230,105 1252,114C1273,122 1292,136 1309,155C1325,174 1338,198 1347,228C1356,258 1361,295 1361,338z" />
-                                <glyph unicode="0" horiz-adv-x="1160" d="M1100,716C1100,591 1087,482 1060,391C1033,299 996,223 949,163C902,103 847,58 784,29C720,0 652,-15 579,-15C506,-15 438,0 375,29C312,58 257,103 210,163C163,223 127,299 100,391C73,482 60,591 60,716C60,841 73,950 100,1042C127,1134 163,1210 210,1271C257,1331 312,1376 375,1405C438,1434 506,1449 579,1449C652,1449 720,1434 784,1405C847,1376 902,1331 949,1271C996,1210 1033,1134 1060,1042C1087,950 1100,841 1100,716M915,716C915,825 906,917 888,992C869,1066 845,1126 814,1171C783,1216 747,1249 706,1269C665,1288 623,1298 579,1298C535,1298 493,1288 452,1269C411,1249 376,1216 345,1171C314,1126 290,1066 272,992C253,917 244,825 244,716C244,607 253,515 272,441C290,367 314,307 345,262C376,217 411,184 452,165C493,145 535,135 579,135C623,135 665,145 706,165C747,184 783,217 814,262C845,307 869,367 888,441C906,515 915,607 915,716z" />
-                                <glyph unicode="1" horiz-adv-x="1160" d="M287,136l308,0l0,977C595,1142 596,1172 598,1202l-256,-219C335,978 329,974 322,972C315,969 309,968 303,968C293,968 284,970 276,975C268,979 262,984 258,990l-56,77l426,369l145,0l0,-1300l282,0l0,-136l-768,0z" />
-                                <glyph unicode="2" horiz-adv-x="1160" d="M601,1449C662,1449 718,1440 771,1422C824,1404 869,1378 908,1344C946,1309 976,1267 998,1218C1020,1169 1031,1113 1031,1050C1031,997 1023,947 1007,902C991,857 969,813 942,772C915,730 883,690 848,651C812,612 774,572 734,531l-377,-386C384,152 411,158 438,163C465,167 492,169 517,169l480,0C1016,169 1032,163 1043,152C1054,141 1060,126 1060,108l0,-108l-956,0l0,61C104,74 107,87 112,100C117,113 125,126 136,137l459,461C633,637 668,674 699,710C730,745 757,781 780,817C802,853 819,890 831,927C843,964 849,1003 849,1045C849,1087 842,1124 829,1156C816,1187 797,1213 774,1234C751,1255 723,1270 692,1281C661,1291 627,1296 591,1296C555,1296 522,1291 491,1280C460,1269 433,1255 410,1236C386,1217 366,1194 350,1168C333,1142 322,1113 315,1082C310,1063 302,1049 291,1040C280,1031 266,1027 249,1027C246,1027 242,1027 239,1028C235,1028 231,1028 226,1029l-93,16C142,1110 160,1168 187,1219C214,1269 248,1311 289,1345C330,1379 377,1405 430,1423C483,1440 540,1449 601,1449z" />
-                                <glyph unicode="3" horiz-adv-x="1160" d="M620,1449C681,1449 737,1440 788,1423C839,1406 884,1381 921,1349C958,1317 986,1278 1007,1233C1028,1188 1038,1137 1038,1082C1038,1037 1032,996 1021,961C1009,925 992,894 971,867C949,840 923,817 892,798C861,779 827,764 789,753C882,728 953,687 1000,629C1047,571 1070,498 1070,411C1070,345 1058,286 1033,233C1008,180 973,136 930,99C887,62 836,33 779,14C721,-6 659,-16 593,-16C517,-16 452,-6 398,13C344,32 298,58 261,91C224,124 193,164 169,210C145,255 125,305 108,358l76,32C198,396 212,399 226,399C239,399 251,396 262,391C272,385 280,376 285,364C286,361 288,359 289,356C290,353 292,349 293,346C302,327 314,305 327,281C340,256 358,233 381,212C404,191 432,173 466,158C499,143 541,136 591,136C641,136 685,144 723,161C760,177 792,198 817,224C842,250 860,279 873,311C886,343 892,375 892,406C892,445 887,480 877,512C866,544 848,572 821,595C794,618 756,637 709,650C661,663 600,670 525,670l0,129C586,800 638,806 681,819C724,832 759,849 786,871C813,893 833,919 846,950C858,981 864,1015 864,1052C864,1093 858,1129 845,1160C832,1191 814,1216 791,1236C768,1256 742,1271 711,1281C680,1291 646,1296 610,1296C574,1296 541,1291 510,1280C479,1269 452,1255 429,1236C405,1217 385,1194 369,1168C353,1141 341,1113 333,1082C328,1063 320,1049 309,1040C298,1031 285,1027 268,1027C265,1027 261,1027 258,1028C254,1028 250,1028 245,1029l-93,16C161,1110 179,1168 206,1219C233,1269 267,1311 308,1345C349,1379 396,1405 449,1423C502,1440 559,1449 620,1449z" />
-                                <glyph unicode="4" horiz-adv-x="1160" d="M903,517l217,0l0,-102C1120,404 1117,395 1111,388C1104,381 1094,377 1081,377l-178,0l0,-377l-157,0l0,377l-635,0C98,377 86,381 77,389C67,396 61,406 58,417l-18,91l697,925l166,0M746,1108C746,1125 747,1144 748,1164C749,1184 751,1205 754,1226l-521,-709l513,0z" />
-                                <glyph unicode="5" horiz-adv-x="1160" d="M978,1355C978,1330 970,1309 954,1293C938,1276 911,1268 873,1268l-450,0l-66,-376C432,908 501,916 564,916C639,916 705,905 762,883C819,861 866,831 905,792C944,753 973,708 993,655C1012,602 1022,545 1022,483C1022,407 1009,338 982,277C955,216 919,163 873,120C826,76 772,42 709,19C646,-4 579,-16 506,-16C464,-16 424,-12 385,-3C346,5 310,16 277,30C244,44 213,60 184,78C155,96 130,115 108,135l54,76C174,228 190,237 210,237C223,237 238,232 255,222C272,211 292,200 316,187C340,174 368,163 401,153C433,142 471,137 516,137C566,137 611,145 651,161C691,177 725,200 754,230C782,259 804,295 819,336C834,377 842,424 842,475C842,520 836,560 823,596C810,632 790,663 764,688C737,713 704,733 665,747C626,761 580,768 527,768C491,768 454,765 415,759C376,753 336,743 295,730l-112,33l116,670l679,0z" />
-                                <glyph unicode="6" horiz-adv-x="1160" d="M650,878C707,878 762,869 813,850C864,831 909,803 948,767C987,730 1017,686 1040,633C1063,580 1074,519 1074,451C1074,385 1062,324 1038,267C1014,210 981,161 938,119C895,77 843,44 782,20C721,-4 655,-16 582,-16C510,-16 445,-4 387,19C328,42 278,74 237,117C196,159 164,210 142,271C119,331 108,398 108,473C108,536 122,602 150,673C178,744 222,820 283,901l363,489C655,1402 668,1412 685,1421C702,1429 721,1433 742,1433l158,0l-497,-629C437,827 475,846 516,859C557,872 602,878 650,878M280,442C280,396 287,354 300,316C313,278 333,245 359,218C384,191 416,170 453,155C490,140 532,132 579,132C627,132 670,140 709,155C748,170 781,192 809,219C836,246 858,279 873,316C888,353 895,394 895,438C895,485 888,527 873,565C858,602 838,634 811,661C784,687 752,707 715,721C678,735 637,742 592,742C544,742 501,734 462,718C423,701 391,679 364,652C337,624 316,592 302,556C287,519 280,481 280,442z" />
-                                <glyph unicode="7" horiz-adv-x="1160" d="M1084,1433l0,-80C1084,1330 1082,1312 1077,1297C1072,1282 1066,1270 1061,1260l-593,-1197C459,46 447,31 432,19C417,6 396,0 370,0l-127,0l602,1182C854,1199 863,1214 872,1228C881,1242 891,1255 902,1268l-748,0C143,1268 133,1273 124,1282C115,1291 110,1301 110,1312l0,121z" />
-                                <glyph unicode="8" horiz-adv-x="1160" d="M579,-16C508,-16 442,-6 383,13C324,32 273,59 230,94C187,129 154,172 131,223C108,273 96,329 96,392C96,484 120,560 168,620C216,679 285,722 374,747C299,775 242,817 204,873C165,928 146,995 146,1072C146,1125 156,1174 177,1220C198,1266 227,1306 265,1340C303,1374 349,1401 402,1420C455,1439 514,1449 579,1449C644,1449 703,1439 756,1420C809,1401 855,1374 893,1340C931,1306 960,1266 981,1220C1002,1174 1012,1125 1012,1072C1012,995 993,928 954,873C915,817 859,775 784,747C873,722 942,679 990,620C1038,560 1062,484 1062,392C1062,329 1050,273 1027,223C1003,172 970,129 928,94C885,59 834,32 775,13C716,-6 650,-16 579,-16M579,126C626,126 668,133 705,146C742,159 773,177 799,201C824,224 844,253 858,286C871,319 878,355 878,395C878,444 870,487 854,522C837,557 815,585 788,607C760,629 728,645 692,656C656,666 618,671 579,671C540,671 502,666 466,656C430,645 398,629 371,607C343,585 321,557 305,522C288,487 280,444 280,395C280,355 287,319 301,286C314,253 334,224 360,201C385,177 417,159 454,146C491,133 532,126 579,126M579,814C626,814 666,821 699,836C732,850 758,869 779,893C800,916 815,943 824,974C833,1005 838,1036 838,1069C838,1102 833,1134 822,1163C811,1192 794,1218 773,1240C751,1262 724,1279 692,1292C659,1305 622,1311 579,1311C536,1311 499,1305 467,1292C434,1279 407,1262 386,1240C364,1218 348,1192 337,1163C326,1134 320,1102 320,1069C320,1036 325,1005 334,974C343,943 358,916 379,893C400,869 427,850 460,836C493,821 532,814 579,814z" />
-                                <glyph unicode="A" horiz-adv-x="1360" d="M1353,0l-150,0C1186,0 1172,4 1161,13C1150,22 1142,33 1137,46l-134,346l-643,0l-134,-346C221,34 213,23 202,14C191,5 177,0 160,0l-150,0l573,1433l197,0M414,532l535,0l-225,583C709,1151 695,1196 681,1250C674,1223 667,1198 660,1175C653,1152 646,1131 639,1114z" />
-                                <glyph unicode="B" horiz-adv-x="1294" d="M174,0l0,1433l457,0C719,1433 795,1424 859,1407C922,1390 975,1365 1016,1333C1057,1301 1087,1262 1107,1216C1126,1169 1136,1117 1136,1059C1136,1024 1131,990 1120,957C1109,924 1092,894 1070,866C1047,838 1019,813 986,791C952,769 912,751 867,737C972,716 1051,679 1104,624C1157,569 1184,497 1184,408C1184,347 1173,292 1151,242C1128,192 1096,149 1053,113C1010,77 957,49 895,30C832,10 761,0 681,0M368,653l0,-499l310,0C733,154 781,160 821,173C860,186 893,204 919,227C944,250 963,277 975,309C987,340 993,375 993,413C993,487 967,546 915,589C862,632 783,653 677,653M368,791l256,0C679,791 726,797 766,809C806,821 839,838 866,859C892,880 911,906 924,937C937,967 943,1000 943,1036C943,1120 918,1182 867,1221C816,1260 738,1280 631,1280l-263,0z" />
-                                <glyph unicode="D" horiz-adv-x="1506" d="M1416,716C1416,609 1399,511 1365,423C1331,335 1283,260 1221,197C1159,134 1085,86 998,52C911,17 815,0 710,0l-536,0l0,1433l536,0C815,1433 911,1416 998,1382C1085,1347 1159,1299 1221,1236C1283,1173 1331,1097 1365,1009C1399,921 1416,823 1416,716M1217,716C1217,804 1205,883 1181,952C1157,1021 1123,1080 1079,1128C1035,1176 982,1213 919,1238C856,1263 787,1276 710,1276l-341,0l0,-1119l341,0C787,157 856,170 919,195C982,220 1035,257 1079,305C1123,352 1157,411 1181,480C1205,549 1217,628 1217,716z" />
-                                <glyph unicode="E" horiz-adv-x="1162" d="M1057,1433l0,-158l-688,0l0,-476l557,0l0,-152l-557,0l0,-489l688,0l0,-158l-883,0l0,1433z" />
-                                <glyph unicode="H" horiz-adv-x="1512" d="M1336,0l-195,0l0,652l-772,0l0,-652l-195,0l0,1433l195,0l0,-639l772,0l0,639l195,0z" />
-                                <glyph unicode="N" horiz-adv-x="1512" d="M274,1433C291,1433 304,1431 313,1427C321,1422 330,1413 341,1400l830,-1080C1169,337 1168,354 1167,371C1166,387 1166,403 1166,418l0,1015l170,0l0,-1433l-98,0C1223,0 1210,3 1200,8C1189,13 1179,22 1169,35l-829,1079C341,1097 342,1081 343,1065C344,1049 344,1034 344,1021l0,-1021l-170,0l0,1433l100,0z" />
-                                <glyph unicode="R" horiz-adv-x="1288" d="M387,598l0,-598l-193,0l0,1433l405,0C690,1433 768,1424 834,1406C900,1387 955,1361 998,1326C1041,1291 1072,1250 1093,1201C1114,1152 1124,1097 1124,1036C1124,985 1116,938 1100,894C1084,850 1061,811 1031,776C1000,741 963,711 920,686C876,661 826,643 771,630C795,616 816,596 835,569l418,-569l-172,0C1046,0 1020,14 1003,41l-372,512C620,569 607,581 594,588C581,595 561,598 534,598M387,739l203,0C647,739 697,746 740,760C783,773 819,793 848,818C877,843 898,872 913,907C928,942 935,980 935,1022C935,1107 907,1172 851,1215C794,1258 710,1280 599,1280l-212,0z" />
-                                <glyph unicode="S" horiz-adv-x="1060" d="M908,1209C902,1199 896,1192 889,1187C882,1182 874,1179 863,1179C852,1179 839,1185 824,1196C809,1207 790,1220 767,1234C744,1247 716,1260 684,1271C651,1282 612,1288 566,1288C523,1288 484,1282 451,1271C418,1259 390,1243 368,1223C345,1203 328,1180 317,1153C306,1126 300,1096 300,1065C300,1025 310,992 330,966C349,939 375,917 408,898C440,879 477,863 518,850C559,836 601,822 644,807C687,792 729,776 770,758C811,739 847,716 880,688C912,660 938,626 958,585C977,544 987,494 987,435C987,372 976,314 955,259C934,204 903,156 862,115C821,74 770,42 711,19C651,-4 583,-16 507,-16C414,-16 330,1 254,35C177,68 112,114 58,171l56,92C119,270 126,277 134,282C141,287 150,289 159,289C173,289 189,282 207,267C225,252 248,235 275,217C302,199 334,183 373,168C411,153 458,145 513,145C559,145 600,151 636,164C672,177 703,195 728,218C753,241 772,268 785,300C798,332 805,368 805,407C805,450 795,486 776,514C756,541 730,564 698,583C666,602 630,618 589,631C548,644 506,657 463,671C420,684 378,700 337,718C296,736 259,759 227,788C195,817 169,853 150,896C130,939 120,992 120,1055C120,1106 130,1155 150,1202C169,1249 198,1291 235,1328C272,1365 319,1394 374,1416C429,1438 492,1449 563,1449C643,1449 716,1436 782,1411C848,1386 906,1349 955,1301z" />
-                                <glyph unicode="T" horiz-adv-x="1180" d="M1150,1433l0,-163l-463,0l0,-1270l-194,0l0,1270l-465,0l0,163z" />
-                                <glyph unicode="U" horiz-adv-x="1460" d="M731,154C790,154 843,164 890,184C937,204 976,232 1009,268C1041,304 1066,347 1083,397C1100,447 1108,502 1108,562l0,871l193,0l0,-871C1301,479 1288,403 1262,332C1235,261 1198,200 1149,149C1100,97 1040,56 969,27C898,-2 819,-17 731,-17C643,-17 564,-2 493,27C422,56 362,97 313,149C264,200 226,261 200,332C173,403 160,479 160,562l0,871l193,0l0,-870C353,503 362,448 379,398C396,348 420,305 453,269C485,233 525,205 572,185C619,164 672,154 731,154z" />
-                            </font>
-                            <text transform="matrix(1 0 0 1 1.666954e-04 13.7318)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:16;">SHARE RENT BURDENED</text>
-                            <rect x="0" y="40.6" style="fill:#BDE6FA;" width="33.3" height="21" />
-                            <rect x="33.3" y="40.6" style="fill:#7DD3F7;" width="33.3" height="21" />
-                            <rect x="66.6" y="40.6" style="fill:#27B7EA;" width="33.3" height="21" />
-                            <rect x="99.9" y="40.6" style="fill:#1D96D4;" width="33.3" height="21" />
-                            <rect x="133.2" y="40.6" style="fill:#1589CA;" width="33.3" height="21" />
-                            <rect x="166.5" y="40.6" style="fill:#136FA5;" width="33.3" height="21" />
-                            <rect x="199.8" y="40.6" style="fill:#204B7C;" width="33.3" height="21" />
-                            <rect x="233.1" y="40.6" style="fill:#142F54;" width="33.3" height="21" />
-                            <rect x="266.3" y="40.6" style="fill:#010101;" width="33.3" height="21" />
-                            <text transform="matrix(1 0 0 1 22.591 37.3804)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:11;">10%</text>
-                            <text transform="matrix(1 0 0 1 89.1781 37.3804)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:11;">30%</text>
-                            <text transform="matrix(1 0 0 1 155.7642 37.3804)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:11;">50%</text>
-                            <text transform="matrix(1 0 0 1 222.3514 37.3804)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:11;">70%</text>
-                            <text transform="matrix(1 0 0 1 55.8848 37.3804)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:11;">20%</text>
-                            <text transform="matrix(1 0 0 1 122.4718 37.3804)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:11;">40%</text>
-                            <text transform="matrix(1 0 0 1 189.0579 37.3804)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:11;">60%</text>
-                            <text transform="matrix(1 0 0 1 255.6451 37.3804)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:11;">80%</text>
-                            <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="33.3" y1="38.5" x2="33.3" y2="61.7" />
-                            <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="66.6" y1="38.5" x2="66.6" y2="61.7" />
-                            <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="33.3" y1="61.7" x2="33.3" y2="38.5" />
-                            <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="99.9" y1="38.5" x2="99.9" y2="61.7" />
-                            <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="66.6" y1="61.7" x2="66.6" y2="38.5" />
-                            <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="133.2" y1="38.5" x2="133.2" y2="61.7" />
-                            <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="99.9" y1="61.7" x2="99.9" y2="38.5" />
-                            <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="166.5" y1="38.5" x2="166.5" y2="61.7" />
-                            <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="133.2" y1="61.7" x2="133.2" y2="38.5" />
-                            <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="199.8" y1="38.5" x2="199.8" y2="61.7" />
-                            <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="166.5" y1="61.7" x2="166.5" y2="38.5" />
-                            <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="233.1" y1="38.5" x2="233.1" y2="61.7" />
-                            <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="199.8" y1="61.7" x2="199.8" y2="38.5" />
-                            <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="266.3" y1="38.5" x2="266.3" y2="61.7" />
-                            <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="233.1" y1="61.7" x2="233.1" y2="38.5" />
-                            <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="266.3" y1="61.7" x2="266.3" y2="38.5" />
-                        </svg>
-                    </div>
-                    <div id='legend-text'>
-                        <div id="hover-year" ></div>
-                        <div id="hover-value"></div>
-                    </div>
-                     
-                </div>
-            </div>
-        </div>
-        <div class="plexiglass modal-div" id="address-error">
-            <div class="popup-modal">
-                <div class="modal-title">
-                    Whoops!
-                    <span class="close-modal">
-              <img src="img/close.png" alt=""></span>
-                </div>
-                <div class="modal-body">
-                    It looks like there was a problem with your address, check to see that it is correct.
-                </div>
-            </div>
-        </div>
-        <div class="plexiglass" id="about-modal">
-                                <div class="popup-modal">
-                                    <div class="modal-title">
-                                        About this map
-                                        <span class="close-modal">
-              <img src="images/close.png" alt=""></span>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Using the Neighborhood Change Database, we looked at Census data on neighborhoods’ average household income, median house value, share of college degrees, and homeownership rate to determine their socioeconomic advantage. We then analyzed the most disadvantaged neighborhoods (those in the bottom 10 percent, or “lowest-SES”) and the most advantaged (those in the top 10 percent or “highest-SES”) to map neighborhood inequality.</p>
-
-                                    </div>
-                                </div>
-
-                            </div>
+      </div>
     </div>
-    <script src="../../js/d3.min.js"></script>
-    <script src="js/vendor/jquery.min.js"></script>
-    <script src="js/area.js"></script>
-    <script src="js/main.js"></script>
-    <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
-    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-hash/v0.2.1/leaflet-hash.js'></script>
-    <script>
-        $(function () {
-            $("#submit_button").on("click", makeAPICall);
-        });
-    </script>
+    <div class="plexiglass modal-div" id="chart-container">
+      <h1 id="burden-response"></h1>
+      <div id="burden-container">
+        <div id="chart"></div>
+        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-primary" id="view-burden-in-map">
+              VIEW NEIGHBORHOOD IN MAP
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-primary" id="close-chart">
+              BACK TO THE CALCULATOR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="map-container">
+      <div id="map2">
+        <div class="persistent" style="top:0px;">
+          <div id='layers' style="top:10px; left:6px; margin-bottom: 15px;"></div>
+          <div id='legend'>
+            <?xml version="1.0" encoding="utf-8" ?>
+            <!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+            <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 299.6 61.7" style="enable-background:new 0 0 299.6 61.7;" xml:space="preserve">
+              <font horiz-adv-x="2000">
+                <!-- Lato is a trademark of tyPoland Lukasz Dziedzic. -->
+                <!-- Copyright: Copyright 2015 Adobe System Incorporated. All rights reserved. -->
+                <font-face font-family="Lato-Regular" units-per-em="2000" underline-position="-140" underline-thickness="120" />
+                <missing-glyph horiz-adv-x="1063" d="M250,1141C267,1156 285,1169 304,1182C323,1195 343,1206 366,1216C389,1225 413,1233 440,1239C466,1244 494,1247 525,1247C567,1247 605,1241 640,1230C674,1218 703,1201 728,1180C752,1159 771,1133 785,1103C798,1072 805,1038 805,1001C805,964 800,933 790,906C780,879 768,856 753,837C738,817 721,800 703,786C685,771 668,758 652,745C636,732 622,720 611,708C599,695 592,681 589,666l-17,-105l-122,0l-12,117C435,701 438,721 447,738C456,755 468,770 483,785C498,799 514,813 533,826C551,839 568,854 584,869C600,884 613,902 624,921C635,940 640,963 640,990C640,1024 628,1051 604,1071C579,1091 548,1101 510,1101C483,1101 460,1098 441,1092C422,1086 406,1079 393,1072C380,1065 368,1058 359,1052C350,1046 341,1043 334,1043C317,1043 305,1050 297,1065M396,292C396,323 406,350 427,371C448,392 474,403 506,403C521,403 535,400 548,395C561,389 573,381 583,371C592,361 600,349 606,336C611,322 614,307 614,292C614,277 611,262 606,249C600,236 592,224 583,214C573,204 561,196 548,191C535,185 521,182 506,182C474,182 448,193 427,214C406,235 396,261 396,292M45,1433l974,0l0,-1433l-974,0M95,54l867,0l0,1324l-867,0z" />
+                <glyph unicode=" " horiz-adv-x="386" />
+                <glyph unicode="%" horiz-adv-x="1572" d="M707,1087C707,1031 698,981 681,937C664,892 641,855 612,825C583,794 549,771 510,755C471,739 431,731 389,731C344,731 302,739 264,755C225,771 192,794 163,825C134,855 112,892 96,937C80,981 72,1031 72,1087C72,1144 80,1195 96,1240C112,1285 134,1322 163,1353C192,1384 225,1407 264,1423C302,1439 344,1447 389,1447C434,1447 476,1439 515,1423C554,1407 587,1384 616,1353C644,1322 666,1285 683,1240C699,1195 707,1144 707,1087M568,1087C568,1131 563,1168 554,1199C545,1230 532,1255 516,1275C499,1294 480,1308 459,1317C437,1326 414,1330 389,1330C364,1330 341,1326 320,1317C298,1308 279,1294 263,1275C247,1255 235,1230 226,1199C217,1168 212,1131 212,1087C212,1044 217,1007 226,977C235,946 247,922 263,903C279,884 298,870 320,862C341,853 364,849 389,849C414,849 437,853 459,862C480,870 499,884 516,903C532,922 545,946 554,977C563,1007 568,1044 568,1087M1208,1397C1217,1408 1226,1417 1236,1424C1245,1430 1258,1433 1274,1433l128,0l-1047,-1404C348,20 340,13 331,8C322,3 311,0 298,0l-132,0M1499,338C1499,282 1490,232 1473,188C1456,144 1433,107 1404,77C1375,46 1341,23 1303,7C1264,-9 1224,-17 1182,-17C1137,-17 1095,-9 1057,7C1018,23 985,46 956,77C927,107 905,144 889,188C873,232 865,282 865,338C865,395 873,447 889,492C905,537 927,574 956,605C985,636 1018,659 1057,675C1095,691 1137,699 1182,699C1227,699 1268,691 1307,675C1346,659 1379,636 1408,605C1437,574 1459,537 1475,492C1491,447 1499,395 1499,338M1361,338C1361,382 1356,420 1347,451C1338,482 1325,507 1309,526C1292,545 1273,559 1252,568C1230,577 1207,581 1182,581C1157,581 1134,577 1113,568C1091,559 1072,545 1056,526C1040,507 1028,482 1019,451C1010,420 1005,382 1005,338C1005,295 1010,258 1019,228C1028,198 1040,174 1056,155C1072,136 1091,122 1113,114C1134,105 1157,101 1182,101C1207,101 1230,105 1252,114C1273,122 1292,136 1309,155C1325,174 1338,198 1347,228C1356,258 1361,295 1361,338z" />
+                <glyph unicode="0" horiz-adv-x="1160" d="M1100,716C1100,591 1087,482 1060,391C1033,299 996,223 949,163C902,103 847,58 784,29C720,0 652,-15 579,-15C506,-15 438,0 375,29C312,58 257,103 210,163C163,223 127,299 100,391C73,482 60,591 60,716C60,841 73,950 100,1042C127,1134 163,1210 210,1271C257,1331 312,1376 375,1405C438,1434 506,1449 579,1449C652,1449 720,1434 784,1405C847,1376 902,1331 949,1271C996,1210 1033,1134 1060,1042C1087,950 1100,841 1100,716M915,716C915,825 906,917 888,992C869,1066 845,1126 814,1171C783,1216 747,1249 706,1269C665,1288 623,1298 579,1298C535,1298 493,1288 452,1269C411,1249 376,1216 345,1171C314,1126 290,1066 272,992C253,917 244,825 244,716C244,607 253,515 272,441C290,367 314,307 345,262C376,217 411,184 452,165C493,145 535,135 579,135C623,135 665,145 706,165C747,184 783,217 814,262C845,307 869,367 888,441C906,515 915,607 915,716z" />
+                <glyph unicode="1" horiz-adv-x="1160" d="M287,136l308,0l0,977C595,1142 596,1172 598,1202l-256,-219C335,978 329,974 322,972C315,969 309,968 303,968C293,968 284,970 276,975C268,979 262,984 258,990l-56,77l426,369l145,0l0,-1300l282,0l0,-136l-768,0z" />
+                <glyph unicode="2" horiz-adv-x="1160" d="M601,1449C662,1449 718,1440 771,1422C824,1404 869,1378 908,1344C946,1309 976,1267 998,1218C1020,1169 1031,1113 1031,1050C1031,997 1023,947 1007,902C991,857 969,813 942,772C915,730 883,690 848,651C812,612 774,572 734,531l-377,-386C384,152 411,158 438,163C465,167 492,169 517,169l480,0C1016,169 1032,163 1043,152C1054,141 1060,126 1060,108l0,-108l-956,0l0,61C104,74 107,87 112,100C117,113 125,126 136,137l459,461C633,637 668,674 699,710C730,745 757,781 780,817C802,853 819,890 831,927C843,964 849,1003 849,1045C849,1087 842,1124 829,1156C816,1187 797,1213 774,1234C751,1255 723,1270 692,1281C661,1291 627,1296 591,1296C555,1296 522,1291 491,1280C460,1269 433,1255 410,1236C386,1217 366,1194 350,1168C333,1142 322,1113 315,1082C310,1063 302,1049 291,1040C280,1031 266,1027 249,1027C246,1027 242,1027 239,1028C235,1028 231,1028 226,1029l-93,16C142,1110 160,1168 187,1219C214,1269 248,1311 289,1345C330,1379 377,1405 430,1423C483,1440 540,1449 601,1449z" />
+                <glyph unicode="3" horiz-adv-x="1160" d="M620,1449C681,1449 737,1440 788,1423C839,1406 884,1381 921,1349C958,1317 986,1278 1007,1233C1028,1188 1038,1137 1038,1082C1038,1037 1032,996 1021,961C1009,925 992,894 971,867C949,840 923,817 892,798C861,779 827,764 789,753C882,728 953,687 1000,629C1047,571 1070,498 1070,411C1070,345 1058,286 1033,233C1008,180 973,136 930,99C887,62 836,33 779,14C721,-6 659,-16 593,-16C517,-16 452,-6 398,13C344,32 298,58 261,91C224,124 193,164 169,210C145,255 125,305 108,358l76,32C198,396 212,399 226,399C239,399 251,396 262,391C272,385 280,376 285,364C286,361 288,359 289,356C290,353 292,349 293,346C302,327 314,305 327,281C340,256 358,233 381,212C404,191 432,173 466,158C499,143 541,136 591,136C641,136 685,144 723,161C760,177 792,198 817,224C842,250 860,279 873,311C886,343 892,375 892,406C892,445 887,480 877,512C866,544 848,572 821,595C794,618 756,637 709,650C661,663 600,670 525,670l0,129C586,800 638,806 681,819C724,832 759,849 786,871C813,893 833,919 846,950C858,981 864,1015 864,1052C864,1093 858,1129 845,1160C832,1191 814,1216 791,1236C768,1256 742,1271 711,1281C680,1291 646,1296 610,1296C574,1296 541,1291 510,1280C479,1269 452,1255 429,1236C405,1217 385,1194 369,1168C353,1141 341,1113 333,1082C328,1063 320,1049 309,1040C298,1031 285,1027 268,1027C265,1027 261,1027 258,1028C254,1028 250,1028 245,1029l-93,16C161,1110 179,1168 206,1219C233,1269 267,1311 308,1345C349,1379 396,1405 449,1423C502,1440 559,1449 620,1449z" />
+                <glyph unicode="4" horiz-adv-x="1160" d="M903,517l217,0l0,-102C1120,404 1117,395 1111,388C1104,381 1094,377 1081,377l-178,0l0,-377l-157,0l0,377l-635,0C98,377 86,381 77,389C67,396 61,406 58,417l-18,91l697,925l166,0M746,1108C746,1125 747,1144 748,1164C749,1184 751,1205 754,1226l-521,-709l513,0z" />
+                <glyph unicode="5" horiz-adv-x="1160" d="M978,1355C978,1330 970,1309 954,1293C938,1276 911,1268 873,1268l-450,0l-66,-376C432,908 501,916 564,916C639,916 705,905 762,883C819,861 866,831 905,792C944,753 973,708 993,655C1012,602 1022,545 1022,483C1022,407 1009,338 982,277C955,216 919,163 873,120C826,76 772,42 709,19C646,-4 579,-16 506,-16C464,-16 424,-12 385,-3C346,5 310,16 277,30C244,44 213,60 184,78C155,96 130,115 108,135l54,76C174,228 190,237 210,237C223,237 238,232 255,222C272,211 292,200 316,187C340,174 368,163 401,153C433,142 471,137 516,137C566,137 611,145 651,161C691,177 725,200 754,230C782,259 804,295 819,336C834,377 842,424 842,475C842,520 836,560 823,596C810,632 790,663 764,688C737,713 704,733 665,747C626,761 580,768 527,768C491,768 454,765 415,759C376,753 336,743 295,730l-112,33l116,670l679,0z" />
+                <glyph unicode="6" horiz-adv-x="1160" d="M650,878C707,878 762,869 813,850C864,831 909,803 948,767C987,730 1017,686 1040,633C1063,580 1074,519 1074,451C1074,385 1062,324 1038,267C1014,210 981,161 938,119C895,77 843,44 782,20C721,-4 655,-16 582,-16C510,-16 445,-4 387,19C328,42 278,74 237,117C196,159 164,210 142,271C119,331 108,398 108,473C108,536 122,602 150,673C178,744 222,820 283,901l363,489C655,1402 668,1412 685,1421C702,1429 721,1433 742,1433l158,0l-497,-629C437,827 475,846 516,859C557,872 602,878 650,878M280,442C280,396 287,354 300,316C313,278 333,245 359,218C384,191 416,170 453,155C490,140 532,132 579,132C627,132 670,140 709,155C748,170 781,192 809,219C836,246 858,279 873,316C888,353 895,394 895,438C895,485 888,527 873,565C858,602 838,634 811,661C784,687 752,707 715,721C678,735 637,742 592,742C544,742 501,734 462,718C423,701 391,679 364,652C337,624 316,592 302,556C287,519 280,481 280,442z" />
+                <glyph unicode="7" horiz-adv-x="1160" d="M1084,1433l0,-80C1084,1330 1082,1312 1077,1297C1072,1282 1066,1270 1061,1260l-593,-1197C459,46 447,31 432,19C417,6 396,0 370,0l-127,0l602,1182C854,1199 863,1214 872,1228C881,1242 891,1255 902,1268l-748,0C143,1268 133,1273 124,1282C115,1291 110,1301 110,1312l0,121z" />
+                <glyph unicode="8" horiz-adv-x="1160" d="M579,-16C508,-16 442,-6 383,13C324,32 273,59 230,94C187,129 154,172 131,223C108,273 96,329 96,392C96,484 120,560 168,620C216,679 285,722 374,747C299,775 242,817 204,873C165,928 146,995 146,1072C146,1125 156,1174 177,1220C198,1266 227,1306 265,1340C303,1374 349,1401 402,1420C455,1439 514,1449 579,1449C644,1449 703,1439 756,1420C809,1401 855,1374 893,1340C931,1306 960,1266 981,1220C1002,1174 1012,1125 1012,1072C1012,995 993,928 954,873C915,817 859,775 784,747C873,722 942,679 990,620C1038,560 1062,484 1062,392C1062,329 1050,273 1027,223C1003,172 970,129 928,94C885,59 834,32 775,13C716,-6 650,-16 579,-16M579,126C626,126 668,133 705,146C742,159 773,177 799,201C824,224 844,253 858,286C871,319 878,355 878,395C878,444 870,487 854,522C837,557 815,585 788,607C760,629 728,645 692,656C656,666 618,671 579,671C540,671 502,666 466,656C430,645 398,629 371,607C343,585 321,557 305,522C288,487 280,444 280,395C280,355 287,319 301,286C314,253 334,224 360,201C385,177 417,159 454,146C491,133 532,126 579,126M579,814C626,814 666,821 699,836C732,850 758,869 779,893C800,916 815,943 824,974C833,1005 838,1036 838,1069C838,1102 833,1134 822,1163C811,1192 794,1218 773,1240C751,1262 724,1279 692,1292C659,1305 622,1311 579,1311C536,1311 499,1305 467,1292C434,1279 407,1262 386,1240C364,1218 348,1192 337,1163C326,1134 320,1102 320,1069C320,1036 325,1005 334,974C343,943 358,916 379,893C400,869 427,850 460,836C493,821 532,814 579,814z" />
+                <glyph unicode="A" horiz-adv-x="1360" d="M1353,0l-150,0C1186,0 1172,4 1161,13C1150,22 1142,33 1137,46l-134,346l-643,0l-134,-346C221,34 213,23 202,14C191,5 177,0 160,0l-150,0l573,1433l197,0M414,532l535,0l-225,583C709,1151 695,1196 681,1250C674,1223 667,1198 660,1175C653,1152 646,1131 639,1114z" />
+                <glyph unicode="B" horiz-adv-x="1294" d="M174,0l0,1433l457,0C719,1433 795,1424 859,1407C922,1390 975,1365 1016,1333C1057,1301 1087,1262 1107,1216C1126,1169 1136,1117 1136,1059C1136,1024 1131,990 1120,957C1109,924 1092,894 1070,866C1047,838 1019,813 986,791C952,769 912,751 867,737C972,716 1051,679 1104,624C1157,569 1184,497 1184,408C1184,347 1173,292 1151,242C1128,192 1096,149 1053,113C1010,77 957,49 895,30C832,10 761,0 681,0M368,653l0,-499l310,0C733,154 781,160 821,173C860,186 893,204 919,227C944,250 963,277 975,309C987,340 993,375 993,413C993,487 967,546 915,589C862,632 783,653 677,653M368,791l256,0C679,791 726,797 766,809C806,821 839,838 866,859C892,880 911,906 924,937C937,967 943,1000 943,1036C943,1120 918,1182 867,1221C816,1260 738,1280 631,1280l-263,0z" />
+                <glyph unicode="D" horiz-adv-x="1506" d="M1416,716C1416,609 1399,511 1365,423C1331,335 1283,260 1221,197C1159,134 1085,86 998,52C911,17 815,0 710,0l-536,0l0,1433l536,0C815,1433 911,1416 998,1382C1085,1347 1159,1299 1221,1236C1283,1173 1331,1097 1365,1009C1399,921 1416,823 1416,716M1217,716C1217,804 1205,883 1181,952C1157,1021 1123,1080 1079,1128C1035,1176 982,1213 919,1238C856,1263 787,1276 710,1276l-341,0l0,-1119l341,0C787,157 856,170 919,195C982,220 1035,257 1079,305C1123,352 1157,411 1181,480C1205,549 1217,628 1217,716z" />
+                <glyph unicode="E" horiz-adv-x="1162" d="M1057,1433l0,-158l-688,0l0,-476l557,0l0,-152l-557,0l0,-489l688,0l0,-158l-883,0l0,1433z" />
+                <glyph unicode="H" horiz-adv-x="1512" d="M1336,0l-195,0l0,652l-772,0l0,-652l-195,0l0,1433l195,0l0,-639l772,0l0,639l195,0z" />
+                <glyph unicode="N" horiz-adv-x="1512" d="M274,1433C291,1433 304,1431 313,1427C321,1422 330,1413 341,1400l830,-1080C1169,337 1168,354 1167,371C1166,387 1166,403 1166,418l0,1015l170,0l0,-1433l-98,0C1223,0 1210,3 1200,8C1189,13 1179,22 1169,35l-829,1079C341,1097 342,1081 343,1065C344,1049 344,1034 344,1021l0,-1021l-170,0l0,1433l100,0z" />
+                <glyph unicode="R" horiz-adv-x="1288" d="M387,598l0,-598l-193,0l0,1433l405,0C690,1433 768,1424 834,1406C900,1387 955,1361 998,1326C1041,1291 1072,1250 1093,1201C1114,1152 1124,1097 1124,1036C1124,985 1116,938 1100,894C1084,850 1061,811 1031,776C1000,741 963,711 920,686C876,661 826,643 771,630C795,616 816,596 835,569l418,-569l-172,0C1046,0 1020,14 1003,41l-372,512C620,569 607,581 594,588C581,595 561,598 534,598M387,739l203,0C647,739 697,746 740,760C783,773 819,793 848,818C877,843 898,872 913,907C928,942 935,980 935,1022C935,1107 907,1172 851,1215C794,1258 710,1280 599,1280l-212,0z" />
+                <glyph unicode="S" horiz-adv-x="1060" d="M908,1209C902,1199 896,1192 889,1187C882,1182 874,1179 863,1179C852,1179 839,1185 824,1196C809,1207 790,1220 767,1234C744,1247 716,1260 684,1271C651,1282 612,1288 566,1288C523,1288 484,1282 451,1271C418,1259 390,1243 368,1223C345,1203 328,1180 317,1153C306,1126 300,1096 300,1065C300,1025 310,992 330,966C349,939 375,917 408,898C440,879 477,863 518,850C559,836 601,822 644,807C687,792 729,776 770,758C811,739 847,716 880,688C912,660 938,626 958,585C977,544 987,494 987,435C987,372 976,314 955,259C934,204 903,156 862,115C821,74 770,42 711,19C651,-4 583,-16 507,-16C414,-16 330,1 254,35C177,68 112,114 58,171l56,92C119,270 126,277 134,282C141,287 150,289 159,289C173,289 189,282 207,267C225,252 248,235 275,217C302,199 334,183 373,168C411,153 458,145 513,145C559,145 600,151 636,164C672,177 703,195 728,218C753,241 772,268 785,300C798,332 805,368 805,407C805,450 795,486 776,514C756,541 730,564 698,583C666,602 630,618 589,631C548,644 506,657 463,671C420,684 378,700 337,718C296,736 259,759 227,788C195,817 169,853 150,896C130,939 120,992 120,1055C120,1106 130,1155 150,1202C169,1249 198,1291 235,1328C272,1365 319,1394 374,1416C429,1438 492,1449 563,1449C643,1449 716,1436 782,1411C848,1386 906,1349 955,1301z" />
+                <glyph unicode="T" horiz-adv-x="1180" d="M1150,1433l0,-163l-463,0l0,-1270l-194,0l0,1270l-465,0l0,163z" />
+                <glyph unicode="U" horiz-adv-x="1460" d="M731,154C790,154 843,164 890,184C937,204 976,232 1009,268C1041,304 1066,347 1083,397C1100,447 1108,502 1108,562l0,871l193,0l0,-871C1301,479 1288,403 1262,332C1235,261 1198,200 1149,149C1100,97 1040,56 969,27C898,-2 819,-17 731,-17C643,-17 564,-2 493,27C422,56 362,97 313,149C264,200 226,261 200,332C173,403 160,479 160,562l0,871l193,0l0,-870C353,503 362,448 379,398C396,348 420,305 453,269C485,233 525,205 572,185C619,164 672,154 731,154z" />
+              </font>
+              <text transform="matrix(1 0 0 1 1.666954e-04 13.7318)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:16;">SHARE RENT BURDENED</text>
+              <rect x="0" y="40.6" style="fill:#BDE6FA;" width="33.3" height="21" />
+              <rect x="33.3" y="40.6" style="fill:#7DD3F7;" width="33.3" height="21" />
+              <rect x="66.6" y="40.6" style="fill:#27B7EA;" width="33.3" height="21" />
+              <rect x="99.9" y="40.6" style="fill:#1D96D4;" width="33.3" height="21" />
+              <rect x="133.2" y="40.6" style="fill:#1589CA;" width="33.3" height="21" />
+              <rect x="166.5" y="40.6" style="fill:#136FA5;" width="33.3" height="21" />
+              <rect x="199.8" y="40.6" style="fill:#204B7C;" width="33.3" height="21" />
+              <rect x="233.1" y="40.6" style="fill:#142F54;" width="33.3" height="21" />
+              <rect x="266.3" y="40.6" style="fill:#010101;" width="33.3" height="21" />
+              <text transform="matrix(1 0 0 1 22.591 37.3804)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:11;">10%</text>
+              <text transform="matrix(1 0 0 1 89.1781 37.3804)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:11;">30%</text>
+              <text transform="matrix(1 0 0 1 155.7642 37.3804)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:11;">50%</text>
+              <text transform="matrix(1 0 0 1 222.3514 37.3804)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:11;">70%</text>
+              <text transform="matrix(1 0 0 1 55.8848 37.3804)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:11;">20%</text>
+              <text transform="matrix(1 0 0 1 122.4718 37.3804)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:11;">40%</text>
+              <text transform="matrix(1 0 0 1 189.0579 37.3804)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:11;">60%</text>
+              <text transform="matrix(1 0 0 1 255.6451 37.3804)" style="fill:#FFFFFF; font-family:'Lato-Regular'; font-size:11;">80%</text>
+              <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="33.3" y1="38.5" x2="33.3" y2="61.7" />
+              <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="66.6" y1="38.5" x2="66.6" y2="61.7" />
+              <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="33.3" y1="61.7" x2="33.3" y2="38.5" />
+              <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="99.9" y1="38.5" x2="99.9" y2="61.7" />
+              <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="66.6" y1="61.7" x2="66.6" y2="38.5" />
+              <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="133.2" y1="38.5" x2="133.2" y2="61.7" />
+              <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="99.9" y1="61.7" x2="99.9" y2="38.5" />
+              <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="166.5" y1="38.5" x2="166.5" y2="61.7" />
+              <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="133.2" y1="61.7" x2="133.2" y2="38.5" />
+              <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="199.8" y1="38.5" x2="199.8" y2="61.7" />
+              <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="166.5" y1="61.7" x2="166.5" y2="38.5" />
+              <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="233.1" y1="38.5" x2="233.1" y2="61.7" />
+              <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="199.8" y1="61.7" x2="199.8" y2="38.5" />
+              <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="266.3" y1="38.5" x2="266.3" y2="61.7" />
+              <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="233.1" y1="61.7" x2="233.1" y2="38.5" />
+              <line style="fill:none;stroke:#FFFFFF;stroke-miterlimit:10;" x1="266.3" y1="61.7" x2="266.3" y2="38.5" />
+            </svg>
+          </div>
+          <div id='legend-text'>
+            <div id="hover-year"></div>
+            <div id="hover-value"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="plexiglass modal-div" id="address-error">
+      <div class="popup-modal">
+        <div class="modal-title">
+          Whoops!
+          <span class="close-modal">
+              <img src="img/close.png" alt=""></span>
+        </div>
+        <div class="modal-body">
+          It looks like there was a problem with your address, check to see that it is correct.
+        </div>
+      </div>
+    </div>
+    <div class="plexiglass" id="about-modal">
+      <div class="popup-modal">
+        <div class="modal-title">
+          About this map
+          <span class="close-modal">
+              <img src="images/close.png" alt=""></span>
+        </div>
+        <div class="modal-body">
+          <p>Using the Neighborhood Change Database, we looked at Census data on neighborhoods’ average household income, median house value, share of college degrees, and homeownership rate to determine their socioeconomic advantage. We then analyzed the most disadvantaged neighborhoods (those in the bottom 10 percent, or “lowest-SES”) and the most advantaged (those in the top 10 percent or “highest-SES”) to map neighborhood inequality.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../../js/d3.min.js"></script>
+  <script src="js/vendor/jquery.min.js"></script>
+  <script src="js/area.js"></script>
+  <script src="js/main.js"></script>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-hash/v0.2.1/leaflet-hash.js'></script>
+  <script>
+  $(function() {
+    $("#submit_button").on("click", makeAPICall);
+  });
+  </script>
 </body>
 
 </html>

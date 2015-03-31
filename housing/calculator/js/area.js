@@ -3,7 +3,7 @@
   @bsouthga
 
 */
-(function(d3) {
+;(function(d3) {
 
   this.burdenArea = function area() {
 
@@ -67,7 +67,10 @@
           .attr('width', width + margin.left + margin.right)
           .attr('height', height + margin.top + margin.bottom)
         .append('g')
-          .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+          .attr(
+            'transform',
+            'translate(' + margin.left + ',' + margin.top + ')'
+          );
 
       var n_data = data.map(function(r) {
             return {year : r.year, value : 0};
