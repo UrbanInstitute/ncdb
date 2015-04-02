@@ -136,7 +136,6 @@ function drawMap() {
   function init(id) {
     var tile = L.mapbox.tileLayer(id, {
       unloadInvisibleTiles: true
-
     });
     return tile;
   }
