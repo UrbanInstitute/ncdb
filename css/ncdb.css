@@ -319,6 +319,11 @@ table.about-table {
     margin-bottom: 20px;
     background-color: #fff;
 }
+.full-screen{
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
 #locBtn {
     position: absolute;
     top: 69px;
@@ -404,6 +409,15 @@ table.about-table {
     position: absolute;
     top: 450px;
     cursor: hand;
+}
+.responsive-map{
+   font-size: 0.8em;
+  color: #1696d2 !important;
+  position: absolute;
+  bottom: 0px;
+  cursor: hand;
+  z-index: 1000;
+  right: 180px;   
 }
 .more-link {
     color: #fff !important;
