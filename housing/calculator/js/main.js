@@ -117,7 +117,7 @@ function drawMap() {
 
   var map = L.mapbox.map('map2', ',', {
       fadeAnimation: true,
-      maxZoom: 12,
+      maxZoom: 11,
       minZoom: 3,
       attributionControl: false
     })

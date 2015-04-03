@@ -57,9 +57,6 @@ $(function() {
         name: '1990',
         layer: init('urbaninstitute.4jazia4i'), //2010
         grid: L.mapbox.gridLayer('urbaninstitute.4jazia4i')
-        
-        
-
     },{
         name: '2000',
         layer: init('urbaninstitute.h564j9k9'), //2000
@@ -96,13 +93,10 @@ $(function() {
         layer.button = control.appendChild(document.createElement('a'));
         layer.button.innerHTML = layers[n].name;
         layer.button.onclick = function() {
+            console.log(n);
             highlightLayer(n);
         };
-        layer.grid.on('mouseover', function(o) {
-            if (o.data) {
-                drawKey(o.data, n);
-            }
-        });
+        
     });
 
     // we use a layer group to make it simple to remove an existing overlay
@@ -132,44 +126,8 @@ $(function() {
 
     }
 
-    function drawKey(data, index) {
-        var SES;
-        var legend = document.getElementById('legend');
-        var legendtext = document.getElementById('legend-text');
-        var el;
-        switch (String(index)) {
-            case "0":
-                if (typeof(data.SES9) != "undefined") {
-                    el = d3.select(".ses" + data.SES9 + ".immig" + data.key9);
-                    d3.selectAll(".selected").classed("selected", false);
-                    el.classed("selected", true);
-                    el[0][0].parentNode.appendChild(el[0][0]);
-                    legendtext.innerHTML = "<div id='year'>1990</div><div class='key-label'>Tract SES :: <span class='key-data'>" + data.SES90t + "</span></div><div class='key-label'>Share of immigrants :: <span class='key-data'>" + data.share90 + "%</span></div>";
-
-                }
-
-                break;
-            case "1":
-                if (typeof(data.SES0) != "undefined") {
-                    el = d3.select(".ses" + data.SES0 + ".immig" + data.key0);
-                    d3.selectAll(".selected").classed("selected", false);
-                    el.classed("selected", true);
-                    el[0][0].parentNode.appendChild(el[0][0]);
-                    legendtext.innerHTML = "<div id='year'>2000</div><div class='key-label'>Tract SES :: <span class='key-data'>" + data.SES00t + "</span></div><div class='key-label'>Share of immigrants :: <span class='key-data'>" + data.share00 + "%</span></div>";
-                }
-                break;
-            case "2":
-                if (typeof(data.SES1A) != "undefined") {
-                    el = d3.select(".ses" + data.SES1A + ".immig" + data.key1a);
-                    d3.selectAll(".selected").classed("selected", false);
-                    el.classed("selected", true);
-                    el[0][0].parentNode.appendChild(el[0][0]);
-                    legendtext.innerHTML = "<div id='year'>2010</div><div class='key-label'>Tract SES :: <span class='key-data'>" + data.SES10tim + "</span></div><div class='key-label'>Share of immigrants :: <span class='key-data'>" + data.share10 + "%</span></div>";
-                }
-                break;
-
-        }
-    }
+    
+    
 
     //streets on top
     var streetLayer = L.mapbox.tileLayer('urbaninstitute.h5b1kc2b');

@@ -424,6 +424,11 @@ table.about-table {
     display: inline-block;
     margin-right: 10px;
     text-transform: uppercase;
+    cursor: hand;
+}
+.more-link a{
+        color: #fff !important;
+
 }
 .alt-map-links a{
   color: #fff;
