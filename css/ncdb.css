@@ -47,6 +47,8 @@ p {
     font-size: 12px;
     color:#999;
     margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px #eee solid;
 }
 .dots {
     color: #aaa;
