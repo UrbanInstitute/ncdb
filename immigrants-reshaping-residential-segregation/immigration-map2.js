@@ -1,6 +1,6 @@
 $(function() {
-    var initLat = 39.673;
-    var initLon = -92.395;
+    var initLat = 40;
+    var initLon = -91;
 
     $("#embed").click(function() {
         $("#embed-modal").attr("style", "display:block;z-index:10;opacity:1;height:550px;");
@@ -34,14 +34,14 @@ $(function() {
     var map = L.mapbox.map('map', 'urbaninstitute.7438ce9f,', {
             fadeAnimation: true,
             maxZoom: 12,
-            minZoom: 4,
+            minZoom: 5,
             attributionControl: false
         })
-        .setView([initLat, initLon], 8);
+        .setView([initLat, initLon], 5);
     //.setView([41.9023, -87.7080], 10);
 
     L.mapbox.accessToken = 'pk.eyJ1IjoidXJiYW5pbnN0aXR1dGUiLCJhIjoiTEJUbmNDcyJ9.mbuZTy4hI_PWXw3C3UFbDQ';
-    var hash = L.hash(map);
+//    var hash = L.hash(map);
 
     var last_layer;
 
