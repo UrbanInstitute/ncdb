@@ -41,11 +41,6 @@ $(function() {
     //.setView([41.9023, -87.7080], 10);
 
     L.mapbox.accessToken = 'pk.eyJ1IjoidXJiYW5pbnN0aXR1dGUiLCJhIjoiTEJUbmNDcyJ9.mbuZTy4hI_PWXw3C3UFbDQ';
-<<<<<<< HEAD:immigrants-reshaping-residential-segregation/immigration-map2.js
-//    var hash = L.hash(map);
-=======
-  //  var hash = L.hash(map);
->>>>>>> 3c3ee31426667073179999e2c0ecd24ff850405d:immigrants-reshaping-residential-segregation/immigration-map2.js
 
     var last_layer;
 
