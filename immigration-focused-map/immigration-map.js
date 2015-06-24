@@ -31,13 +31,13 @@ $(function() {
         map.panTo([position.coords.latitude, position.coords.longitude], 8);
     }
 
-    var map = L.mapbox.map('map', 'urbaninstitute.7438ce9f,', {
+    var map = L.mapbox.map('map2', 'urbaninstitute.7438ce9f,', {
             fadeAnimation: true,
             maxZoom: 12,
             minZoom: 4,
             attributionControl: false
         })
-        .setView([initLat, initLon], 8);
+        .setView([initLat, initLon], 5);
     //.setView([41.9023, -87.7080], 10);
 
     L.mapbox.accessToken = 'pk.eyJ1IjoidXJiYW5pbnN0aXR1dGUiLCJhIjoiTEJUbmNDcyJ9.mbuZTy4hI_PWXw3C3UFbDQ';
@@ -57,6 +57,7 @@ $(function() {
         name: '1990',
         layer: init('urbaninstitute.4jazia4i'), //2010
         grid: L.mapbox.gridLayer('urbaninstitute.4jazia4i')
+
     },{
         name: '2000',
         layer: init('urbaninstitute.h564j9k9'), //2000
@@ -109,10 +110,9 @@ $(function() {
 
     // var active;
     function highlightLayer(i) {
-        i = i % 3;
-        if (i === 0) {
+     
             layerGroup.clearLayers();
-        }
+        
         layerGroup.addLayer(layers[i].layer);
         var gridControl = L.mapbox.gridControl(layers[i].grid);
         map.addLayer(layers[i].grid);
