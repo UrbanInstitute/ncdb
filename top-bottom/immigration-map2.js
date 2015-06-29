@@ -41,7 +41,7 @@ $(function() {
     //.setView([41.9023, -87.7080], 10);
 
     L.mapbox.accessToken = 'pk.eyJ1IjoidXJiYW5pbnN0aXR1dGUiLCJhIjoiTEJUbmNDcyJ9.mbuZTy4hI_PWXw3C3UFbDQ';
-    //var hash = L.hash(map);
+    var hash = L.hash(map);
 
     var last_layer;
 

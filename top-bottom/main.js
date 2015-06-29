@@ -23,6 +23,7 @@ function drawMap() {
   L.mapbox.accessToken = (
     'pk.eyJ1IjoidXJiYW5pbnN0aXR1dGUiLCJhIjoiTEJUbmNDcyJ9.mbuZTy4hI_PWXw3C3UFbDQ'
   );
+  var hash = L.hash(map);
 
 
   var last_layer;
