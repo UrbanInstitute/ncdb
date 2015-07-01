@@ -113,11 +113,14 @@ $(function() {
     // var active;
     function highlightLayer(i) {
         i = i % 3;
-        if (i === 0) {
-            layerGroup.clearLayers();
-        }
+        layerGroup.clearLayers();
         layerGroup.addLayer(layers[i].layer);
         var gridControl = L.mapbox.gridControl(layers[i].grid);
+        for(var j = 0; j<3; j++){
+            if(j != i){
+                map.removeLayer(layers[j].grid);
+            }
+        }
         map.addLayer(layers[i].grid);
 
         var count = document.getElementById('count');
