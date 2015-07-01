@@ -37,16 +37,19 @@ function drawMap() {
 
    var layers = [{
         name: '1990',
-        layer: init('urbaninstitute.ncdb-top-bot'), //2010
-        grid: L.mapbox.gridLayer('urbaninstitute.ncdb-top-bot')
+       layer: init('urbaninstitute.tqmbcsor'), //1990
+        grid: L.mapbox.gridLayer('urbaninstitute.tqmbcsor')
+       
+//        layer: init('urbaninstitute.ncdb-top-bot'), //2010
+//        grid: L.mapbox.gridLayer('urbaninstitute.ncdb-top-bot')
     },{
         name: '2000',
         layer: init('urbaninstitute.u4xqolxr'), //2000
         grid: L.mapbox.gridLayer('urbaninstitute.u4xqolxr')
     },{
         name: '2010',
-        layer: init('urbaninstitute.tqmbcsor'), //1990
-        grid: L.mapbox.gridLayer('urbaninstitute.tqmbcsor')
+         layer: init('urbaninstitute.ncdb-top-bot'), //2010
+        grid: L.mapbox.gridLayer('urbaninstitute.ncdb-top-bot')
     } ];
 
 
