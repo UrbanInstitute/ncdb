@@ -113,8 +113,8 @@ $(function() {
     // var active;
     function highlightLayer(i) {
         i = i % 3;
-        layerGroup.clearLayers();
         layerGroup.addLayer(layers[i].layer);
+        // layerGroup.clearLayers();
         var gridControl = L.mapbox.gridControl(layers[i].grid);
         for(var j = 0; j<3; j++){
             if(j != i){
@@ -129,7 +129,13 @@ $(function() {
         var defaultlegend = document.getElementById('legend');
         for (var j = 0; j < active.length; j++) active[j].className = '';
         layers[i].button.className = 'active';
-
+        setTimeout(function(){
+            for(var j = 0; j<3; j++){
+                if(j != i){
+                    layerGroup.removeLayer(layers[j].layer);
+                }
+            }
+        }, 300);
     }
 
     function drawKey(data, index) {
