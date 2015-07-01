@@ -178,44 +178,93 @@ function drawMap() {
     }
   }
 
-  layers.forEach(function(layer, n) {
-    layer.button = control.appendChild(document.createElement('a'));
-    layer.button.innerHTML = layers[n].name;
-    layer.button.onclick = function() {
-      highlightLayer(n);
-      play_button.innerHTML = play;
-    };
-    layer.grid.on('mouseover', gridMouseover);
-  });
+//  layers.forEach(function(layer, n) {
+//    layer.button = control.appendChild(document.createElement('a'));
+//    layer.button.innerHTML = layers[n].name;
+//    layer.button.onclick = function() {
+//      highlightLayer(n);
+//      play_button.innerHTML = play;
+//    };
+//    layer.grid.on('mouseover', gridMouseover);
+//  });
+//
+//  // we use a layer group to make it simple to remove an existing overlay
+//  // and add a new one in the same line of code, as below, without juggling
+//  // temporary variables.
+//  var layerGroup = L.layerGroup().addTo(map);
+//
+//  // i is the number of the currently-selected layer: this loops through
+//  // 0, 1, and 2.
+//  highlightLayer(2);
+//
+//  // var active;
+//  function highlightLayer(i) {
+//    i = i % 3;
+//    if (i === 0) {
+//      layerGroup.clearLayers();
+//    }
+//    layerGroup.addLayer(layers[i].layer);
+//    var gridControl = L.mapbox.gridControl(layers[i].grid);
+//    map.addLayer(layers[i].grid);
+//
+//    var count = document.getElementById('count');
+//
+//    var active = control.getElementsByClassName('active');
+//    var defaultlegend = document.getElementById('legend');
+//
+//    for (var j = 0; j < active.length; j++) active[j].className = '';
+//    layers[i].button.className = 'active';
+ layers.forEach(function(layer, n) {
+        layer.button = control.appendChild(document.createElement('a'));
+        layer.button.innerHTML = layers[n].name;
+        layer.button.onclick = function() {
+            highlightLayer(n);
+        };
+     layer.grid.on('mouseover', gridMouseover);
+//        layer.grid.on('mouseover', function(o) {
+//            if (o.data) {
+//                drawKey(o.data, n);
+//            }
+//        });
+    });
 
-  // we use a layer group to make it simple to remove an existing overlay
-  // and add a new one in the same line of code, as below, without juggling
-  // temporary variables.
-  var layerGroup = L.layerGroup().addTo(map);
+    // we use a layer group to make it simple to remove an existing overlay
+    // and add a new one in the same line of code, as below, without juggling
+    // temporary variables.
+    var layerGroup = L.layerGroup().addTo(map);
 
-  // i is the number of the currently-selected layer: this loops through
-  // 0, 1, and 2.
-  highlightLayer(2);
+    // start on 2010
+    highlightLayer(2);
 
-  // var active;
-  function highlightLayer(i) {
-    i = i % 3;
-    if (i === 0) {
-      layerGroup.clearLayers();
-    }
-    layerGroup.addLayer(layers[i].layer);
-    var gridControl = L.mapbox.gridControl(layers[i].grid);
-    map.addLayer(layers[i].grid);
+    // var active;
+    function highlightLayer(i) {
+        i = i % 3;
+        layerGroup.addLayer(layers[i].layer);
+        // layerGroup.clearLayers();
+        var gridControl = L.mapbox.gridControl(layers[i].grid);
+        for(var j = 0; j<3; j++){
+            if(j != i){
+                map.removeLayer(layers[j].grid);
+            }
+        }
+        map.addLayer(layers[i].grid);
 
-    var count = document.getElementById('count');
+        var count = document.getElementById('count');
 
-    var active = control.getElementsByClassName('active');
-    var defaultlegend = document.getElementById('legend');
-
-    for (var j = 0; j < active.length; j++) active[j].className = '';
-    layers[i].button.className = 'active';
-
+        var active = control.getElementsByClassName('active');
+        var defaultlegend = document.getElementById('legend');
+        for (var j = 0; j < active.length; j++) active[j].className = '';
+        layers[i].button.className = 'active';
+        setTimeout(function(){
+            for(var j = 0; j<3; j++){
+                if(j != i){
+                    layerGroup.removeLayer(layers[j].layer);
+                }
+            }
+        }, 300);
   }
+    
+
 
   //streets on top
   var streetLayer = L.mapbox.tileLayer('urbaninstitute.h5b1kc2b');
