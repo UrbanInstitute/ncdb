@@ -161,6 +161,7 @@ function drawMap() {
 
   function gridMouseover(o) {
     if (o.data) {
+        console.log(o.data);
       var d = d3.entries(o.data)[0];
       var year = d.key.split("-")[1];
       var val = pct_format(d.value / 100);
@@ -350,7 +351,7 @@ function showBurden(data) {
 $(document).ready(function() {
   $.ajax({
     type: "GET",
-    url: "data/rentburden_tracts.csv",
+    url: "data/rentburden_tracts_july15.csv",
     dataType: "text",
     success: processData
   });
@@ -365,9 +366,9 @@ function processData(text) {
     var line = lines[i].split(',');
     data[line[0]] = {
       // "burden1980": line[1],
-      "burden1990": line[2],
-      "burden2000": line[3],
-      "burden2010": line[4]
+      "burden1990": line[1],
+      "burden2000": line[2],
+      "burden2010": line[3]
     };
   }
   burdenData = data;
