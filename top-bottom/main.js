@@ -7,18 +7,13 @@
 function drawMap() {
 
   var coords = [42, -94];
-
-//  if (currentState.lat !== null && currentState.lon !== null) {
-//    coords = [currentState.lat, currentState.lon];
-//  }
-
-    var map = L.mapbox.map('map2', 'urbaninstitute.7438ce9f,', {
-      fadeAnimation: true,
-      maxZoom: 12,
-      minZoom: 3,
-      attributionControl: false
-    })
-    .setView(coords, 7);
+  var map = L.mapbox.map('map2', 'urbaninstitute.7438ce9f,', {
+        fadeAnimation: true,
+        maxZoom: 12,
+        minZoom: 3,
+        attributionControl: false
+      })
+      .setView(coords, 7);
 
   L.mapbox.accessToken = (
     'pk.eyJ1IjoidXJiYW5pbnN0aXR1dGUiLCJhIjoiTEJUbmNDcyJ9.mbuZTy4hI_PWXw3C3UFbDQ'
@@ -37,21 +32,14 @@ function drawMap() {
 
    var layers = [{
         name: '1990',
-       layer: init('urbaninstitute.tqmbcsor'), //1990
-        grid: L.mapbox.gridLayer('urbaninstitute.tqmbcsor')
-       
-//        layer: init('urbaninstitute.ncdb-top-bot'), //2010
-//        grid: L.mapbox.gridLayer('urbaninstitute.ncdb-top-bot')
+       layer: init('urbaninstitute.tqmbcsor') //1990
     },{
         name: '2000',
-        layer: init('urbaninstitute.u4xqolxr'), //2000
-        grid: L.mapbox.gridLayer('urbaninstitute.u4xqolxr')
+        layer: init('urbaninstitute.u4xqolxr') //2000
     },{
         name: '2010',
-         layer: init('urbaninstitute.ncdb-top-bot'), //2010
-        grid: L.mapbox.gridLayer('urbaninstitute.ncdb-top-bot')
+         layer: init('urbaninstitute.ncdb-top-bot') //2010
     } ];
-
 
   var control = document.getElementById('layers');
 
@@ -72,15 +60,11 @@ function drawMap() {
   // 0, 1, and 2.
   highlightLayer(2);
 
-  // var active;
   function highlightLayer(i) {
     i = i % 3;
-//    if (i === 0) {
-      layerGroup.clearLayers();
-//    }
+    layerGroup.clearLayers();
     layerGroup.addLayer(layers[i].layer);
-    var gridControl = L.mapbox.gridControl(layers[i].grid);
-    map.addLayer(layers[i].grid);
+
 
     var count = document.getElementById('count');
 
@@ -100,12 +84,9 @@ function drawMap() {
  
 }
 
-
-
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // !!! END OF FUNCTIONS FOR TIM TO WRITE !!!!
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 
 // draw map on document load
 $(drawMap);
