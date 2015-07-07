@@ -316,8 +316,8 @@ function calculateBurden(burden) {
       " of your census tract was rent burdened."
     );
   } else {
-    $("#burden-response").text(
-      "You’re not rent burdened! But, in 2010, " +
+    $("#burden-response").html(
+      "You&#8217;re not rent burdened! But, in 2010, " +
       format(value) + " of your census tract was rent burdened."
     );
   }
