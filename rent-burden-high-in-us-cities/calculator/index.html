@@ -316,6 +316,53 @@
     $("#submit_button").on("click", makeAPICall);
   });
   </script>
+    
+    
+    
+    <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() { 
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),  m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m) 
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+     
+    ga('create', 'UA-57529944-1', 'auto'); 
+    ga('send', 'pageview');
+    </script>
+    <script src="../../js/custom-analytics-master/urban-analytics.min.js"></script>
+    <!--custom element tracking-->
+    <script type="text/javascript">
+    $(".save-chart")
+      .custom_analytics('track', {
+        category: "button",
+        action: "click",
+        label: "object_HTML",
+        value: 1,
+        timing: true,
+        interaction: true
+      });
+    $(".urban-img")
+      .custom_analytics('track', {
+        category: "button",
+        action: "mouseup",
+        label: "object_HTML",
+        value: 1,
+        timing: true,
+        interaction: true
+      });
+
+    $(window)
+      .custom_analytics('scrollTrack', {
+        timing: true,
+        interaction: true
+      });
+    </script>
 </body>
 
 </html>
