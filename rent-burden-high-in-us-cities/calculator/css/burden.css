@@ -107,7 +107,7 @@ h1#burden-response {
 }
 
 input {
-    padding: 15px;
+    padding-left: 15px;
     border: 1px solid rgba(0, 0, 0, .6);
     background: #fff;
     font-size: 1.3em;
